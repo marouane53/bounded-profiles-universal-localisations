@@ -1,0 +1,165 @@
+
+\section{A known factorisation criterion and perfect restriction}\label{sec:comparison}
+
+Continue with
+\[
+ \cC=\cK\cap\cP=\Kc_\lambda,
+ \qquad
+ \cL=\thick(\cP,\cK).
+\]
+The inclusion \(\cK\subseteq\cL\) induces the natural exact functor
+\begin{equation}\label{eq:rho}
+ \rho_\lambda:
+ \DeltaB(\lambda)=\cK/\cC
+ \longrightarrow
+ \Defsg(\lambda)=\cL/\cP.
+\end{equation}
+The essential image always thickly generates the target, but this says nothing by itself about morphisms.
+
+\subsection{The standard factorisation criterion}
+
+\begin{lemma}[Conservativity of the comparison]\label{lem:rho-conservative}
+For any triangulated category \(\cT\) and thick subcategories \(\cK,\cP\), the functor
+\[
+ \rho:\cK/(\cK\cap\cP)
+ \longrightarrow
+ \thick(\cK,\cP)/\cP
+\]
+reflects zero objects, and hence is conservative.
+\end{lemma}
+
+\begin{proof}
+An object \(K\in\cK\) becomes zero in the target if and only if
+\(K\in\cP\), since \(\cP\) is thick.  This is equivalent to
+\(K\in\cK\cap\cP\), which is exactly the condition that \(K\) be zero in the source.  An exact functor which reflects zero objects reflects isomorphisms by applying this to cones.
+\end{proof}
+
+\begin{lemma}[Full plus conservative implies faithful]\label{lem:full-conservative}
+Let \(F:\mathcal A\to\mathcal B\) be an exact full functor of triangulated categories.  If \(F\) is conservative, then \(F\) is faithful.  We include the short argument because it separates faithfulness from roof surjectivity.
+\end{lemma}
+
+\begin{proof}
+Let \(f:X\to Y\) satisfy \(F(f)=0\), and complete it to a triangle
+\[
+ X\xrightarrow{f}Y\xrightarrow{g}Z\longrightarrow X[1].
+\]
+The image triangle is split, so \(F(g)\) has a retraction
+\(r:F(Z)\to F(Y)\).  Fullness lifts \(r\) to a map \(p:Z\to Y\).  Then
+\(F(pg)=\id_{F(Y)}\), so \(F(pg)\) is an isomorphism.  Conservativity implies that \(pg\) is an isomorphism.  Consequently \(g\) is split monic, the original triangle is split, and \(f=0\).
+\end{proof}
+
+The full-faithfulness assertion in the next result is the standard localisation-of-subcategories criterion; see \cite[the dual of Lemma~10.3]{Keller96}, \cite[Lemma~4.7.1(2)]{Krause10}, and \cite[Lemma~2.6(1)]{SunZhangZhang}.  This is the opposite orientation from the compact-factorisation proof of \Cref{thm:abstract-rigidity}. We retain it here for the perfect-restriction application.  The thick-generation and idempotent-completion statements are formal consequences for the displayed target.
+
+\begin{proposition}[Known factorisation criterion with Karoubi-density addendum]\label{thm:factorisation-comparison}
+Let \(\cK,\cP\) be thick subcategories of a triangulated category \(\cT\), and put \(\cC=\cK\cap\cP\).  Assume
+\begin{equation}\label{eq:factorization-condition}
+ \text{every morphism }K\longrightarrow P,
+ \quad K\in\cK,
+ \quad P\in\cP,
+ \quad\text{factors through an object of }\cC.
+\end{equation}
+Then
+\[
+ \rho:\cK/\cC\longrightarrow\thick(\cK,\cP)/\cP
+\]
+is fully faithful.  Its essential image is triangulated and thickly generates the target.  Consequently
+\[
+ \Kar(\cK/\cC)
+ \xrightarrow{\sim}
+ \Kar\bigl(\thick(\cK,\cP)/\cP\bigr).
+\]
+If the source is idempotent complete, or more generally if the essential image is closed under direct summands, then \(\rho\) is an equivalence before idempotent completion.
+\end{proposition}
+
+\begin{proof}
+We first prove fullness.  Let \(K_1,K_2\in\cK\), and represent a morphism between their images in \(\cT/\cP\) by a roof
+\[
+ K_1\xleftarrow{s}Z\xrightarrow{g}K_2,
+ \qquad \Cone(s)\in\cP.
+\]
+Choose a triangle
+\[
+ Z\xrightarrow{s}K_1\xrightarrow{u}P\longrightarrow Z[1]
+\]
+with \(P\in\cP\).  By \eqref{eq:factorization-condition}, write
+\(u=ba\) with
+\[
+ K_1\xrightarrow{a}C\xrightarrow{b}P,
+ \qquad C\in\cC.
+\]
+Complete \(a\) to a triangle
+\[
+ Z'\xrightarrow{s'}K_1\xrightarrow{a}C\longrightarrow Z'[1].
+\]
+The identity of \(K_1\) together with \(b:C\to P\) extends, by the morphism axiom for triangles, to a morphism of triangles.  In particular there is a map \(t:Z'\to Z\) with
+\(st=s'\).  Since \(K_1,C\in\cK\), the object \(Z'\) belongs to \(\cK\), and \(\Cone(s')\cong C\in\cC\).  The roof
+\[
+ K_1\xleftarrow{s'}Z'\xrightarrow{gt}K_2
+\]
+represents the same target morphism and is a roof in \(\cK/\cC\).  Thus \(\rho\) is full.
+
+By \Cref{lem:rho-conservative}, \(\rho\) is conservative.  It is therefore faithful by \Cref{lem:full-conservative}.  The essential image is triangulated because \(\rho\) is exact and fully faithful.  Since
+\(\thick(\cK,\cP)/\cP\) is the thick closure of the image of \(\cK\), the image of \(\rho\) becomes essentially surjective after adjoining direct summands.  This yields the Karoubi equivalence.  If the image is already thick, no completion is needed.  In particular, a fully faithful functor from an idempotent-complete source has image closed under direct summands: a target idempotent lifts by fullness, splits in the source, and its splitting maps to the given target splitting.
+\end{proof}
+
+\begin{remark}
+No novelty is claimed for the full-faithfulness criterion.  The proof is retained to expose the internal-roof construction in the direction used here and to separate fullness from faithfulness via \Cref{lem:rho-conservative,lem:full-conservative}; the Karoubi-density conclusion is formal for this target.
+\end{remark}
+
+\subsection{Perfect restriction}
+
+\begin{theorem}[Perfect-restriction comparison theorem]\label{thm:perfect-restriction}
+Let \(\lambda:R\to S\) be a homological ring epimorphism satisfying \textup{(B1)--(B3)}, and assume
+\[
+ U(\per(S))\subseteq\per(R),
+ \quad\text{equivalently }{}_RS\in\per(R).
+\]
+Then \(\rho_\lambda\) in \eqref{eq:rho} is fully faithful and
+\[
+ \Kar\DeltaB(\lambda)
+ \xrightarrow{\sim}
+ \Kar\Defsg(\lambda).
+\]
+If \(\DeltaB(\lambda)\) is idempotent complete, then \(\rho_\lambda\) is an equivalence before completion.
+\end{theorem}
+
+\begin{proof}
+We verify \eqref{eq:factorization-condition}.  Let
+\(K\in\Kb(\lambda)\), \(P\in\per(R)\), and let \(f:K\to P\).  Complete the localisation unit at \(P\) to a triangle
+\[
+ K_P\longrightarrow P\xrightarrow{\eta_P}U\Phi P\longrightarrow K_P[1].
+\]
+The object \(K_P\) lies in the unbounded kernel.  It is bounded because both \(P\) and \(U\Phi P\) are bounded.  Moreover \(\Phi P\in\per(S)\), and perfect restriction gives \(U\Phi P\in\per(R)\).  Hence \(K_P\in\per(R)\), so
+\[
+ K_P\in\Kb(\lambda)\cap\per(R)=\Kc_\lambda
+\]
+by \Cref{lem:compact-intersection}.
+
+Adjunction and \(\Phi K=0\) give
+\[
+ \Hom_{D(R)}(K,U\Phi P)
+ \cong
+ \Hom_{D(S)}(\Phi K,\Phi P)=0.
+\]
+Therefore \(\eta_Pf=0\).  Exactness of \(\Hom(K,-)\) on the unit triangle implies that \(f\) factors through \(K_P\in\Kc_\lambda\).  The hypotheses of \Cref{thm:factorisation-comparison} are satisfied, and the conclusion follows.
+\end{proof}
+
+\begin{corollary}[Vanishing criterion]\label{cor:comparison-vanishing}
+Under the hypotheses of \Cref{thm:perfect-restriction}, the following are equivalent:
+\[
+ \DeltaB(\lambda)=0,
+ \qquad
+ \Defsg(\lambda)=0,
+ \qquad
+ \Dsg(R)\xrightarrow{\sim}\Dsg(S).
+\]
+Here the final equivalence holds before idempotent completion.
+\end{corollary}
+
+\begin{proof}
+Full faithfulness gives \(\DeltaB=0\) if and only if its essential image is zero.  Since that image thickly generates \(\Defsg\), this is equivalent to \(\Defsg=0\).  The last equivalence follows from \Cref{thm:actual-kernel}.
+\end{proof}
+
+\medskip
+\noindent\textbf{Secondary applications and computations.}
+The structural comparison package is complete at this point.  

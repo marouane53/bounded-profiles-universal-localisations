@@ -1,0 +1,461 @@
+\section{The summand obstruction in negative \texorpdfstring{\(K\)}{K}-theory}\label{app:negative-k}\label{subsec:summand-negative-k}
+Throughout this appendix, \(R\) is left noetherian and \(\lambda:R\to R_\Sigma\) is a stably flat universal localisation. Let \(\cE\) be the common idempotent completion and put
+\[
+ H_\Delta=\im\bigl(K_0(\DeltaB(\lambda))\to K_0(\cE)\bigr),\qquad
+ H_{\mathrm{Def}}=\im\bigl(K_0(\Defsg(\lambda))\to K_0(\cE)\bigr).
+\]
+
+\begin{proposition}[Thomason summand obstruction]\label{prop:k0-obstruction}
+The quotient
+\[
+ \operatorname{SObs}_0(\lambda)=H_{\mathrm{Def}}/H_\Delta
+\]
+vanishes if and only if \(\rho_\lambda\) is essentially surjective before idempotent completion.
+\end{proposition}
+
+\begin{proof}
+Via the fully faithful comparison, regard \(\DeltaB(\lambda)\) and \(\Defsg(\lambda)\) as dense full triangulated subcategories of their common idempotent completion \(\cE\), with the former contained in the latter.  Thomason's Theorem~2.1~\cite{Thomason97} identifies dense triangulated subcategories of \(\cE\) with subgroups of its triangulated Grothendieck group \(K_0(\cE)\).  The two subcategories correspond to \(H_\Delta\subseteq H_{\mathrm{Def}}\).  Thus they coincide exactly when \(H_\Delta=H_{\mathrm{Def}}\), equivalently when \(\operatorname{SObs}_0(\lambda)=0\).
+\end{proof}
+
+\paragraph{K-theoretic conventions.}
+For every category occurring below, \(K_{-n}\) means Schlichting's group \(\mathrm{IK}_{-n}\) of the Frobenius model specified in \Cref{lem:negative-k-models}.  Maps on these groups are induced by the displayed maps of Frobenius pairs.  By Schlichting's Corollary~1.8~\cite{Schlichting06}, the groups are invariant under derived equivalences induced by maps of models.  In degree zero,
+\[
+ \mathrm{IK}_0(\mathfrak X)=K_0\bigl(\Kar D(\mathfrak X)\bigr),
+\]
+where the right-hand side is the triangulated Grothendieck group, not the split Grothendieck group.  Thus the \(K_0\) used here is the same Grothendieck group as in Thomason's Theorem~2.1.  The finite-complex Frobenius model of \(\per R\), Schlichting's Corollary~1.8, and the comparison of Section~7.1 identify
+\[
+ K_{-1}(\per R)\cong K_{-1}(R),
+\]
+where the right-hand side is the classical Bass group.  By \Cref{lem:negative-k-models}, the categories \(\cC,\cK,\cP,\cA\) below are idempotent complete.  Their degree-zero terms are therefore ordinary triangulated Grothendieck groups; only the two Verdier-quotient terms require idempotent completion in Schlichting's convention.
+
+\begin{lemma}[Compatible Frobenius models for the two quotient rows]\label{lem:negative-k-models}
+Assume the hypotheses of \Cref{thm:unconditional-comparison}, and put
+\[
+ \cC=\Kc_\lambda,\qquad
+ \cK=\Kb(\lambda),\qquad
+ \cP=\per(R),\qquad
+ \cA=\thick(\cP,\cK).
+\]
+There is a commutative diagram of exact sequences of Frobenius pairs
+\[
+\begin{array}{ccccc}
+ (\cF_{\cC},\cF_0)&\longrightarrow&(\cF_{\cK},\cF_0)&\longrightarrow&(\cF_{\cK},\cF_{\cC})\\
+ \big\downarrow&&\big\downarrow&&\big\downarrow\\
+ (\cF_{\cP},\cF_0)&\longrightarrow&(\cF,\cF_0)&\longrightarrow&(\cF,\cF_{\cP})
+\end{array}
+\tag{\(*\)}\label{eq:frobenius-pair-square}
+\]
+whose derived diagram is
+\[
+\begin{array}{ccccc}
+ \cC&\longrightarrow&\cK&\longrightarrow&\cK/\cC\\
+ \big\downarrow&&\big\downarrow&&\big\downarrow\rho_\lambda\\
+ \cP&\longrightarrow&\cA&\longrightarrow&\cA/\cP.
+\end{array}
+\tag{\(**\)}\label{eq:derived-quotient-square}
+\]
+The first two terms in both rows of \eqref{eq:frobenius-pair-square} use the same acyclic subcategory \(\cF_0\), and
+\[
+ \cF_{\cC}=\cF_{\cK}\cap\cF_{\cP}.
+\]
+Moreover, \(\cC,\cK,\cP,\cA\) are idempotent complete.
+\end{lemma}
+
+\begin{proof}
+Since \(R\) is left noetherian, \(R\text{-}\modcat\) is abelian and hence idempotent complete.  Balmer--Schlichting's theorem, in the form recalled in Schlichting's Section~5.5~\cite{BalmerSchlichting01,Schlichting06}, therefore shows that \(\Db(R\text{-}\modcat)\) is idempotent complete.  The categories \(\cC,\cK,\cP\), and \(\cA\) are thick subcategories of \(\Db(R\text{-}\modcat)\); hence they are idempotent complete.
+
+The category \(R\text{-}\Mod\) is Grothendieck abelian, and
+\[
+ \cA\subseteq\Db(R\text{-}\modcat)\subseteq D(R\text{-}\Mod)
+\]
+is essentially small.  After choosing a small skeleton, Schlichting's construction in Section~5.6~\cite{Schlichting06} supplies a Frobenius pair \((\cF,\cF_0)\) and a triangle equivalence
+\[
+ D(\cF,\cF_0)\xrightarrow{\sim}\cA.
+\]
+
+Apply Schlichting's construction in Section~5.2 first to the strictly full triangulated subcategories \(\cK\) and \(\cP\) of \(D(\cF,\cF_0)\).  Thus \(\cF_{\cK}\) and \(\cF_{\cP}\) are the full subcategories of objects whose images are isomorphic to objects of \(\cK\) and \(\cP\), respectively, and
+\[
+ (\cF_{\cK},\cF_0),\qquad (\cF_{\cP},\cF_0)
+\]
+are Frobenius pairs modelling \(\cK\) and \(\cP\).  Apply the same construction to \(\cC\subseteq\cK\) inside the model \((\cF_{\cK},\cF_0)\).  It gives the sub-pair \((\cF_{\cC},\cF_0)\) and the quotient pair
+\[
+ \mathfrak Q_{\cC}=(\cF_{\cK},\cF_{\cC}),
+\]
+with derived category \(\cK/\cC\).  The lower quotient pair is
+\[
+ \mathfrak Q_{\cP}=(\cF,\cF_{\cP}),
+\]
+with derived category \(\cA/\cP\).
+
+By Lemma~3.2,
+\[
+ \cC=\cK\cap\cP.
+\]
+Since all four triangulated subcategories are strictly full, an object of \(\cF\) belongs to \(\cF_{\cC}\) exactly when its image belongs to both \(\cK\) and \(\cP\).  Hence \(\cF_{\cC}=\cF_{\cK}\cap\cF_{\cP}\).  In particular, the inclusion \(\cF_{\cK}\subseteq\cF\) sends \(\cF_{\cC}\) into \(\cF_{\cP}\), and therefore induces the right-hand vertical map in \eqref{eq:frobenius-pair-square}.  Schlichting's Section~5.2 identifies both rows as exact sequences of Frobenius pairs and identifies their derived rows with \eqref{eq:derived-quotient-square}.
+\end{proof}
+
+\begin{theorem}[Negative-\(K\) realisation of the summand obstruction]\label{thm:negative-k-obstruction}
+Assume the hypotheses of \Cref{thm:unconditional-comparison}, and use the notation of \Cref{lem:negative-k-models}.  Fix
+\[
+ \cE=\Kar\Defsg(\lambda)
+\]
+and identify \(\Kar\DeltaB(\lambda)\) with \(\cE\) through the equivalence \(\Kar(\rho_\lambda)\) of \Cref{thm:unconditional-comparison}.  Let
+\[
+ i_{\cK}:\cC\hookrightarrow\cK,
+ \qquad
+ i_{\cP}:\cC\hookrightarrow\cP
+\]
+be the inclusions.  There is a commutative diagram with exact rows
+\[
+\begin{array}{ccccccccc}
+ K_0(\cC)&\longrightarrow&K_0(\cK)&\xrightarrow{\ \bar q_{\cK,*}\ }&K_0(\cE)&\xrightarrow{\ \partial_{\cC}\ }&K_{-1}(\cC)&\xrightarrow{\ i_{\cK,*}\ }&K_{-1}(\cK)\\[1mm]
+ \big\downarrow&&\big\downarrow&&\big\Vert&&\big\downarrow i_{\cP,*}&&\big\downarrow\\[1mm]
+ K_0(\cP)&\longrightarrow&K_0(\cA)&\xrightarrow{\ \bar q_{\cA,*}\ }&K_0(\cE)&\xrightarrow{\ \partial_{\cP}\ }&K_{-1}(\cP)&\longrightarrow&K_{-1}(\cA),
+\end{array}
+\tag{\(\dagger\)}\label{eq:negative-k-two-rows}
+\]
+where
+\[
+ \bar q_{\cK}:\cK\longrightarrow\DeltaB(\lambda)
+ \longrightarrow\Kar\DeltaB(\lambda)\xrightarrow{\sim}\cE
+\]
+and
+\[
+ \bar q_{\cA}:\cA\longrightarrow\Defsg(\lambda)
+ \longrightarrow\Kar\Defsg(\lambda)=\cE.
+\]
+All unlabeled arrows in \eqref{eq:negative-k-two-rows} are induced by the displayed inclusions or quotient functors.  The boundary maps satisfy
+\[
+ \partial_{\cP}=i_{\cP,*}\partial_{\cC}.
+\tag{\(\ddagger\)}\label{eq:boundary-naturality}
+\]
+Moreover,
+\[
+ H_\Delta=\ker\partial_{\cC},
+ \qquad
+ H_{\mathrm{Def}}=\ker\partial_{\cP},
+\tag{\(\star\)}\label{eq:H-as-boundary-kernels}
+\]
+and the assignment
+\[
+ \Theta_\lambda:
+ \operatorname{SObs}_0(\lambda)\longrightarrow K_{-1}(\cC),
+ \qquad
+ x+H_\Delta\longmapsto\partial_{\cC}(x)\quad(x\in H_{\mathrm{Def}}),
+\]
+is a canonical isomorphism
+\[
+ \boxed{
+ \operatorname{SObs}_0(\lambda)
+ \xrightarrow{\sim}
+ \ker\!\left(
+ K_{-1}(\Kc_\lambda)
+ \xrightarrow{\ (i_{\cK,*},i_{\cP,*})\ }
+ K_{-1}(\Kb(\lambda))\oplus K_{-1}(R)
+ \right).}
+\tag{\(\heartsuit\)}\label{eq:sobs-negative-k}
+\]
+Consequently,
+\[
+ \operatorname{SObs}_0(\lambda)=0
+ \quad\Longleftrightarrow\quad
+ (i_{\cK,*},i_{\cP,*})\text{ is injective}.
+\tag{\(\clubsuit\)}\label{eq:sobs-injectivity}
+\]
+This equality requires only \(H_\Delta=H_{\mathrm{Def}}\).  By contrast, the stronger hypothesis \(K_{-1}(\Kc_\lambda)=0\) forces
+\[
+ H_\Delta=H_{\mathrm{Def}}=K_0(\cE).
+\tag{\(\spadesuit\)}\label{eq:stronger-k0-density}
+\]
+\end{theorem}
+
+\begin{proof}
+Apply Schlichting's Theorem~11.10~\cite{Schlichting06} to the two exact sequences of Frobenius pairs in \eqref{eq:frobenius-pair-square}.  The theorem is functorial for maps of exact sequences of Frobenius pairs, so it gives a morphism between the two localisation sequences.  Before identifying their middle terms, the middle vertical map is
+\[
+ \mathrm{IK}_0\bigl(\Kar(\rho_\lambda)\bigr):
+ K_0\bigl(\Kar\DeltaB(\lambda)\bigr)
+ \longrightarrow
+ K_0\bigl(\Kar\Defsg(\lambda)\bigr).
+\]
+It is an isomorphism by \Cref{thm:unconditional-comparison}; we identify both groups with \(K_0(\cE)\).  This gives \eqref{eq:negative-k-two-rows}.  Since \(\cC,\cK,\cP,\cA\) are idempotent complete by \Cref{lem:negative-k-models}, the other degree-zero terms in the diagram are their ordinary triangulated Grothendieck groups.  Functoriality in Schlichting's Theorem~11.10 gives
+\[
+ \partial_{\cP}\circ
+ \mathrm{IK}_0\bigl(\Kar(\rho_\lambda)\bigr)
+ =i_{\cP,*}\circ\partial_{\cC};
+\]
+after the preceding identification, this is \eqref{eq:boundary-naturality}.
+
+The triangulated Grothendieck group is right exact on Verdier quotients.  Hence
+\[
+ K_0(\cK)\twoheadrightarrow K_0(\cK/\cC),
+ \qquad
+ K_0(\cA)\twoheadrightarrow K_0(\cA/\cP).
+\]
+It follows that
+\[
+ H_\Delta=\im\bigl(K_0(\cK)\to K_0(\cE)\bigr),
+ \qquad
+ H_{\mathrm{Def}}=\im\bigl(K_0(\cA)\to K_0(\cE)\bigr).
+\]
+Exactness of the two rows of \eqref{eq:negative-k-two-rows} at \(K_0(\cE)\) proves \eqref{eq:H-as-boundary-kernels}.
+
+Since \(H_\Delta=\ker\partial_{\cC}\), the formula defining \(\Theta_\lambda\) is well defined and injective.  By \eqref{eq:boundary-naturality}, its image is
+\[
+ \partial_{\cC}(\ker\partial_{\cP})
+ =\im\partial_{\cC}\cap\ker i_{\cP,*}.
+\]
+Exactness of the upper row at \(K_{-1}(\cC)\) gives
+\[
+ \im\partial_{\cC}=\ker i_{\cK,*}.
+\]
+Therefore
+\[
+ \im\Theta_\lambda
+ =\ker i_{\cK,*}\cap\ker i_{\cP,*}
+ =\ker(i_{\cK,*},i_{\cP,*}).
+\]
+For completeness, let \(\eta\) lie in this last kernel.  Exactness of the upper row gives \(x\in K_0(\cE)\) with \(\partial_{\cC}(x)=\eta\).  Then
+\[
+ \partial_{\cP}(x)=i_{\cP,*}(\eta)=0,
+\]
+so \(x\in H_{\mathrm{Def}}\), and \(\Theta_\lambda(x+H_\Delta)=\eta\).  Thus \(\Theta_\lambda\) is surjective onto the simultaneous kernel.  Finally, the finite-complex comparison recalled in the conventions identifies \(K_{-1}(\cP)=K_{-1}(\per R)\) with \(K_{-1}(R)\), proving \eqref{eq:sobs-negative-k}.
+
+The equivalence \eqref{eq:sobs-injectivity} follows immediately.  If \(K_{-1}(\cC)=0\), then \(\partial_{\cC}=0\), so \eqref{eq:H-as-boundary-kernels} gives \(H_\Delta=K_0(\cE)\).  Since
+\[
+ H_\Delta\subseteq H_{\mathrm{Def}}\subseteq K_0(\cE),
+\]
+this proves \eqref{eq:stronger-k0-density}.
+\end{proof}
+
+\begin{remark}[The logical asymmetry]\label{rem:logical-asymmetry}
+The exact criterion for essential surjectivity is the injectivity in \eqref{eq:sobs-injectivity}, or equivalently the equality \(H_\Delta=H_{\mathrm{Def}}\).  The vanishing of \(K_{-1}(\Kc_\lambda)\) is only a sufficient condition.  It proves the stronger statement that \(\DeltaB(\lambda)\) is dense in the whole idempotent completion at the level of \(K_0\), as in \eqref{eq:stronger-k0-density}.  Essential surjectivity may therefore hold even when \(K_{-1}(\Kc_\lambda)\ne0\), provided that the simultaneous kernel in \eqref{eq:sobs-negative-k} is zero.
+\end{remark}
+
+\begin{remark}[The boundary in Schlichting's construction]\label{rem:schlichting-boundary}
+We record the object-level construction from Schlichting's Section~1.5~\cite{Schlichting06}.  Apply the flasque and suspension functors to the upper exact sequence in \eqref{eq:frobenius-pair-square}.  An object \(e\) of the idempotent completion of \(D(\mathfrak Q_{\cC})\) is lifted, along the flasque localisation, to an object \(B\) in the flasque model of \((\cF_{\cK},\cF_0)\).  Its image in the suspension model becomes zero in the suspension of \(\mathfrak Q_{\cC}\), and therefore lies in the suspension model of \((\cF_{\cC},\cF_0)\).  The boundary is
+\[
+ \partial_{\cC}[e]=[B_{\mathrm s}]
+ \in K_0\bigl(D(S(\cF_{\cC},\cF_0))\bigr)
+ =K_{-1}(\cC).
+\]
+Schlichting proves independence of the lift and compatibility with triangle relations.  Naturality in \eqref{eq:boundary-naturality} is not deduced from choices in this construction; it is the functoriality assertion of his Theorem~11.10 applied to \eqref{eq:frobenius-pair-square}.
+\end{remark}
+
+\begin{lemma}[Connective invariance]\label{lem:connective-negative-k}
+Let \(B\) be a cohomologically non-positive dga and put \(\Gamma=H^0(B)\).  For every \(n\ge1\), the canonical map \(B\to\Gamma\) induces an isomorphism
+\[
+ K_{-n}(\per B)\xrightarrow{\sim}K_{-n}(\Gamma).
+\]
+\end{lemma}
+
+\begin{proof}
+Let \(HB\) be the Eilenberg--Mac Lane \(A_\infty\)-ring spectrum associated with \(B\).  Since \(B\) is cohomologically non-positive, \(HB\) is connective and
+\[
+ \pi_0(HB)=H^0(B)=\Gamma.
+\]
+The category of perfect \(B\)-modules identifies with the category of compact \(HB\)-modules.  Blumberg--Gepner--Tabuada's Theorem~9.53~\cite{BGT13} states that, for a connective \(A_\infty\)-ring spectrum \(A\), the map
+\[
+ A\longrightarrow H\pi_0A
+\]
+induces isomorphisms
+\[
+ \pi_iK(A)\xrightarrow{\sim}\pi_iK(\pi_0A)
+ \qquad(i\le0).
+\]
+Applied to \(A=HB\), this gives the asserted isomorphism.
+
+Alternatively, Bass delooping gives a three-step proof.  The map \(K_0(A)\to K_0(\pi_0A)\) is an isomorphism for every connective ring spectrum \(A\).  Laurent extension preserves connectivity and satisfies \(\pi_0(A[t_1^{\pm1},\ldots,t_r^{\pm1}])=\pi_0(A)[t_1^{\pm1},\ldots,t_r^{\pm1}]\).  Applying the first statement to all iterated Laurent extensions and inducting through the Bass fundamental exact sequence yields the isomorphism in every negative degree.
+\end{proof}
+
+\begin{remark}[Compatibility of nonconnective models]\label{rem:bgt-schlichting-compatibility}
+Blumberg--Gepner--Tabuada's proof of Theorem~9.53 invokes the argument of Schlichting's Theorem~11.7, which compares the nonconnective construction used there with Schlichting's delooping.  In the dga model, Schlichting's Section~5.9 defines \(\mathrm{IK}(B)\) from finite cell modules, and Corollary~1.8 gives quasi-isomorphism invariance.  Thus the connective invariance used in \Cref{lem:connective-negative-k} is compatible with the Schlichting groups and dg models used elsewhere in this subsection.
+\end{remark}
+
+\begin{lemma}[Artinian vanishing]\label{lem:artinian-negative-k}
+If \(\Gamma\) is an artinian ring, then
+\[
+ K_{-n}(\Gamma)=0
+ \qquad(n\ge1).
+\]
+\end{lemma}
+
+\begin{proof}
+Let \(J=\rad\Gamma\).  The ideal \(J\) is nilpotent and \(\Gamma/J\) is semisimple artinian.  Corti{\~n}as defines
+\[
+ K_{-n}(A)=K_0(\Sigma^nA)
+\]
+using Karoubi's suspension, and Proposition~2.5.2(i)~\cite{Cortinas11} states that, in non-positive degrees, these functors are additive, nilinvariant, and \(M_\infty\)-stable.  These groups agree with Schlichting's groups by Schlichting's Section~7.1.  Hence
+\[
+ K_{-n}(\Gamma)\xrightarrow{\sim}K_{-n}(\Gamma/J).
+\]
+The ring \(\Gamma/J\) is regular, so its negative groups vanish by Schlichting's Example~9.5.  The result follows.
+\end{proof}
+
+\begin{lemma}[Regular-noetherian vanishing]\label{lem:regular-noetherian-negative-k}
+Let \(\Gamma\) be left noetherian, and assume that every finitely generated left \(\Gamma\)-module has finite projective dimension.  Then
+\[
+ K_{-n}(\Gamma)=0
+ \qquad(n\ge1).
+\]
+\end{lemma}
+
+\begin{proof}
+The resolution hypothesis gives a triangle equivalence
+\[
+ \Kb(\Gamma\text{-}\operatorname{proj})
+ \xrightarrow{\sim}
+ \Db(\Gamma\text{-}\modcat).
+\]
+After choosing a small skeleton, the abelian category \(\Gamma\text{-}\modcat\) is small and noetherian.  Schlichting's Theorem~9.3~\cite{Schlichting06} therefore gives vanishing of all its negative \(K\)-groups.  Corollary~1.8 transfers this vanishing across the displayed derived equivalence.
+\end{proof}
+
+\begin{theorem}[Pre-completion equivalence criteria]\label{thm:negative-k-vanishing}
+Under the hypotheses of \Cref{thm:unconditional-comparison}, each of the following conditions implies that
+\[
+ \rho_\lambda:\DeltaB(\lambda)\xrightarrow{\sim}\Defsg(\lambda)
+\]
+is an equivalence before idempotent completion.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item The map
+\[
+ K_{-1}(\Kc_\lambda)
+ \longrightarrow
+ K_{-1}(\Kb(\lambda))\oplus K_{-1}(R)
+\]
+is injective.
+\item \(K_{-1}(\Kc_\lambda)=0\).
+\item The small stable category underlying a dg enhancement of \(\Kc_\lambda\) admits a bounded \(t\)-structure.
+\item The category \(\Kc_\lambda\) admits a silting object \(T\), and, for
+\[
+ B_T=\tau_{\le0}\RHom_R(T,T)^{\op},
+ \qquad
+ \Gamma_T=H^0(B_T),
+\]
+one has \(K_{-1}(\Gamma_T)=0\).
+\item The category \(\Kc_\lambda\) admits a silting object \(T\) for which \(\Gamma_T\) is artinian.
+\item The category \(\Kc_\lambda\) admits a silting object \(T\) for which \(\Gamma_T\) is left noetherian and every finitely generated left \(\Gamma_T\)-module has finite projective dimension.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Condition~\textup{(1)} is equivalent to \(\operatorname{SObs}_0(\lambda)=0\) by \Cref{thm:negative-k-obstruction}.  \Cref{prop:k0-obstruction} gives essential surjectivity, while \Cref{thm:unconditional-comparison} gives full faithfulness.  Condition~\textup{(2)} implies condition~\textup{(1)}.
+
+Under condition~\textup{(3)}, the dg enhancement supplied by \Cref{prop:compatible-dg-models} determines a small stable enhancement of \(\Kc_\lambda\).  Antieau--Gepner--Heller's Theorem~1.1~\cite{AGH19} gives
+\[
+ K_{-1}(\Kc_\lambda)=0,
+\]
+so condition~\textup{(2)} applies.
+
+Assume condition~\textup{(4)}.  The Morita equivalence of \Cref{prop:nonpositive-model} sends the free module \(B_T\) to \(T\), and therefore restricts on compact objects to
+\[
+ \per(B_T)\xrightarrow{\sim}\thick(T)=\Kc_\lambda.
+\]
+More explicitly, \Cref{prop:compatible-dg-models} supplies a dg enhancement of the compact kernel.  Since \(T\) classically generates it, dg Morita theory replaces this enhancement by the one-object dga \(A_T=\RHom_R(T,T)^{\op}\).  The silting condition gives \(H^{>0}(A_T)=0\), so the good truncation \(B_T=\tau_{\le0}A_T\to A_T\) is a quasi-isomorphism.  Schlichting's Section~5.9 supplies the finite-cell Frobenius model for \(\per(B_T)\), and Corollary~1.8 gives invariance under this quasi-isomorphism and the induced derived equivalence.  Therefore \Cref{lem:connective-negative-k} gives
+\[
+ K_{-1}(\Kc_\lambda)
+ \cong K_{-1}(\per B_T)
+ \cong K_{-1}(\Gamma_T)=0.
+\]
+Thus condition~\textup{(2)} again applies.  Conditions~\textup{(5)} and~\textup{(6)} follow from \Cref{lem:artinian-negative-k,lem:regular-noetherian-negative-k}.
+\end{proof}
+
+\begin{corollary}[Finite-dimensional silting range]\label{cor:finite-dimensional-precompletion}
+Let \(R\) be a finite-dimensional \(k\)-algebra and let \(\lambda\) be a stably flat universal localisation.  If \(\Kc_\lambda\) admits a silting object, then
+\[
+ \rho_\lambda:\DeltaB(\lambda)\xrightarrow{\sim}\Defsg(\lambda)
+\]
+is an equivalence before idempotent completion.
+\end{corollary}
+
+\begin{proof}
+Let \(T\) be a silting object.  Since \(T\) is a bounded complex of finite-dimensional projective \(R\)-modules,
+\[
+ \Gamma_T=\End_{\Kc_\lambda}(T)^{\op}
+\]
+is finite-dimensional over \(k\), hence artinian.  Apply condition~\textup{(5)} of \Cref{thm:negative-k-vanishing}.
+\end{proof}
+
+\begin{corollary}[Idempotent completeness under compact-kernel vanishing]\label{cor:negative-k-completeness}
+Under the hypotheses of \Cref{thm:unconditional-comparison}, assume
+\[
+ K_{-1}(\Kc_\lambda)=0.
+\]
+In particular, this conclusion applies under conditions \textup{(2)--(6)} of \Cref{thm:negative-k-vanishing}.  Then \(\DeltaB(\lambda)\) and \(\Defsg(\lambda)\) are idempotent complete, and
+\[
+ \rho_\lambda:\DeltaB(\lambda)\xrightarrow{\sim}\Defsg(\lambda)
+\]
+is an equivalence before idempotent completion.
+\end{corollary}
+
+\begin{proof}
+Apply Schlichting's Remark~1.9~\cite{Schlichting06} to the upper exact sequence of Frobenius pairs in \eqref{eq:frobenius-pair-square}.  The categories \(\cC\) and \(\cK\) are already idempotent complete, so the Verdier quotient appearing there is precisely
+\[
+ \cK/\cC=\DeltaB(\lambda).
+\]
+The vanishing of \(K_{-1}(\cC)\) therefore implies that \(\DeltaB(\lambda)\) is idempotent complete.  The equivalence follows from \Cref{thm:negative-k-vanishing}; hence \(\Defsg(\lambda)\) is idempotent complete as well.
+\end{proof}
+
+\begin{remark}[Equivalence without completeness]\label{rem:injectivity-without-completeness}
+Condition~\textup{(1)} of \Cref{thm:negative-k-vanishing} alone proves that \(\rho_\lambda\) is an equivalence, but it does not force either quotient to be idempotent complete.  This is another form of the asymmetry in \Cref{rem:logical-asymmetry}: injectivity kills the relative discrepancy between the two dense subcategories, whereas vanishing of the whole compact-kernel group controls the idempotent completeness of the upper Verdier quotient.
+\end{remark}
+
+\begin{theorem}[Residue of a nonzero summand obstruction]\label{thm:negative-k-residue}
+Under the hypotheses of \Cref{thm:unconditional-comparison}, suppose
+\[
+ \operatorname{SObs}_0(\lambda)\ne0.
+\]
+Then:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item \(K_{-1}(\Kc_\lambda)\ne0\).  More precisely, there is a nonzero class
+\[
+ 0\ne\eta\in K_{-1}(\Kc_\lambda)
+\]
+whose images in both \(K_{-1}(\Kb(\lambda))\) and \(K_{-1}(R)\) vanish.
+\item The compact kernel admits no silting object \(T\) for which \(K_{-1}(\Gamma_T)=0\).  In particular, it admits no silting object with artinian heart algebra, and none with regular noetherian heart algebra in the sense of \Cref{lem:regular-noetherian-negative-k}.
+\item If \(R\) is finite-dimensional over a field, then \(\Kc_\lambda\) admits no silting object.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Assertion~\textup{(1)} is the contrapositive form of \eqref{eq:sobs-negative-k}.  If a silting object as in assertion~\textup{(2)} existed, the proof of condition~\textup{(4)} in \Cref{thm:negative-k-vanishing} would give \(K_{-1}(\Kc_\lambda)=0\), contradicting assertion~\textup{(1)}.  The artinian and regular-noetherian cases follow from \Cref{lem:artinian-negative-k,lem:regular-noetherian-negative-k}.  Finally, if \(R\) is finite-dimensional, the heart algebra of every silting object in \(\Kc_\lambda\subseteq\per(R)\) is finite-dimensional, hence artinian.  Assertion~\textup{(2)} therefore excludes every silting object.
+\end{proof}
+
+\begin{remark}\label{rem:no-unrestricted-silting-obstruction}
+The implication
+\[
+ K_{-1}(\Kc_\lambda)\ne0
+ \quad\Longrightarrow\quad
+ \Kc_\lambda\text{ has no silting object}
+\]
+is false without a condition on the heart algebra.  For an arbitrary ring \(\Gamma\), the category \(\per(\Gamma)\) has the silting object \(\Gamma\), whether or not \(K_{-1}(\Gamma)\) vanishes.  The unconditional exclusion in \Cref{thm:negative-k-residue} is therefore restricted to the finite-dimensional setting.
+\end{remark}
+
+\begin{question}[Counterexample problem]\label{question:negative-k-counterexample}
+Does there exist a left noetherian ring \(R\), a stably flat universal localisation
+\[
+ \lambda:R\longrightarrow R_\Sigma,
+\]
+and a nonzero class
+\[
+ 0\ne\eta\in K_{-1}(\Kc_\lambda)
+\]
+such that
+\[
+ \eta\longmapsto0
+ \quad\text{in both}\quad
+ K_{-1}(\Kb(\lambda))
+ \quad\text{and}\quad
+ K_{-1}(R)?
+\tag{\(\diamondsuit\)}\label{eq:counterexample-problem}
+\]
+Equivalently, does there exist a stably flat universal localisation for which
+\[
+ \operatorname{SObs}_0(\lambda)\ne0?
+\]
+\end{question}
+
+No such example is constructed here.  The problem is sharper than producing a compact kernel with nonzero negative \(K\)-theory: the same nonzero class must die under both ambient maps in \eqref{eq:counterexample-problem}.  By \Cref{thm:negative-k-residue}, a finite-dimensional example would necessarily have a compact kernel with no silting object.  More generally, a candidate must either have no silting object or have only silting hearts with nonzero \(K_{-1}\), and it must still satisfy the simultaneous-annihilation condition.
+
+\begin{remark}[Scope]\label{rem:negative-k-scope}
+The formula \eqref{eq:sobs-negative-k} is stated for the enhanced category \(\Kc_\lambda\) and applies to an arbitrary set \(\Sigma\).  It does not identify this group with the negative \(K\)-theory of a one-object kernel dga unless a one-object dg Morita model has been constructed.  For infinite \(\Sigma\), a silting generator need not exist, and the multi-object intrinsic computation remains open.  The vanishing criteria are sufficient, not necessary: the node in \Cref{thm:node} has an equivalence before completion by direct calculation although its displayed cone generator is not silting.  The explicit artinian-heart computation for the Marks family is given in the proof of \Cref{cor:marks-comparison}.
+\end{remark}

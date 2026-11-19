@@ -1,0 +1,334 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage{support-notes}
+\title{Orbit closures on representation spaces detect bounded profiles}
+\author{\workingauthor}\date{\coursedate}
+\begin{document}\maketitle
+\begin{abstract}
+In characteristic zero an arbitrary automorphism of the free
+localization chart admits a geometric profile test. Compute the generic
+rank of a matrix on each component of the orbit closure of a simple
+representation. This gives both rows and their order, without periodicity,
+including for nonlinear automorphisms. For linear twists in positive
+characteristic the corresponding return sets are automatic. The
+geometric test fails over $\mathbb F_p(t)$, even in a strict two-term
+family. All assertions stated as results are proved.
+\end{abstract}
+
+\section{The geometric test}
+Use hypotheses (1)--(3) of \othernote{normal_localisations}{Bounded
+profiles and finite-dimensional points of universal localisations},
+allowing the $k$-algebra automorphism $\sigma$ of
+$R=k\langle U_1,\ldots,U_g\rangle$ to have arbitrary order. In
+particular $A$ is positive, locally finite and connected, $h$ is
+regular normal, the closed fibre forces at least one factor to have
+eventually bijective $h$ in every bounded perfect tensor, and all
+finite simple points admit perfect lifts on the indicated side.
+Call a factor with this eventual bijectivity \emph{tame} in this note.
+For a finite-dimensional module choose a basis, giving a point $w$ of
+$X_d=(\operatorname{Mat}_d)^g$, $d=\dim_k W$. Substitution by
+$\sigma$ gives a polynomial automorphism $\phi$ of $X_d$ with inverse
+induced by $\sigma^{-1}$. Use the row convention for right modules and
+the column convention for left modules. On the right a basis of row
+vectors acts by matrices on the right; the block map on Hom uses
+precomposition. With either convention evaluation is polynomial and
+equivariant for change of basis.
+
+Let $Z_w$ be the reduced Zariski closure, over an algebraic closure
+of $k$, of $\{\phi^j(w):j\in\mathbb Z\}$. For each square matrix $H$
+over $R$, write $D_\epsilon(H)$ for the set of isomorphism types of
+finite-dimensional simple modules on side $\epsilon=r,l$ on which
+$\det H$ is generically nonzero on \emph{every} irreducible component
+of $Z_w$. Evaluations use the indicated side. In particular we test a
+$k$-simple in its given $k$-dimension; extending the determinant to
+the algebraic closure does not require that the simple remain simple
+there. For a finite set $F$ of right simple types put
+\[
+ F^\sharp=\bigcap_{H:\ F\subseteq D_r(H)}D_r(H).
+\]
+The intersection ranges over square polynomial matrices of all finite
+sizes. It contains $F$, and the zero matrix gives $\varnothing^\sharp
+=\varnothing$. This definition uses the affine representation spaces
+of $R$ and has no quantifier over dg objects.
+
+\begin{thm}\label{geo}
+Over a field of characteristic zero all upper-row profiles are labelled,
+without duplication, by $F^\sharp$ for finite $F$, ordered by reverse
+inclusion. A tame detector supplies the simple factors of its
+degree-zero localized cohomology as $F$. All remaining profiles are
+labelled by $D_l(H)$, ordered by inclusion. A source $P$ belongs to
+this latter profile exactly when $P^\vee$ is tame and every simple
+factor of $H^0(P^\vee)_h$ lies in $D_l(H)$. For $g\ge2$ the mixed
+order is the same as for a finite twist: no upper-row element lies
+below a lower-row element, and a lower-row element lies below an
+upper-row element only at the bottom or top endpoints. If $\sigma$
+has finite order, $F^\sharp$ is exactly the union of the twist orbits
+of $F$ and the finite-order theorem is recovered.
+\end{thm}
+
+\begin{lem}\label{return}
+For a polynomial automorphism $\phi$ of affine space in characteristic
+zero, a polynomial $f$ is nonzero at all but finitely many positive
+iterates of $w$ iff it is nonzero generically on each component of
+$Z_w$. The same condition governs negative iterates. The exceptional
+indices are eventually a finite union of arithmetic progressions.
+\end{lem}
+\begin{proof}
+Both forward and backward tails are dense in $Z_w$. Indeed the closures
+of the successive forward tails form a stationary descending chain.
+The stable closure is invariant under $\phi$ and its inverse, and contains
+the whole orbit. The same proof applies to $\phi^{-1}$ and to any power.
+Every component is met infinitely often counting multiplicities of
+times: every tail meets its open part outside the other components.
+For a periodic point the lemma is immediate. Otherwise the orbit is
+injectively parametrized by the integers. The dynamical Mordell--Lang
+theorem for \'etale maps of
+\href{https://arxiv.org/abs/0808.3266}{Bell--Ghioca--Tucker, Theorem 1.3}
+gives a finite union of arithmetic progressions and a finite set of
+return times to $V(f)$. Its use over general characteristic-zero
+fields is legitimate: the finitely many coefficients of the maps,
+$f$ and the point descend to a finitely generated field over $\mathbb Q$,
+which embeds in $\mathbb C$. Equalities at all iterates are preserved.
+If the returns are infinite, the zero set contains the orbit along
+some full progression $a+m\mathbb N$. Its closure contains a component
+of $Z_w$: the $m$ translates of the closure of the step-$m$ orbit cover
+$Z_w$, so one contains an irreducible component, and translation is
+an automorphism permuting the components. Every translate therefore
+contains a component. Conversely vanishing identically on a component
+forces infinitely many returns by tail density. Repeat for $\phi^{-1}$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{geo}]
+The two local lemmas in the normal-localisation note use no periodicity.
+For a tame detector with chart module $W$, present the localized source
+by a cone on a finite free matrix. In high degrees its Hom cone has
+finite total cohomology exactly when the matrix is bijective at all
+but finitely many twists of $W$. This follows degree by degree from
+the kernel--cokernel sequence of the cone; a shift of the index leaves
+eventuality unchanged. For $W\ne0$ the matrix must be square.
+A composition series is preserved by all entries, so its determinant
+on $W$ is the product of its determinants on the simple factors.
+There are finitely many factors. By Lemma~\ref{return} the upper
+test for a square $H$ is exactly $F\subseteq D_r(H)$. Every such
+matrix occurs as a test: multiply its entries on one side by a common
+power of $h$ to clear denominators, then take its cone. The extra
+unit after localization effects a shift or twist, which preserves
+the tail test. This also works for noninjective matrices. A rectangular
+unequal-size matrix fails on every nonzero $W$ and the case $W=0$
+gives the top. Thus containment of upper profiles from $F,F'$ is
+equivalent to the implication on all matrix tests, equivalently to
+reverse containment of $F^\sharp,(F')^\sharp$. All finite $F$ are
+realised by sums of lifts.
+
+For other detectors the closed test forces $P^\vee$ tame. Present the
+localized detector by a matrix, tensor with the induced module from
+$H^0(P^\vee)_h$, and apply the same determinant argument on the left.
+All domains are obtained by adjoining $G=A/(h)$ to a cleared matrix
+cone. Duals of simple lifts distinguish these domains. The source
+$G$ belongs to all upper and no lower profiles; if finite chart modules
+on opposite sides both have positive dimension, the free resolution
+of the right one has ranks $gd$ and $d$. For $g\ge2$ its evaluations
+have unequal dimensions in every degree, so no nontrivial mixed
+inclusion is possible. For finite $\sigma$, the component tests are
+exactly evaluations at each twist. The Chinese remainder argument of
+the finite-order theorem separates any additional simple orbit from
+the finitely many prescribed orbits, giving precisely the stated closure.
+\end{proof}
+
+The theorem also describes the lower labels as follows. For each
+component pass to its function field and evaluate the tautological
+tuple there. The component test says exactly that this representation
+extends to the universal localisation inverting $H$ (use the opposite
+convention for the right test). Thus finite-order point tests become
+function-field tests for the same matrix. This gives a geometric
+criterion, but does not give a terminating equality algorithm for two
+upper labels in general. For $A_{n,r,Q}$ it applies to \emph{every}
+$Q\in{\rm GL}_r(k)$ in characteristic zero.
+
+\begin{cor}[An explicit equality test for scalar detectors]\label{scalar}
+In characteristic zero suppose all chart composition factors of each
+of two tame detectors are one-dimensional over $k$. For a detector
+with factor set $F$, take all irreducible components of the orbit
+closures in $\mathbb A^g_{\bar k}$ of its scalar points, discard
+repetitions and keep the inclusion-minimal components. Denote this
+finite antichain by $\mathcal C(F)$. Its profile is contained in that
+of $F'$ iff each member of $\mathcal C(F')$ contains a member of
+$\mathcal C(F)$. In particular the profiles are equal iff these finite
+antichains are equal.
+\end{cor}
+\begin{proof}
+On scalar points the determinant of every square matrix is an ordinary
+polynomial. Every ordinary polynomial occurs by lifting it, in a fixed
+order of monomials, to a one-by-one free polynomial. Passing on a
+component means the polynomial does not vanish identically there.
+This implication passes from a smaller component to any containing
+one. Conversely suppose a component $C'$ on the second list contains
+none from the first list. All these components are defined over $k$:
+the automorphism permutes the components of an orbit closure; an
+orbit point cannot belong to the union of pairwise intersections,
+which is closed, invariant and proper. The permutation is transitive
+by density. Each component is therefore the closure of one
+arithmetic-progression subsequence of $k$-points, hence defined over
+$k$ (linear equations in the coefficients of any bounded-degree
+vanishing polynomial descend to $k$). For each of the first components
+its vanishing ideal consequently cannot contain $I_k(C')$. A finite
+union of proper linear subspaces cannot cover the vector space
+$I_k(C')$ over the infinite field $k$. Choose $f$ in that ideal
+and outside all the first ideals. Its cleared cone passes the first
+detector and fails the second. This also treats an empty first list,
+for which the zero polynomial can serve. Equality of the two mutual
+containment relations on finite antichains is equality of antichains.
+\end{proof}
+
+\begin{cor}[A complete invariant in each simple dimension]\label{pure}
+Let $k$ be algebraically closed of characteristic zero. Fix $d\ge1$.
+Suppose all chart composition factors of both tame detectors have
+dimension $d$. Work inside the open set $X_d^{\rm simp}$ of tuples
+generating $\operatorname{Mat}_d(k)$. For each orbit component $C$
+take the relative closure of
+$\mathrm{PGL}_d(C\cap X_d^{\rm simp})$ in this open set, meaning the
+closure of the union of simultaneous conjugates. Keep the distinct
+inclusion-minimal such varieties. The containment and equality tests of
+Corollary~\ref{scalar} hold for these finite antichains of varieties.
+Whenever containment fails, a single free \emph{polynomial} supplies a
+witness cone.
+\end{cor}
+\begin{proof}
+Every component meets the simple locus densely, since the orbit
+of a simple consists of simples and each component receives a dense
+subsequence. Its conjugation-saturated relative closure is irreducible
+because $\mathrm{PGL}_d$ is irreducible. Invertibility of $H$ is invariant
+under conjugacy and open. Passing generically on a component is
+therefore equivalent to passing generically on its saturated relative
+closure. This proves sufficiency of the containment criterion.
+
+Suppose a target variety $V'$ contains none of the finitely many
+source varieties. From each source choose a point $w_i$ outside $V'$.
+Let $I\subset R$ be the two-sided ideal of free polynomials that
+vanish as whole matrices on $V'$. By
+\href{https://arxiv.org/abs/math/0407152}{Reichstein--Vonessen,
+Lemma 3.6(b)}, a relatively closed $\mathrm{PGL}_d$-invariant subset
+of the generating tuples is the zero set there of its generic-matrix
+ideal. The free algebra maps onto the generic matrix ring, so
+$I(w_i)\ne0$ for every $i$. Simple evaluation maps onto
+$\operatorname{Mat}_d(k)$, and the image of $I$ is a two-sided ideal,
+hence is the whole matrix algebra. Discard duplicate conjugacy
+classes among the chosen finite set. Their simple annihilators are
+distinct maximal two-sided ideals, so $R$ surjects onto the product
+of the matrix algebras. The image of $I$ is an ideal surjecting onto
+each factor, and therefore contains the identity of the product.
+Some $f\in I$ evaluates to the identity at all the chosen points.
+It passes generically on every source variety and vanishes identically
+on $V'$. Its cleared cone separates the profiles. For an empty source
+list the zero polynomial suffices. This proves both assertions.
+\end{proof}
+
+Using separate dimensions as disjoint spaces fails for mixed comparisons.
+For the infinite-order scalar twist and $g\ge2$, the zero scalar detector's
+profile is contained in every tame profile, including those from higher
+dimensional simples, as proved in \othernote{parameter_jump}{Failure of
+constructibility}. Such inclusions remain covered by Theorem~\ref{geo}.
+
+\section{The one-variable boundary}
+\begin{cor}
+For a rank-one chart in characteristic zero, finite order gives the
+finite-orbit version of the projective-line order. An infinite-order
+dilation about a $k$-rational point gives the six-element order of
+\othernote{parameter_jump}{Failure of constructibility}. A nonzero
+translation gives a four-element chain. These exhaust the possibilities.
+\end{cor}
+\begin{proof}
+An automorphism of $k[U]$ has form $U\mapsto aU+b$. If $a\ne1$
+translate the unique fixed point to zero and apply the primary-module
+argument of the six-element theorem, which uses only the closed test,
+the free resolutions on the chart and the lifts. For $a=1,b\ne0$
+every closed point has infinite orbit: a finite set of roots stable
+under a nonzero multiple of $b$ would contain an infinite additive
+progression in characteristic zero. Hence every nonzero finite module
+passes a square polynomial matrix in the tail exactly when its
+determinant is a nonzero polynomial. The upper row has top and a single
+proper label; the lower row has bottom and the label of all simples.
+Finite supports on both sides can meet in only finitely many twists,
+so the latter label lies below the proper upper label. The four are
+distinct by the zero and nonzero lifts, the source $A$, and $G$.
+\end{proof}
+
+For instance the Jordan plane $xz=zx+x^2$, $|x|=|z|=1$, realizes the
+translation chart with $h=x$, $U=zx^{-1}$ and $\sigma U=U+1$.
+The words $z^i x^j$ form a basis: $xz\mapsto zx+xx$ decreases first
+the number of $z$'s or, when equal, the number of inversions. There
+is no overlapping leading word. Right multiplication by $x$ is
+injective and $xz=(z+x)x$ gives normality by the invertible substitution
+$z\mapsto z+x$. The fibre is $k[z]$. A finite right chart module $W$
+has a perfect lift with relations $wz-(wU)x$ on a basis of $W$:
+highest $z$-degree proves independence, and the Hilbert series shows
+that the cokernel maps isomorphically to the nonnegative induced tail.
+The opposite ring has the inverse translation and the same proof.
+The finite ordinary local dual has reduced bar dual $dx=dz=0$,
+$dy=xz-zx-x^2$ with $|y|=1$. Its only radical products land in the
+one-dimensional socle. Filtering by the expanded word $y\mapsto xz$
+using the same triangular order gives one contractible choice per
+disjoint occurrence of $xz$, proving the quotient quasi-isomorphism.
+
+\section{Positive characteristic}
+\begin{prop}\label{positive}
+For a chart with a linear twist of the generators in characteristic
+$p>0$, the set of failing twists for a square $H$ on a given finite
+tuple is $p$-automatic. Over an explicitly presented field finitely
+generated over $\mathbb F_p$ its finiteness is decidable from the
+matrix, tuple and twist. The componentwise geometric test can fail.
+\end{prop}
+\begin{proof}
+Write $J\in{\rm GL}_g(k)$ for the linear substitution. The block
+determinant after $j$ substitutions is a polynomial in the entries
+of $J^j$. Every monomial of degree $b$ is a matrix coefficient
+of $(J^{\otimes b})^j$. A finite direct sum, allowing repeated summands
+and the degree-zero constant, expresses the determinant as a linear
+functional of powers of one finite matrix. Its characteristic polynomial
+therefore gives a scalar linear recurrence; the same holds with
+$J^{-1}$. \href{https://arxiv.org/abs/math/0510583}{Derksen's
+positive-characteristic Skolem--Mahler--Lech theorem and Theorem 1.10}
+give automaticity and the stated effective description. A finite
+automaton recognizes infinitely many canonical base-$p$ expansions
+exactly when there is a productive cycle of unbounded input length.
+This decides the chart test with the data specified above.
+
+Over $k=\mathbb F_p(t)$ take $A_{2,2,Q}$ with
+$Q=\operatorname{diag}(t,t+1)$. At the four-generator chart take
+the one-dimensional tuple with all entries one. Test
+$H=U_{2,0}-U_{1,0}-1$, represented by the cone of $z_2-z_1-x$.
+At twists $2j$ and $2j+1$ its value is
+\[
+                      (t+1)^j-t^j-1 .
+\]
+It vanishes for all $j=p^a$. In fact these are exactly its zeros:
+for $j=p^a m$ with $p\nmid m$, $m>1$, the coefficient of
+$t^{p^a}$ is $m$; at $j=0$ the value is $-1$.
+But the even iterates are dense in the torus-closure parametrized
+by $(u,u,v,v)$, grouping the two slots for each generator. Indeed
+the Laurent monomials $t^i(t+1)^j$ are pairwise distinct by the
+valuations at $0,-1$. A linear combination vanishing at every power
+would give a Vandermonde system with distinct nonzero bases.
+The odd closure is the corresponding translate, with the first slot of
+each pair still $u,v$ and the other slots $tu,(t+1)v$.
+These affine closures are irreducible, and the determinant on both
+is $v-u-1$, a nonzero polynomial. These are all components (they
+are distinct planes). The failure is consequently a genuine failure
+of generic ranks to detect bounded Ext in a two-term dg kernel.
+Even the direction of iteration matters: at even negative twists the
+scalar is $(t+1)^{-j}-t^{-j}-1$ for $j>0$, which has a pole at
+$t=0$ and cannot vanish. At negative odd twists the same statement
+holds with the corresponding integer from the two equal slots.
+\end{proof}
+
+\paragraph{Priority and boundary.}
+The orbit arithmetic is previously established mathematics.
+\href{https://arxiv.org/abs/1611.05885}{Bell--Satriano--Sierra}
+study fixed homological degree of sheaf Tor as the input moves under
+iteration. \href{https://arxiv.org/abs/1706.06470}{Piontkovski}
+encodes linear orbits and hyperplane intersections in Hilbert functions
+of graded algebras. Here iterating changes the \emph{cohomological
+degree of a fixed dg pair}; the result orders all detectors on opposite
+module sides. A positive-characteristic test for arbitrary nonlinear
+automorphisms beyond the return-time condition is open here.
+\end{document}

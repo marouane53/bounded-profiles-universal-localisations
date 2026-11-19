@@ -1,0 +1,176 @@
+% Omit volatile PDF metadata so clean pdfLaTeX builds can be compared exactly.
+\ifdefined\pdfinfoomitdate\pdfinfoomitdate=1\fi
+\ifdefined\pdftrailerid\pdftrailerid{}\fi
+\ifdefined\pdfsuppressptexinfo\pdfsuppressptexinfo=15\fi
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{etoolbox,needspace}
+\usepackage{array,booktabs,tabularx,longtable}
+\usepackage{microtype}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{aliascnt}
+\usepackage{xcolor}
+\definecolor{KDLink}{RGB}{24,62,102}
+\definecolor{KDCite}{RGB}{35,82,67}
+\definecolor{KDUrl}{RGB}{38,74,88}
+\usepackage[
+  pdftitle={Two-term dg kernels and bounded profiles of universal localisations},
+  pdfauthor={Marouane Lamharzi Alaoui},
+  pdfsubject={Prescribed two-term dg kernels, t-exact optimality, and bounded profiles},
+  colorlinks=true,
+  linkcolor=KDLink,
+  citecolor=KDCite,
+  urlcolor=KDUrl
+]{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\raggedbottom
+
+\makeatletter
+\renewcommand{\tocsubsection}[3]{%
+  \indentlabel{%
+    \if\relax\detokenize{#2}\relax
+      \hspace*{5pc}% align unnumbered entries with subsection titles
+    \else
+      \ignorespaces#1 #2.\quad
+    \fi
+  }#3}
+\makeatother
+
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\newaliascnt{question}{theorem}
+\newtheorem{question}[question]{Question}
+\aliascntresetthe{question}
+\theoremstyle{definition}
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\newaliascnt{example}{theorem}
+\newtheorem{example}[example]{Example}
+\aliascntresetthe{example}
+\newaliascnt{notation}{theorem}
+\newtheorem{notation}[notation]{Notation}
+\aliascntresetthe{notation}
+\theoremstyle{remark}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+
+\AtBeginEnvironment{theorem}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{proposition}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{lemma}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{corollary}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{question}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{definition}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{example}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{notation}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{remark}{\Needspace{4\baselineskip}}
+\AtBeginEnvironment{proof}{\Needspace{3\baselineskip}}
+
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\crefname{example}{example}{examples}
+\Crefname{example}{Example}{Examples}
+\crefname{question}{question}{questions}
+\Crefname{question}{Question}{Questions}
+\crefname{notation}{notation}{notations}
+\Crefname{notation}{Notation}{Notations}
+
+\DeclareMathOperator{\Loc}{Loc}
+\DeclareMathOperator{\thick}{thick}
+\DeclareMathOperator{\per}{per}
+\DeclareMathOperator{\Cone}{Cone}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\RHom}{RHom}
+\DeclareMathOperator{\add}{add}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\Kar}{Kar}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\gl}{gl.dim}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Calk}{Calk}
+\DeclareMathOperator{\Fact}{Fact}
+\DeclareMathOperator{\Obs}{Obs}
+
+\newcommand{\Db}{D^{\mathrm b}}
+\newcommand{\Dsg}{D_{\mathrm{sg}}}
+\newcommand{\Dfd}{D_{\mathrm{fd}}}
+\newcommand{\Dfg}{D^{\mathrm b}_{\mathrm{fg}}}
+\newcommand{\Kb}{K^{\mathrm b}}
+\newcommand{\Kc}{K^c}
+\newcommand{\R}{\mathbf R}
+\newcommand{\Ltensor}{\otimes^{\mathbf L}}
+\newcommand{\DeltaB}{\Delta_{\mathrm b}}
+\newcommand{\Defsg}{\operatorname{Def}_{\mathrm{sg}}}
+\newcommand{\modcat}{\operatorname{mod}}
+\newcommand{\Mod}{\operatorname{Mod}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\vect}{\operatorname{vect}}
+\newcommand{\kerob}{\ker_{\mathrm{ob}}}
+
+
+\DeclareMathOperator{\HMF}{\mathbf{HMF}}
+\DeclareMathOperator{\pd}{pd}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\Proj}{Proj}
+\newcommand{\Dk}{D_k}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\sD}{\mathscr D}
+\newcommand{\VV}{\mathbb V}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Gam}{\Gamma}
+\newcommand{\Prof}{\mathcal P}
+\newcommand{\bbZ}{\mathbb Z}
+\usepackage{mathrsfs}
+
+\title[Two-term dg kernels and bounded profiles]{Two-term dg kernels and bounded profiles\\ of universal localisations}
+\author{Marouane Lamharzi Alaoui}
+\thanks{Independent researcher. Correspondence: \texttt{marouane@masonai.fr}.}
+\date{}
+\subjclass[2020]{18E30, 16E35, 18G80, 16S85, 16G10, 13D07}
+\keywords{universal localisation, dg algebra, bounded profile, singularity category, one-point extension, support variety}

@@ -1,0 +1,9 @@
+AHKLY 4.13(b) two-sided certificate
+relations b^2=0 and a*b=0: PASS
+right-module cone ker=k*b and coker=k*e1: PASS
+left-module cone is regular over k[eps]/eps^2: PASS
+B_A = (e1 A)^2, so the left-module extension side satisfies (B2): PASS
+Tor_i^A(S2, _A B) has dimension 2 for i=1,...,12: PASS
+therefore _A B has infinite projective dimension: PASS
+dual-number simple has an infinite periodic free resolution: PASS
+ALL CHECKS PASSED

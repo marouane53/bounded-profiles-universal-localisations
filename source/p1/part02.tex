@@ -1,0 +1,101 @@
+
+\section{Conventions and standing hypotheses}\label{sec:preliminaries}
+
+For a ring \(R\), \(R\text{-}\Mod\) denotes all left \(R\)-modules and \(R\text{-}\modcat\) denotes finitely generated left \(R\)-modules.  We write \(D(R)=D(R\text{-}\Mod)\).  When \(R\) is left noetherian, \(\Db(R\text{-}\modcat)\) is the bounded derived category of finitely generated left modules.  If a right-module calculation is used, it is explicitly described as a calculation over the opposite ring.
+
+The dg enhancement in \Cref{sec:obstruction} is over a fixed commutative ground ring \(\mathsf k\), taken to be \(\mathbb Z\) when none is specified. Its morphism complexes are replaced by \(K\)-flat models. Algebraic triangulated categories are stable categories of Frobenius exact categories. These hypotheses belong to the enhanced appendix, not to the classical comparison in \Cref{sec:rigidity}.
+
+Throughout, \emph{before idempotent completion} means at the level of the displayed Verdier quotients themselves; otherwise the application of \(\Kar(-)\) is shown explicitly.  The idempotent completion carries its canonical triangulated structure by Balmer--Schlichting~\cite[Theorem~1.5]{BalmerSchlichting01}.
+
+Complexes are cohomologically graded, \(X[1]^n=X^{n+1}\), with differential \(-d_X\).  If \(\sigma:P\to Q\) is a map of projectives, \(\Cone(\sigma)=[P\to Q]\) has \(P\) in degree \(-1\) and \(Q\) in degree zero.  Paths are composed from left to right in written quiver notation: if \(a:i\to j\) and \(b:j\to l\), then \(ab:i\to l\).
+
+For finite \(\Sigma\), set
+\[
+ T_\Sigma=\bigoplus_{\sigma\in\Sigma}\Cone(\sigma),\qquad
+ \Lambda=\RHom_R(T_\Sigma,T_\Sigma)^{\op}.
+\]
+Thus \(T_\Sigma\) is a left \(R\)-complex and a right dg \(\Lambda\)-module, and the realisation functor is
+\[
+ \Psi=T_\Sigma\Ltensor_\Lambda-:D(\Lambda)\to D(R).
+\]
+The opposite in the definition of \(\Lambda\) is fixed throughout.
+
+The bounded hypotheses are:
+\begin{enumerate}[label=\textup{(B\arabic*)}]
+\item \(R\) and \(S\) are left noetherian;
+\item \(S_R\) has finite Tor-amplitude;
+\item restriction of scalars sends \(\Db(S\text{-}\modcat)\) to \(\Db(R\text{-}\modcat)\).
+\end{enumerate}
+
+\begin{definition}[Object-kernel]\label{def:object-kernel}
+For an exact functor \(F:\cD\to\cE\), write
+\[
+ \kerob(F)=\{X\in\cD\mid F(X)\cong0\}
+\]
+for the full triangulated subcategory on the objects sent to zero.  It is thick.  Throughout, an \emph{actual kernel} means this embedded object-kernel in the displayed triangulated category; it does not mean an enhanced homotopy fibre.
+\end{definition}
+
+\begin{definition}[Bounded and singular defects]\label{def:singularity-defect}
+Let \(\lambda:R\to S\) be a ring map with \(R\) left noetherian, and put
+\[
+ \cK_\lambda=\kerob(S\Ltensor_R-:D(R)\to D(S)),
+ \qquad
+ \Kb(\lambda)=\cK_\lambda\cap\Db(R\text{-}\modcat),
+ \qquad
+ \Kc_\lambda=\cK_\lambda\cap\per(R).
+\]
+The \emph{bounded defect} and \emph{singularity defect} are
+\[
+ \DeltaB(\lambda)=\Kb(\lambda)/\Kc_\lambda,
+ \qquad
+ \Defsg(\lambda)=\thick(\per(R),\Kb(\lambda))/\per(R).
+\]
+These Verdier quotients are defined without \textup{(B2)} or \textup{(B3)}.  Those hypotheses enter only when extension and restriction are required to preserve the bounded categories and when \(\Defsg(\lambda)\) is identified with an object-kernel.
+\end{definition}
+
+No noetherian hypothesis is used in \Cref{sec:obstruction,sec:rigidity} or in the thick-scale formula of \Cref{thm:relative-dg-formula}.  The bounded defects and the specialization in \Cref{cor:relative-dg-bounded} require \(R\) to be left noetherian.  Conditions \textup{(B1)--(B2)} give the bounded extension functor and induced singularity functor, while \textup{(B3)} is additionally used for bounded restriction.  The actual object-kernel theorem also requires \(\lambda\) to be a homological ring epimorphism; conditions \textup{(B1)--(B3)} alone do not imply homologicality.  Finiteness of \(\Sigma\) is needed only for a one-object kernel dga; the compact-kernel comparison permits a set of compact generators.
+
+\subsection*{The AHKLY algebra in fixed bases}
+Let
+\[
+ A=kQ/(\beta^2,\alpha\beta),\qquad
+ Q:\;1\xrightarrow{\alpha}2,\quad \beta:2\to2,
+\]
+and let \(S=M_2(k)\), with
+\[
+ e_i\mapsto E_{ii},\qquad \alpha\mapsto E_{12},\qquad \beta\mapsto0.
+\]
+In left modules the inverted presentation is
+\[
+ \sigma_L:Ae_1\longrightarrow Ae_2,\qquad u\longmapsto u\alpha,
+\]
+with bases \(Ae_1=(e_1)\) and \(Ae_2=(e_2,\alpha,\beta)\).  In right modules the opposite presentation is
+\[
+ \sigma_R:e_2A\longrightarrow e_1A,\qquad v\longmapsto\alpha v,
+\]
+with \(e_2A=(e_2,\beta)\) and \(e_1A=(e_1,\alpha)\).  Every side-sensitive assertion below refers to these two maps.
+
+\subsection*{Kernel dg algebras, profiles, and markings}
+In \Cref{sec:detector,sec:ambient,sec:realisation,sec:ordinary,sec:support} the ground ring is a field \(k\), ordinary ambient algebras are finite-dimensional over \(k\) unless otherwise stated, and
+\[
+ \Db(R\text{-}\modcat)=\Bigl\{X\in D(R):\ \bigoplus_nH^n(X)\text{ is finite-dimensional}\Bigr\}.
+\]
+We write \(D_k=\Hom_k(-,k)\).  For a right \(R\)-module \(W\), the dual \(D_kW\) is a left \(R\)-module via \((rf)(w)=f(wr)\); the injective cogenerator of left modules is \(DR=D_k(R_R)\), with \((rf)(s)=f(sr)\).  The graded opposite of a dg algebra carries the Koszul sign, \(a\cdot^{\op}b=(-1)^{|a||b|}ba\).
+
+If \(T\) is a compact generator of a compactly generated localising subcategory \(\cK\subseteq D(R)\), we put
+\[
+ B=\RHom_R(T,T)^{\op},\qquad F=T\Ltensor_B-:D(B)\xrightarrow{\sim}\cK,\qquad\Theta=\RHom_R(T,-):D(R)\to D(B);
+\]
+for \(T=T_\Sigma\) this is the raw kernel dga \(\Lambda\) and its realisation functor \(\Psi\) above, with notation suited to the profile problem.  Thus \(T\) is an \(R\)-\(B\) bimodule and \(\Theta X\) is a left dg \(B\)-module by precomposition.  When \(T\) is a bounded complex of finite-dimensional projective \(R\)-modules, \(B\) is proper, that is, \(\dim_kH^*(B)<\infty\).  For a proper dg algebra \(B\), \(\Dfd(B)\subseteq D(B)\) is the full subcategory of dg modules with finite-dimensional total cohomology and \(\Dsg(B)=\Dfd(B)/\per B\).
+
+\begin{definition}[Far-away orthogonal, profile, marking]\label{def:profile}
+For \(E\in\Dfd(B)\) put
+\[
+ \cU_E=\{Y\in\Dfd(B):\RHom_B(Y,E)\in\Db(k\text{-}\modcat)\}.
+\]
+This is a thick subcategory of \(\Dfd(B)\) containing \(\per B\): the condition is stable under shifts, cones, and summands in \(Y\), and for \(Y=B\) it says that \(E\) is proper.  For an embedding \(F:D(B)\simeq\cK\subseteq D(R)\) with \(R\) finite-dimensional, the \emph{bounded profile} is
+\[
+ \Prof(F)=\{Y\in D(B):FY\in\Db(R\text{-}\modcat)\},
+\]
+so that \(\Prof(\Psi)=\Db_\lambda(A_\lambda)\) in the notation of \Cref{cor:relative-dg-bounded}.  A \emph{marking} of a kernel is a specified dg Morita identification \(D(B)\simeq\cK\); the classifications of \Cref{sec:ambient,sec:realisation,sec:ordinary,sec:support} concern full subcategories of the fixed marked category \(\Dfd(B)\) or \(\Dsg(B)\).  They are not classifications up to abstract triangle equivalence.
+\end{definition}

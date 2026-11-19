@@ -1,0 +1,405 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={When a cubic higher product changes a bounded profile}}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\Dfd}{D_{\rm fd}}
+\newcommand{\per}{\operatorname{per}}
+\newcommand{\thick}{\operatorname{thick}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Cone}{\operatorname{Cone}}
+\newcommand{\sg}{\mathcal S}
+\newcommand{\UU}{\mathcal U}
+\newcommand{\kk}{\Bbbk}
+\setlength{\emergencystretch}{1em}
+\title{When a cubic higher product changes a bounded profile}
+\author{Marouane Lamharzi Alaoui\\
+\small Research notes on two-term dg kernels and bounded profiles of universal localisations}
+\date{18 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the one-simple algebra of Example 3.11, both choices of the higher
+multiplication have exactly two marked bounded defects ordered by inclusion.
+Their nonzero defect categories admit no nonzero additive functor commuting
+with suspension between them in either direction. For a connected
+four-simple algebra we exhibit a change in the inclusion poset itself.
+Keeping the graded cohomology algebra fixed and turning on one cubic
+multiplication changes a three-element chain to a two-element chain.
+A directed triangle supplies the calculation responsible for the change.
+All statements hold over any field.
+\end{abstract}
+
+\section{What the poset measures}
+Use cochain grading, left dg modules, and a field $k$. For a finite
+nonpositive dg algebra $A$, write $\Dfd(A)$ for the modules with finite total
+cohomology, $\per A=\thick(A)$, and $q\colon\Dfd(A)\to
+\sg(A)=\Dfd(A)/\per A$. A detector $E\in\Dfd(A)$ gives a thick subcategory
+\[
+ \UU_E=\{X\in\Dfd(A)\mid \textstyle\sum_n\dim_k\Ext_A^n(X,E)<\infty\}.
+\]
+It contains $\per A$. The manuscript's Corollary 3.10 identifies the
+realised marked bounded defects with $\UU_E/\per A$. We compare their
+inclusion posets. We also ask whether the triangulated categories at equal
+positions in two posets are equivalent. These are distinct questions.
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Fixed graded cohomology & Formal profile count & Nonformal profile count\\
+\midrule
+One simple, Example 3.11 & 2 & 2\\
+Directed triangle & 2 & 1\\
+Triangle with an attached loop vertex & 3 & 2\\
+\bottomrule
+\end{tabular}
+\end{center}
+In each row the posets are chains. In the last row both maximal defects
+are nonzero. All algebras below are explicit strict two-term dg algebras,
+so the manuscript realises them by ordinary universal localisations.
+
+\section{A reduction for finite modules}
+All the algebras used here have a split augmentation $A\to S=k^m$ with
+nilpotent dg kernel $J$, degree-zero primitive idempotents $e_i$, and
+$A=A^{-1}\oplus A^0$. Let $S_i$ denote the corresponding simple left
+module and put $S=\bigoplus_i S_i$ as a module. Standard truncation
+triangles and composition series in the heart give $\thick(S)=\Dfd(A)$.
+
+\begin{lem}\label{cut}
+For each $Y\in\Dfd(A)$, $qY$ is a shift of the image of a two-term
+dg module $L$ consisting of elements in $JP'$ for a finite approximation $P'$ built
+from shifts of the projectives $Ae_i$. In particular any dg ideal
+$I$ with $IJ=0$ kills $L$. If $J^2=0$, $qY$ is a finite direct sum of
+shifts of the $qS_i$. In all these examples $\UU_S=\per A$.
+\end{lem}
+\begin{proof}
+Take a minimal semi-free resolution $P$ of $Y$ with cells shifts of
+$Ae_i$, bounded above in cell degree, with finitely many cells per degree.
+Here is a construction. Working down from the highest cohomology of $Y$,
+attach cells mapping to cocycles that span the top cohomology of the
+cone of the current approximation. Lift each generator at its own
+idempotent. The top cone cohomology is killed and each stage is finite.
+The union is a resolution. Modulo $J$, each differential is a matrix over
+$S$. Split off its nonzero pivots from the top degree down. A pivot at
+vertex $i$ lifts to a unit in $e_iA^0e_i$ because $J$ is nilpotent.
+Replacing the upper cell by the differential of the lower one gives a
+contractible free pair, whose quotient removes it. In a given total degree
+the process stabilises because cells have amplitude one and differentials
+raise degree. The resulting $P$ satisfies $dP\subset JP$ (also $dA\subset
+J$). Thus $\Hom_A(P,S)$ has zero differential and detects every cell.
+Finitely many cells imply perfection, and every perfect source has finite
+total Ext against $S$. This gives the final assertion. It also proves that
+every Ext group between finite-cohomology objects is finite and sufficiently
+negative groups vanish, by building the target from the simples.
+
+For $Y\ne0$ take $a<\inf H(Y)$, and let $P'$ be generated by cells of
+degree at least $a$. The differential of a cell uses only cells of higher
+degree, so $P'$ is a finite cell submodule. The quotient $Q=P/P'$ is
+concentrated in degrees $\le a-1$. The connecting map $Q\to P'[1]$ factors
+in the derived category through $(\tau^{\le a}P')[1]$ by the standard
+t-structure. The long exact sequence and $H^{\le a}(P)=0$ make this
+factor a quasi-isomorphism. Thus $qY\simeq qQ\simeq qL[1]$ for
+$L=\tau^{\le a}P'$. It has terms only in degrees $a-1,a$. The lower
+term consists of $A^{-1}$-multiples of cells, and $A^{-1}\subset J$.
+The upper term consists of cycles, hence boundaries in $P$ and elements
+of $JP\cap P'=JP'$. The equality follows from the graded cell basis.
+This proves the assertion about $I$. If $J^2=0$, $L$ is a bounded
+complex over the semisimple algebra $S$, where it splits into its cohomology.
+The zero object satisfies the assertions directly.
+\end{proof}
+
+\section{A connected example in which the poset changes}
+Read paths from left to right, so $Ae_i$ consists of paths ending at $i$.
+Take the oriented triangle
+\[
+ 0\xrightarrow{a}1\xrightarrow{b}2\xrightarrow{c}0 .
+\]
+For the four-vertex example adjoin $0\xrightarrow{h}3$ and a loop
+$\ell$ at 3. In degree zero take the vertex idempotents, these arrows, and
+$s\colon1\to0$. In degree $-1$ take $r\colon1\to0$ and $w\colon0\to0$.
+Apart from idempotent actions the only nonzero products and differential are
+\[
+                   bc=s,\qquad ar=w,\qquad dr=s .
+\]
+These rules give an associative dg algebra $A$: every product of three
+radical factors vanishes, and $s$ annihilates the radical on both sides.
+The formal comparison $F=H^*(A)$ has the original arrows, the class of
+$w$, and radical square zero. Both have the same connected cohomology
+quiver. Splitting off the contractible pair $r\mapsto s$, the only
+tree term in transfer on arrow triples is $a\,r=w$, from contracting
+$bc$. Thus $m_3(a,b,c)=\pm w$, and all other reduced triples vanish.
+Idempotents are in the base $S$. Operations of arity at least four vanish
+by degree. The value on $(a,b,c)$ of any relative normalized Hochschild
+coboundary is zero, since the products of adjacent arrows vanish and
+the radical annihilates $kw$. This verifies the nonzero class and also
+explains the choice of relations.
+
+\begin{thm}\label{triangle}
+For the triangle, $\sg(A)=0$ and $F$ has exactly two profiles.
+For the connected four-vertex example, $A$ has exactly two profiles
+and $F$ has exactly three. For $F$ in the latter case the intermediate
+defect is generated, as a thick subcategory in the quotient, by the
+three old vertex simples.
+\end{thm}
+\begin{proof}
+Write $P_i=Ae_i$. In the triangle, right multiplication by $c$ embeds
+$P_2$ in $\rad P_0$ with basis images $c,s$. Its quotient has basis
+$r,w$ with $ar=w$ and zero differential, hence is $P_1[1]$.
+Also $\rad P_1=S_0$ and $\rad P_2=S_1$. The short exact sequences for
+these projectives successively make $S_0,S_1,S_2$ perfect. They generate
+the triangle's finite-cohomology category.
+
+Adding the bridge and loop leaves $P_0,P_1,P_2$ intact. Set
+$e=e_0+e_1+e_2$ and $T=k[\ell]/(\ell^2)$. For any left dg module $X$,
+$eX$ is a submodule since $e_3Ae=0$. For $X\in\Dfd(A)$, $eX$ is perfect
+by the triangle calculation applied to $eAe$ and by the identification
+of its three projectives with $Ae_0,Ae_1,Ae_2$. The quotient $X/eX$
+is inflated from $T$. Inflation takes $T$ to a perfect object by the exact
+sequence $0\to S_0\xrightarrow{1\mapsto h}P_3\to T\to0$. Over $T$,
+Lemma~\ref{cut} reduces finite objects modulo perfects to sums of shifted
+copies of its simple. It follows that every $qX$ is a sum of shifts of
+$qS_3$. This simple survives: $X\mapsto e_3X$ takes the four projectives
+to $0,0,0,T$ and $S_3$ to $k$, whose $T$-resolution repeats multiplication
+by $\ell$ indefinitely. Every thick subcategory of the quotient containing
+a nonzero object therefore contains $qS_3$ and is the entire quotient.
+The detectors $S$ and $0$ give the two endpoints.
+
+For $F$ Lemma~\ref{cut} gives a sum of shifted simples for every object
+of the quotient. The radical of each projective is the direct sum of
+the incoming arrow simples, with one additional shift for an arrow of
+degree $-1$. Thus $qS_i\simeq q(\rad Fe_i)[1]$. Each old simple has its
+old predecessor as a shifted direct summand and generates all old simples
+in the quotient. They survive: iterating the radical resolution follows
+the triangle arbitrarily many times; its differentials vanish against
+$S$. For the triangle alone this proves the two endpoints exhaust the
+poset. With vertex 3, $qS_3\simeq qS_3[1]\oplus qS_0[1]$ generates all
+four. A thick subcategory can consequently only be zero, the one generated
+by the old simples, or the whole quotient. The detector $E=S_3$ realises
+the middle option. Resolutions of old simples use only old projectives,
+so their Ext to $S_3$ vanishes in every degree. Resolving $S_3$ follows
+the loop indefinitely and gives nonzero self-Ext in every nonnegative
+degree. Again $S$ and $0$ realise the endpoints.
+\end{proof}
+
+\paragraph{Independent calculation on the triangle.}
+The reduced bar dual over $S$ has the reversed triangle of degree-one
+arrows and one degree-two loop $y$ with $dy=p$, where $p$ is the
+reversed, dual three-arrow path. Rescale $y$ to fix the sign. The projection
+to the path algebra on the three arrows modulo $p$ is a quasi-isomorphism.
+Indeed expand each $y$ into $p$ and group basis words by the resulting
+path. The occurrences of $p$ in it are disjoint, since the three arrows
+are distinct and $p$ has no proper prefix equal to a suffix. In such a
+group each occurrence independently contributes the complex
+$ky\xrightarrow{d} kp$ with the cochain tensor signs. If there is an
+occurrence, the group is contractible. The surviving paths avoiding $p$
+have counts $3,3,3,2,1$ in degrees zero through four, respectively;
+every path of length five meets $p$. In particular $\dim\Ext_A^*(S,S)=12$.
+The projective argument has the same count: $S_0$ has one minimal cell
+in each degree $0,-1,-2$ (differentials use $c,b,r$); adjoining $P_1$
+and then $P_2$ at the top of the shifted resolutions gives the counts for
+$S_1,S_2$. In the formal algebra the entire reduced bar differential
+vanishes, and the triangle supplies paths of arbitrary length.
+
+\section{The one-simple comparison in Question 3.21}
+For the manuscript's example use its quasi-isomorphic five-dimensional
+model $B$. Its radical basis is $t,c$ in degree zero and $r,w$ in degree
+$-1$, with $t^2=c$, $tr=w$, $dr=c$ and all remaining radical products
+zero. Put $B_f=H^*(B)$ with zero differential. It has square-zero
+radical spanned by $t,w$. The earlier continuation note verifies the
+quasi-isomorphism with Example 3.11 and the nonzero cubic multiplication.
+
+\begin{thm}\label{one}
+For $D=B,B_f$, every object of $\sg(D)$ is a finite direct sum of shifts
+of $qk$. Each inclusion poset in Question 3.21 consists of exactly
+$0\subsetneq\sg(D)$. In $\sg(B)$ and $\sg(B_f)$ respectively,
+\[
+            qk\simeq qk[3]\oplus qk[4],
+  \qquad    qk\simeq qk[1]\oplus qk[2].
+\]
+\end{thm}
+\begin{proof}
+The square-zero case follows from Lemma~\ref{cut}. Its augmentation-ideal
+triangle gives the displayed decomposition, since the radical is
+$k\oplus k[1]$.
+
+For $B$ put $I=\langle c,r,w\rangle$ and $J=\langle t,c,r,w\rangle$.
+Here $IJ=0$, while $JI=kw$. Lemma~\ref{cut} makes $L$ a two-term
+complex of finite modules over $G=B/I=k[t]/(t^2)$. We describe every
+such complex in $D^b(G)$. Its two cohomology modules are direct sums
+of $G$ and $k$, by the square-zero Jordan decomposition. The connecting
+class of the truncation triangle belongs to $\Ext_G^2(H^aL,H^{a-1}L)$.
+The free summands drop out in either variable since $G$ is Frobenius.
+The resolution with differential $t$ gives $\Ext_G^2(k,k)=k$.
+The remaining matrix of scalars reduces by independent changes of basis
+to an identity block and a zero block. Cones of the resulting blocks
+give shifts of $G$, $k$, and the two-term complex $[G\xrightarrow{t}G]$.
+For the last block the two-extension
+$0\to k\to G\xrightarrow{t}G\to k\to0$ represents a generator, as
+seen by the same minimal resolution. This classification includes
+arbitrary finite modules as terms; termwise projectivity is unnecessary.
+
+Now restrict to $B$. Inclusion $kw\hookrightarrow I$ is a left dg
+module quasi-isomorphism, as $r\mapsto c$ is acyclic in the vector
+space quotient. The triangle $I\to B\to G\to I[1]$ gives $qG\simeq qk[2]$.
+Right multiplication by $t$ gives an endomorphism of this triangle.
+It is zero on $I$ since $IJ=0$. Hence it is zero on $qG$ by naturality.
+The cone of $t$ therefore splits in the quotient. This proves the
+decomposition for all objects. In fact $J$ itself is the complex
+$[G\xrightarrow{t}G]$ in degrees $-1,0$, with generators $r,t$ and
+$t r=w,\ t t=c$. Since $qk\simeq qJ[1]$, we get the asserted shifts.
+
+In either case $k$ is nonperfect, by the infinite self-Ext computation
+below. Any nonzero sum of shifted copies of $qk$ generates the quotient
+as a thick subcategory. More explicitly, for a profile containing a
+nonperfect $Y$, passage to $\Dfd(D)/\UU_E$ kills the sum representing
+$qY$, hence kills $k$ as a summand. The kernel of the quotient by a
+thick subcategory is that subcategory, so $k\in\UU_E$ and $\thick(k)=
+\Dfd(D)$. The endpoints are $\UU_S$ and $\UU_0$.
+\end{proof}
+
+\section{Growth distinguishes the two nonzero defects}
+For the nonformal algebra the reduced bar dual over $k$ is
+$K=k\langle x,y\rangle$, $|x|=1$, $|y|=2$, $dx=0$, $dy=x^3$.
+This is the dual of $m_3(t,t,t)=w$ on the reduced minimal model;
+the sign can be absorbed into $y$. Each degree is finite. In the formal
+case the differential vanishes. Write $P_D(s)=\sum_n\dim_k\Ext_D^n(k,k)s^n$.
+
+\begin{lem}\label{series}
+Put $z=xy+yx$ and $v=x^2y-yx^2$. A basis for $H^*(K)$ is
+$u x^j$, with $u$ any word in $z,v$ and $j\in\{0,1,2\}$. Consequently
+\[
+ P_B(s)=\frac{1+s+s^2}{1-s^3-s^4},\qquad
+ P_{B_f}(s)=\frac{1}{1-s-s^2}.
+\]
+\end{lem}
+\begin{proof}
+Both $z,v$ are cycles by the signed Leibniz rule. Classify words by
+their initial segment to obtain the graded direct sum
+\[
+ K=\langle 1,x,x^2\rangle\oplus (yK\oplus x^3K)\oplus zK\oplus vK .
+\]
+Indeed the original last two summands are $xyK,x^2yK$, and replacing
+them by $zK,vK$ adds only terms in $yK$. All displayed blocks are
+subcomplexes. The middle block contracts by $h(x^3u)=yu$, $h(yu)=0$;
+the differential terms on the suffix cancel in $dh+hd$. Left multiplication
+identifies the last blocks with degree shifts of $K$ (with the appropriate
+differential signs). Induction on cohomological degree proves the basis.
+Counting gives the first series, while counting all words gives the second.
+\end{proof}
+
+For $D=B,B_f$ let $\rho_D>1$ be respectively the positive root of
+$\rho^4=\rho+1$ and the golden ratio. If $b_n=[s^n]P_D$, then
+$b_n\sim c_D\rho_D^n$ for a constant $c_D>0$. Indeed the positive
+root of the denominator in $s$ is simple. Equality in the triangle
+inequality on its circle forces both powers to have argument zero;
+the two exponents are coprime. This gives a unique pole of smallest
+modulus and a positive leading coefficient.
+
+\begin{thm}\label{growth}
+Every additive functor commuting with suspension from $\sg(B)$ to
+$\sg(B_f)$ or in the reverse direction is zero up to isomorphism.
+More generally, for either algebra $D$, a finite pair $(X,E)$ has
+bounded total Ext precisely when $X\in\per D$ or
+$E\in\thick(D_kD)$, where $D_k=\Hom_k(-,k)$. In every other case
+$\dim_k\Ext_D^n(X,E)\sim c_{X,E}\rho_D^n$ with $c_{X,E}>0$.
+\end{thm}
+\begin{proof}
+For fixed finite $E$, changing the source by a map with perfect cone
+induces isomorphisms on all sufficiently high Ext groups by the long
+exact sequence. An isomorphism in the singular quotient is represented
+by a roof with both cones perfect. This gives a well-defined sequence
+of dimensions up to finitely many terms on each isomorphism class.
+Theorem~\ref{one} applied with $E=k$ shows that
+\[
+ d_D(qX)=\lim_{n\to\infty}\rho_D^{-n}\dim_k\Ext_D^n(X,k)
+\]
+exists, is finite, and is strictly positive on nonzero objects. It adds
+on sums and $d_D(V[j])=\rho_D^{-j}d_D(V)$. If the image of $qk$ under
+a suspension-commuting additive functor were nonzero, its source's
+splitting identity would force $1=\rho_{\rm target}^{-3}+
+\rho_{\rm target}^{-4}$ or $1=\rho_{\rm target}^{-1}+
+\rho_{\rm target}^{-2}$ respectively. These identities require different
+positive roots greater than one. Hence the image is zero, and every
+object is a sum of shifts of the generator.
+
+For the pair statement, the same decomposition holds for the opposite
+algebra. For clarity, a strict zigzag for $B^{\rm op}$ and $B$ uses an
+algebra $C$ with $C^0=k[t]/(t^4)$ and $C^{-1}=\langle r,tr,rt\rangle$.
+The indicated two products with $r$ are independent; higher actions of
+$t$ on the bimodule, including $trt$, vanish, and products of negative
+elements vanish. Set $dr=t^2$, $d(tr)=d(rt)=t^3$. The Leibniz rule
+holds, including on two negative elements since $t^2$ kills the bimodule.
+The maps to $B$ and $B^{\rm op}$ sending $t,r$ to the namesake elements
+are augmented quasi-isomorphisms: in degree $-1$ the surviving generator
+$tr-rt$ maps to $w$ and $-w$. The formal algebra is its own opposite.
+Vector space duality on finite-cohomology derived categories sends
+$\per(D^{\rm op})$ to $\thick(D_kD)$ and fixes $k$. Hence, modulo this
+last subcategory, $E$ is a sum of shifts of $k$, nonempty exactly when
+$E$ survives. Since $\operatorname{RHom}_D(X,D_kD)\simeq D_kX$, changing
+the target by maps with cones in $\thick(D_kD)$ preserves all high Ext
+groups. Combining the two finite decompositions gives a finite sum
+of shifted copies of $\Ext_D^*(k,k)$ in high degrees, nonempty exactly
+under the stated conditions. Lemma~\ref{series} gives the asymptotic.
+\end{proof}
+
+\section{Scope and comparison with prior work}
+The cone of the class $z$ in the earlier note cannot give a third
+profile. Its nonperfection was established there. Equivalently,
+eventual invertibility of $z$ on unbounded $\Ext_B^*(k,E)$ would force
+eventual period three of its dimensions, contrary to Theorem~\ref{growth}.
+This closes the earlier detector search.
+
+The reduction over the dual numbers is compatible with the classification
+of indecomposable complexes by \href{https://arxiv.org/abs/1309.7215}{Amodeo
+and Moschetti}. The argument above specifically needs only the two adjacent
+cohomology groups. For ordinary radical-square-zero artin algebras,
+\href{https://arxiv.org/abs/1104.4006}{Chen} describes the whole singularity
+category. Our formal models include a radical generator in degree $-1$.
+For commutative dg trivial extensions, \href{https://arxiv.org/abs/1508.00748}
+{Avramov, Iyengar, Nasseh and Sather-Wagstaff} prove rigidity of Tor
+vanishing. The nonformal one-simple model here is noncommutative and has
+$tr=w$ and $rt=0$.
+
+The cubic-relation mechanism has explicit predecessors.
+\href{https://webusers.imj-prg.fr/~bernhard.keller/publ/IntroAinfEdinb.pdf}
+{Keller} computes a nonzero ternary product for a linearly oriented
+four-vertex quiver with a cubic relation.
+\href{https://arxiv.org/abs/math/0606144}{Lu, Palmieri, Wu and Zhang}
+recover relation coefficients from higher products for connected graded
+algebras. The absence of overlaps is classical in
+\href{https://doi.org/10.1016/0021-8693(82)90104-1}{Anick's theory of
+combinatorially free relations}. The triangle closes the path into a cycle,
+which makes forbidding one path bound its length. The attached fourth
+vertex preserves a singular component while the other one disappears.
+The profile computation also uses the manuscript's realisation theorem.
+The notion of far-away orthogonality is studied by
+\href{https://arxiv.org/abs/2512.18417}{Kostas, Psaroudakis and
+Vit\'oria}. These comparisons identify prior ingredients; priority for
+the combined profile results requires a wider review.
+
+\paragraph{Remaining local question.}
+The next comparison asks whether two proper two-term dg algebras with
+the same graded cohomology and a single simple module can have nonisomorphic
+profile posets while both singularity categories survive. Theorem~\ref{one} settles the
+one-loop test in the manuscript. The multivertex examples do not decide
+this local question. Even the ordinary local algebra
+$R=k[u,v]/(u^2,v^2)$ has an intermediate profile: take
+$X=R/(u), E=R/(v)$. Multiplication by $u$ gives a periodic minimal
+resolution of $X$, and is exact in positive cochain degrees after applying
+$\Hom_R(-,E)$. Thus $X$ is nonperfect and lies in $\UU_E$. Tensoring
+the two periodic residue-field resolutions over $k$ shows
+$\Ext_R^n(k,E)\cong k$ for every $n\ge0$ (the $u$ factor contributes
+only its socle in degree zero). A promising local test would have to
+alter such a detectable vanishing pair while keeping the entire graded
+cohomology fixed. The companion note \emph{A cubic higher multiplication creates infinitely
+many bounded profiles} resolves this question using two degree-zero
+radical generators and a six-dimensional commutative dg algebra.
+
+\end{document}

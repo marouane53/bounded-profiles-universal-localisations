@@ -1,0 +1,321 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{10}
+
+\bibitem{AHKLY17}
+Lidia Angeleri~H\"ugel, Steffen Koenig, Qunhua Liu, and Dong Yang,
+  \emph{Ladders and simplicity of derived module categories}, J. Algebra
+  \textbf{472} (2017), 15--66.
+  \url{https://doi.org/10.1016/j.jalgebra.2016.10.023}
+
+\bibitem{ALSV25}
+Lidia Angeleri~H\"ugel, Rosanna Laking, Jan \v{S}\v{t}ov\'{i}\v{c}ek, and Jorge
+  Vit\'{o}ria, \emph{Mutation and torsion pairs}, Algebra \& Number Theory
+  \textbf{19} (2025), no.~7, 1313--1368.
+  \url{https://doi.org/10.2140/ant.2025.19.1313}
+
+\bibitem{AMSTV20}
+Lidia Angeleri~H{\"u}gel, Frederik Marks, Jan {\v{S}}{\v{t}}ov{\'\i}{\v{c}}ek,
+  Ryo Takahashi, and Jorge Vit{\'o}ria, \emph{Flat ring epimorphisms and
+  universal localizations of commutative rings}, Q. J. Math. \textbf{71}
+  (2020), no.~4, 1489--1520. \url{https://doi.org/10.1093/qmath/haaa041}
+
+\bibitem{AGH19}
+Benjamin Antieau, David Gepner, and Jeremiah Heller, \emph{{K}-theoretic
+  obstructions to bounded {t}-structures}, Inventiones Mathematicae
+  \textbf{216} (2019), no.~1, 241--300.
+  \url{https://doi.org/10.1007/s00222-018-00847-0}
+
+\bibitem{AvramovBuchweitz00}
+Luchezar~L. Avramov and Ragnar-Olaf Buchweitz, \emph{Support varieties and
+  cohomology over complete intersections}, Invent. Math. \textbf{142} (2000),
+  no.~2, 285--318. \url{https://doi.org/10.1007/s002220000090}
+
+\bibitem{AvruninScott82}
+George~S. Avrunin and Leonard~L. Scott, \emph{Quillen stratification for
+  modules}, Invent. Math. \textbf{66} (1982), no.~2, 277--286.
+  \url{https://doi.org/10.1007/BF01389396}
+
+\bibitem{BalmerSchlichting01}
+Paul Balmer and Marco Schlichting, \emph{Idempotent completion of triangulated
+  categories}, J. Algebra \textbf{236} (2001), no.~2, 819--834.
+  \url{https://doi.org/10.1006/jabr.2000.8529}
+
+\bibitem{BauesMinian02}
+Hans-Joachim Baues and Elias~Gabriel Minian, \emph{Crossed extensions of
+  algebras and {H}ochschild cohomology}, Homology Homotopy Appl. \textbf{4}
+  (2002), no.~2, 63--82.
+
+\bibitem{BensonII}
+David~J. Benson, \emph{Representations and cohomology. {II}: {C}ohomology of
+  groups and modules}, Cambridge Studies in Advanced Mathematics, vol.~31,
+  Cambridge University Press, 1991.
+
+\bibitem{BerghJorgensenEasy}
+Petter~Andreas Bergh and David~A. Jorgensen, \emph{Support varieties over
+  complete intersections made easy}, arXiv:1509.07828, 2015.
+
+\bibitem{BerghJorgensenMF}
+\bysame, \emph{Complete intersections and equivalences with categories of
+  matrix factorizations}, Homology Homotopy Appl. \textbf{18} (2016), no.~2,
+  377--390, arXiv:1509.04204.
+
+\bibitem{BGT13}
+Andrew~J. Blumberg, David Gepner, and Gon{\c{c}}alo Tabuada, \emph{A universal
+  characterization of higher algebraic {K}-theory}, Geometry \& Topology
+  \textbf{17} (2013), no.~2, 733--838.
+  \url{https://doi.org/10.2140/gt.2013.17.733}
+
+\bibitem{Booth21}
+Matt Booth, \emph{Singularity categories via the derived quotient}, Adv. Math.
+  \textbf{381} (2021), 107631. \url{https://doi.org/10.1016/j.aim.2021.107631}
+
+\bibitem{Buchweitz}
+Ragnar-Olaf Buchweitz, \emph{Maximal cohen--macaulay modules and tate
+  cohomology}, Mathematical Surveys and Monographs, vol. 262, American
+  Mathematical Society, Providence, RI, 2021, Edited by Luchezar L. Avramov,
+  Benjamin Briggs, Srikanth B. Iyengar, and Janina C. Letz.
+
+\bibitem{BurkeWalker15}
+Jesse Burke and Mark~E. Walker, \emph{Matrix factorizations in higher
+  codimension}, Trans. Amer. Math. Soc. \textbf{367} (2015), no.~5, 3323--3370.
+  \url{https://doi.org/10.1090/S0002-9947-2015-06323-5}
+
+\bibitem{Carlson83}
+Jon~F. Carlson, \emph{The varieties and the cohomology ring of a module}, J.
+  Algebra \textbf{85} (1983), no.~1, 104--143.
+  \url{https://doi.org/10.1016/0021-8693(83)90121-7}
+
+\bibitem{Carlson84}
+\bysame, \emph{The variety of an indecomposable module is connected}, Invent.
+  Math. \textbf{77} (1984), no.~2, 291--299.
+  \url{https://doi.org/10.1007/BF01388748}
+
+\bibitem{ChenXiRecollI}
+Hongxing Chen and Changchang Xi, \emph{Recollements of derived categories {I}:
+  exact contexts}, arXiv:1203.5168, 2012.
+
+\bibitem{ChenXi19}
+\bysame, \emph{Exact contexts, non-commutative tensor products, and universal
+  localizations}, Trans. Amer. Math. Soc. \textbf{371} (2019), no.~5,
+  3647--3672. \url{https://doi.org/10.1090/tran/7615}
+
+\bibitem{ChenSchur09}
+Xiao-Wu Chen, \emph{Singularity categories, {S}chur functors and triangular
+  matrix rings}, Algebr. Represent. Theory \textbf{12} (2009), no.~2-5,
+  181--191, arXiv:0706.3638.
+
+\bibitem{ChenRadicalSquareZero}
+\bysame, \emph{The singularity category of an algebra with radical square
+  zero}, Documenta Mathematica \textbf{16} (2011), 921--936.
+
+\bibitem{ChristensenThompson}
+Lars~Winther Christensen and Peder Thompson, \emph{Pure-minimal chain
+  complexes}, Rendiconti del Seminario Matematico della Universit\`a di Padova
+  \textbf{142} (2019), 41--67. \url{https://doi.org/10.4171/RSMUP/29}
+
+\bibitem{Cortinas11}
+Guillermo Corti{\~n}as, \emph{Algebraic v. topological {K}-theory: a friendly
+  match}, Topics in Algebraic and Topological {K}-Theory, Lecture Notes in
+  Mathematics, vol. 2008, Springer, Berlin, Heidelberg, 2011, pp.~103--165.
+  \url{https://doi.org/10.1007/978-3-642-15708-0_3}
+
+\bibitem{Drinfeld04}
+Vladimir Drinfeld, \emph{{DG} quotients of {DG} categories}, J. Algebra
+  \textbf{272} (2004), no.~2, 643--691.
+  \url{https://doi.org/10.1016/j.jalgebra.2003.05.001}
+
+\bibitem{Efimov17}
+Alexander~I. Efimov, \emph{Categorical formal punctured neighborhood of
+  infinity, {I}}, 2017, arXiv:1711.00756.
+
+\bibitem{GaoPsaroudakis17}
+Nan Gao and Chrysostomos Psaroudakis, \emph{Gorenstein homological aspects of
+  monomorphism categories via {M}orita rings}, Algebr. Represent. Theory
+  \textbf{20} (2017), no.~2, 487--529.
+  \url{https://doi.org/10.1007/s10468-016-9652-1}
+
+\bibitem{GaoPsaroudakis18}
+\bysame, \emph{Ladders of compactly generated triangulated categories and
+  preprojective algebras}, Appl. Categ. Structures \textbf{26} (2018), no.~4,
+  657--679. \url{https://doi.org/10.1007/s10485-017-9508-9}
+
+\bibitem{Goodbody24}
+Isambard Goodbody, \emph{Approximable triangulated categories and reflexive
+  {DG}-categories}, Appl. Categ. Structures \textbf{34} (2026), 19, With an
+  appendix by Theo Raedschelders and Greg Stevenson.
+  \url{https://doi.org/10.1007/s10485-026-09856-0}
+
+\bibitem{GreenPsaroudakis14}
+Edward~L. Green and Chrysostomos Psaroudakis, \emph{On {A}rtin algebras arising
+  from {M}orita contexts}, Algebr. Represent. Theory \textbf{17} (2014), no.~5,
+  1485--1525. \url{https://doi.org/10.1007/s10468-013-9457-4}
+
+\bibitem{GreuelKnorrer85}
+Gert-Martin Greuel and Horst Kn{\"o}rrer, \emph{Einfache
+  kurvensingularit{\"a}ten und torsionsfreie moduln}, Mathematische Annalen
+  \textbf{270} (1985), no.~3, 417--425.
+  \url{https://doi.org/10.1007/BF01473437}
+
+\bibitem{HunekeJorgensen03}
+Craig Huneke and David~A. Jorgensen, \emph{Symmetry in the vanishing of {E}xt
+  over {G}orenstein rings}, Math. Scand. \textbf{93} (2003), no.~2, 161--184.
+
+\bibitem{JinYangZhou}
+Haibo Jin, Dong Yang, and Guodong Zhou, \emph{A localisation theorem for
+  singularity categories of proper dg algebras}, 2023, arXiv:2302.05054v2.
+
+\bibitem{JorgensenSega04}
+David~A. Jorgensen and Liana~M. {\c{S}}ega, \emph{Nonvanishing cohomology and
+  classes of {G}orenstein rings}, Adv. Math. \textbf{188} (2004), no.~2,
+  470--490. \url{https://doi.org/10.1016/j.aim.2003.11.003}
+
+\bibitem{KalckThesis}
+Martin Kalck, \emph{Relative singularity categories}, Ph.D. thesis, Rheinische
+  Friedrich-Wilhelms-Universit{\"a}t Bonn, 2013, arXiv:1709.04753.
+
+\bibitem{KalckYangI}
+Martin Kalck and Dong Yang, \emph{Relative singularity categories {I}:
+  {A}uslander resolutions}, Adv. Math. \textbf{301} (2016), 973--1021.
+  \url{https://doi.org/10.1016/j.aim.2016.06.011}
+
+\bibitem{KalckYangII}
+\bysame, \emph{Relative singularity categories {II}: {DG} models}, 2018,
+  arXiv:1803.08192.
+
+\bibitem{Keller94}
+Bernhard Keller, \emph{Deriving {DG} categories}, Annales scientifiques de
+  l'\'{E}cole Normale Sup\'{e}rieure \textbf{27} (1994), no.~1, 63--102.
+  \url{https://doi.org/10.24033/asens.1689}
+
+\bibitem{Keller96}
+\bysame, \emph{Derived categories and their uses}, Handbook of Algebra (Michiel
+  Hazewinkel, ed.), vol.~1, Elsevier/North-Holland, Amsterdam, 1996,
+  pp.~671--701. \url{https://doi.org/10.1016/S1570-7954(96)80023-4}
+
+\bibitem{Keller01Ainf}
+\bysame, \emph{Introduction to {$A$}-infinity algebras and modules}, Homology
+  Homotopy Appl. \textbf{3} (2001), no.~1, 1--35.
+
+\bibitem{KostasPsaroudakisVitoria25}
+Panagiotis Kostas, Chrysostomos Psaroudakis, and Jorge Vit{\'{o}}ria,
+  \emph{Intrinsic homological algebra for triangulated categories}, 2025,
+  arXiv:2512.18417v1.
+
+\bibitem{Krause10}
+Henning Krause, \emph{Localization theory for triangulated categories},
+  Triangulated Categories (Thorsten Holm, Peter J{\o}rgensen, and Rapha{\"e}l
+  Rouquier, eds.), London Math. Soc. Lecture Note Ser., vol. 375, Cambridge
+  University Press, Cambridge, 2010, pp.~161--235.
+  \url{https://doi.org/10.1017/CBO9781139107075.005}
+
+\bibitem{KuznetsovShinder25}
+Alexander Kuznetsov and Evgeny Shinder, \emph{Homologically finite-dimensional
+  objects in triangulated categories}, Selecta Mathematica (New Series)
+  \textbf{31} (2025), no.~2, 27, Article 27.
+  \url{https://doi.org/10.1007/s00029-024-01004-7}
+
+\bibitem{LefevreHasegawa03}
+Kenji Lef{\`e}vre-Hasegawa, \emph{Sur les {$A_\infty$}-cat{\'e}gories}, Ph.D.
+  thesis, Universit{\'e} Paris 7, 2003, arXiv:math/0310337.
+
+\bibitem{LinLin08}
+Yanan Lin and Zengqiang Lin, \emph{One-point extension and recollement}, Sci.
+  China Ser. A \textbf{51} (2008), no.~3, 376--382.
+  \url{https://doi.org/10.1007/s11425-008-0032-0}
+
+\bibitem{Marks15}
+Frederik Marks, \emph{Universal localisations and tilting modules for finite
+  dimensional algebras}, J. Pure Appl. Algebra \textbf{219} (2015), no.~7,
+  3053--3088. \url{https://doi.org/10.1016/j.jpaa.2014.10.003}
+
+\bibitem{MarksVitoria15}
+Frederik Marks and Jorge Vit{\'o}ria, \emph{From ring epimorphisms to universal
+  localisations}, Forum Math. \textbf{27} (2015), no.~2, 1139--1161,
+  arXiv:1207.4669. \url{https://doi.org/10.1515/forum-2012-0103}
+
+\bibitem{MarksStovicek19}
+Frederik Marks and Jan \v{S}\v{t}ov\'{i}\v{c}ek, \emph{Universal localizations
+  via silting}, Proc. Roy. Soc. Edinburgh Sect. A \textbf{149} (2019), no.~2,
+  511--532. \url{https://doi.org/10.1017/prm.2018.37}
+
+\bibitem{Neeman01}
+Amnon Neeman, \emph{Triangulated categories}, Ann. of Math. Stud., vol. 148,
+  Princeton University Press, 2001.
+
+\bibitem{Neeman07}
+\bysame, \emph{Noncommutative localization in algebraic {K}-theory. {II}}, Adv.
+  Math. \textbf{213} (2007), no.~2, 785--819.
+  \url{https://doi.org/10.1016/j.aim.2007.01.002}
+
+\bibitem{NeemanRanicki04}
+Amnon Neeman and Andrew Ranicki, \emph{Noncommutative localisation in algebraic
+  {K}-theory. {I}}, Geometry \& Topology \textbf{8} (2004), 1385--1425.
+  \url{https://doi.org/10.2140/gt.2004.8.1385}
+
+\bibitem{NicolasSaorin09}
+Pedro Nicol{\'a}s and Manuel Saor{\'\i}n, \emph{Parametrizing recollement data
+  for triangulated categories}, J. Algebra \textbf{322} (2009), no.~4,
+  1220--1250. \url{https://doi.org/10.1016/j.jalgebra.2009.04.035}
+
+\bibitem{PavicShinder21}
+Neboj{\v{s}}a Pavi{\'c} and Evgeny Shinder, \emph{{K}-theory and the
+  singularity category of quotient singularities}, Annals of K-Theory
+  \textbf{6} (2021), no.~3, 381--424.
+  \url{https://doi.org/10.2140/akt.2021.6.381}
+
+\bibitem{PsaroudakisVitoria18}
+Chrysostomos Psaroudakis and Jorge Vit{\'{o}}ria, \emph{Realisation functors in
+  tilting theory}, Math. Z. \textbf{288} (2018), no.~3--4, 965--1028.
+  \url{https://doi.org/10.1007/s00209-017-1923-y}
+
+\bibitem{Quillen71}
+Daniel Quillen, \emph{The spectrum of an equivariant cohomology ring. {I},
+  {II}}, Ann. of Math. (2) \textbf{94} (1971), 549--572; 573--602.
+
+\bibitem{Ringel84}
+Claus~Michael Ringel, \emph{Tame algebras and integral quadratic forms},
+  Lecture Notes in Mathematics, vol. 1099, Springer, Berlin, 1984.
+  \url{https://doi.org/10.1007/BFb0072870}
+
+\bibitem{Schlichting06}
+Marco Schlichting, \emph{Negative {K}-theory of derived categories}, Math. Z.
+  \textbf{253} (2006), no.~1, 97--134.
+  \url{https://doi.org/10.1007/s00209-005-0889-3}
+
+\bibitem{Schofield85}
+A.~H. Schofield, \emph{Representations of rings over skew fields}, London Math.
+  Soc. Lecture Note Ser., vol.~92, Cambridge University Press, Cambridge, 1985.
+  \url{https://doi.org/10.1017/CBO9780511661914}
+
+\bibitem{Sheiham06}
+Desmond Sheiham, \emph{Universal localization of triangular matrix rings},
+  Proc. Amer. Math. Soc. \textbf{134} (2006), no.~12, 3465--3474.
+  \url{https://doi.org/10.1090/S0002-9939-06-08420-6}
+
+\bibitem{Stevenson14}
+Greg Stevenson, \emph{Subcategories of singularity categories via tensor
+  actions}, Compos. Math. \textbf{150} (2014), no.~2, 229--272.
+  \url{https://doi.org/10.1112/S0010437X1300746X}
+
+\bibitem{SunZhangZhang}
+Yongliang Sun, Jinbi Zhang, and Yaohua Zhang, \emph{Localization theorems for
+  weakly approximable triangulated categories}, 2026, arXiv:2402.04954v3.
+
+\bibitem{Tabuada05}
+Gon{\c{c}}alo Tabuada, \emph{Une structure de cat{\'e}gorie de mod{\`e}les de
+  {Quillen} sur la cat{\'e}gorie des dg-cat{\'e}gories}, Comptes Rendus
+  Math{\'e}matique \textbf{340} (2005), no.~1, 15--19.
+  \url{https://doi.org/10.1016/j.crma.2004.11.007}
+
+\bibitem{Thomason97}
+R.~W. Thomason, \emph{The classification of triangulated subcategories},
+  Compos. Math. \textbf{105} (1997), no.~1, 1--27.
+  \url{https://doi.org/10.1023/A:1017932514274}
+
+\end{thebibliography}

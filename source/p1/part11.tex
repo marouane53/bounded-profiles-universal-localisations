@@ -1,0 +1,162 @@
+
+\section{Stratifying idempotent quotients}\label{sec:stratifying}
+
+Let \(A\) be a finite-dimensional \(k\)-algebra, let \(e\in A\) be an idempotent, and put
+\[
+ B=A/AeA,
+ \qquad
+ C=eAe.
+\]
+Assume that \(AeA\) is stratifying, so the multiplication map
+\[
+ Ae\Ltensor_CeA\xrightarrow{\sim}AeA
+\]
+is an isomorphism in \(D(A^e)\), and \(A\to B\) is homological.
+
+\begin{lemma}\label{lem:idempotent-universal}
+The quotient \(A\to A/AeA\) is the universal localisation at
+\(0\to Ae\).  Its compact kernel is \(\thick(Ae)\).
+\end{lemma}
+
+\begin{proof}
+For a ring map \(f:A\to T\), the map
+\[
+ T\otimes_A0\longrightarrow T\otimes_AAe\cong Te
+\]
+is an isomorphism if and only if \(f(e)=0\), equivalently
+\(AeA\subseteq\ker f\).  This is exactly the universal property of the quotient by \(AeA\).  The cone is \(Ae\), up to shift.
+\end{proof}
+
+Define
+\[
+ \cB_e^b=
+ \{Y\in\Db(C\text{-}\modcat)
+   \mid Ae\Ltensor_CY\in\Db(A\text{-}\modcat)\}.
+\]
+
+\begin{theorem}[Stratifying computation]\label{thm:stratifying-delta}
+The functor
+\[
+ j_!=Ae\Ltensor_C-:\cB_e^b\longrightarrow\Kb(\lambda)
+\]
+is an exact equivalence with quasi-inverse
+\(j^*=eA\otimes_A-\).  It sends \(\per(C)\) onto \(\thick(Ae)\).  Hence
+\[
+ \DeltaB(\lambda)\simeq\cB_e^b/\per(C).
+\]
+If \(Ae_C\) has finite Tor-amplitude, then
+\[
+ \cB_e^b=\Db(C\text{-}\modcat),
+ \qquad
+ \DeltaB(\lambda)\simeq\Dsg(C).
+\]
+\end{theorem}
+
+\begin{proof}
+Since \(eA_A\) is projective, \(j^*=eA\otimes_A-\) is underived.  Multiplication gives
+\[
+ j^*j_!(Y)
+ \simeq
+ (eA\otimes_AAe)\Ltensor_CY
+ \cong C\Ltensor_CY\simeq Y,
+\]
+so \(j_!\) is fully faithful.
+
+The stratifying triangle of \(A\)-bimodules is
+\[
+ Ae\Ltensor_CeA\longrightarrow A\longrightarrow B\longrightarrow.
+\]
+Tensoring it over \(A\) with \(X\in D(A)\) gives
+\[
+ j_!j^*X\longrightarrow X\longrightarrow B\Ltensor_AX\longrightarrow.
+\]
+If \(X\in\Kb(\lambda)\), the third term is zero, so
+\(X\simeq j_!j^*X\), and \(j^*X\in\cB_e^b\).  Conversely, if
+\(Y\in\cB_e^b\), then
+\[
+ B\Ltensor_Aj_!Y
+ \simeq
+ (B\Ltensor_AAe)\Ltensor_CY=0
+\]
+because \(Be=0\).  Thus \(j_!Y\in\Kb(\lambda)\), proving the equivalence.
+
+Since \(j_!(C)=Ae\), exactness and full faithfulness identify
+\(j_!(\per(C))\) with \(\thick(Ae)\).  Passing to quotients gives the first formula.  If \(Ae_C\) has finite Tor-amplitude, \(j_!\) sends all bounded finitely generated \(C\)-complexes to bounded \(A\)-complexes, so \(\cB_e^b=\Db(C\text{-}\modcat)\).
+\end{proof}
+
+The two source sides of the stratifying bimodules have different roles.  We record them explicitly because they are exactly what is needed for the singularity comparison.
+
+\begin{lemma}[Bimodule perfectness]\label{lem:stratifying-perfectness}
+Assume \(Ae_C\in\per(C^{\op})\).  Then \(B_A\in\per(A^{\op})\), so extension of scalars has finite Tor-amplitude.  Assume instead \({}_CeA\in\per(C)\).  Then \({}_AB\in\per(A)\), so restriction of scalars preserves perfect complexes.
+\end{lemma}
+
+\begin{proof}
+Choose a bounded resolution of \(Ae_C\) by finitely generated projective right \(C\)-modules.  Tensoring it over \(C\) with the projective right \(A\)-module \(eA_A\) gives a bounded complex of finitely generated projective right \(A\)-modules representing
+\(Ae\Ltensor_CeA\).  The stratifying triangle then shows
+\(B_A\in\per(A^{\op})\).
+
+Dually, resolve \({}_CeA\) by finitely generated projective left \(C\)-modules.  Tensoring with the projective left \(A\)-module \({}_AAe\) represents
+\(Ae\Ltensor_CeA\) by a bounded complex of finitely generated projective left \(A\)-modules.  The same triangle gives \({}_AB\in\per(A)\).
+\end{proof}
+
+\begin{theorem}[Corner singularity as the actual kernel]\label{thm:stratifying-comparison}
+Assume both
+\[
+ Ae_C\in\per(C^{\op}),
+ \qquad
+ {}_CeA\in\per(C).
+\]
+Then the bounded hypotheses and perfect restriction hold for
+\(A\to B\), and the comparison functor is an equivalence before idempotent completion
+\[
+ \rho_\lambda:\DeltaB(\lambda)
+ \xrightarrow{\sim}
+ \Defsg(\lambda).
+\]
+Under the identification of \Cref{thm:stratifying-delta}, this gives an exact sequence of the displayed categories
+\[
+ \Dsg(C)\longrightarrow\Dsg(A)\longrightarrow\Dsg(B)
+\]
+and
+\[
+ \Defsg(\lambda)\simeq\Dsg(C).
+\]
+\end{theorem}
+
+\begin{proof}
+Finite-dimensionality gives noetherianity and bounded restriction on finitely generated modules.  The first perfectness assumption and
+\Cref{lem:stratifying-perfectness} give finite Tor-amplitude of \(B_A\); the second gives \({}_AB\in\per(A)\), which is perfect restriction.  Thus \Cref{thm:perfect-restriction} applies.
+
+The first assumption also gives
+\(\DeltaB(\lambda)\simeq\Dsg(C)\) by
+\Cref{thm:stratifying-delta}.  The singularity category of a finite-dimensional algebra is idempotent complete \cite[Corollary~2.4]{ChenRadicalSquareZero}.  Therefore \(\DeltaB(\lambda)\) is idempotent complete, and the Karoubi-dense fully faithful comparison is already essentially surjective.  The exact sequence is \Cref{thm:actual-kernel} with its kernel identified.
+\end{proof}
+
+\begin{example}[A nonzero corner defect]\label{ex:triangular}
+Let \(C=k[t]/(t^3)\) and
+\[
+ A=T_2(C)=
+ \begin{pmatrix}C&C\\0&C\end{pmatrix},
+ \qquad e=e_{22}.
+\]
+Then \(A/AeA\cong C\), both corner bimodules are projective, and
+\[
+ \DeltaB(\lambda)
+ \simeq
+ \Defsg(\lambda)
+ \simeq
+ \Dsg(C)\ne0.
+\]
+A left \(A\)-module is a triple \((X,Y,\varphi:Y\to X)\), and
+\[
+ j_!(Y)=(Y,Y,\id).
+\]
+The unique simple \(k=C/(t)\) has periodic resolution
+\[
+ \cdots\xrightarrow{t^2}C\xrightarrow{t}C
+ \xrightarrow{t^2}C\xrightarrow{t}C\twoheadrightarrow k,
+\]
+so the explicit extra bounded-kernel generator is
+\(j_!(k)=(k,k,\id)\), beyond the compact generator
+\(Ae=(C,C,\id)\).
+\end{example}

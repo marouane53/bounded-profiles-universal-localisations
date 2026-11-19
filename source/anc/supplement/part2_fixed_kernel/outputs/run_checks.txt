@@ -1,0 +1,6 @@
+verify_dg_boundary: PASS (output reproduced byte-for-byte)
+verify_nakayama_profiles: PASS (output reproduced byte-for-byte)
+check_7dim: PASS (output reproduced byte-for-byte)
+verify_formal_realisation: PASS (output reproduced byte-for-byte)
+verify_group_block_obstruction: PASS (output reproduced byte-for-byte)
+ALL FIVE CERTIFICATES PASSED AND REPRODUCED THEIR CAPTURED OUTPUTS.

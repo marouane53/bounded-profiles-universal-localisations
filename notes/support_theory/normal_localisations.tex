@@ -1,0 +1,386 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage{support-notes}
+\title{Bounded profiles and finite-dimensional points of universal localisations}
+\author{\workingauthor}\date{\coursedate}
+\begin{document}\maketitle
+\begin{abstract}
+We classify every bounded profile of a positive graded Koszul dual
+having a suitable normal element, a hereditary free algebra on the open
+chart, and perfect lifts of its finite simple points. One part of the
+order consists of finite orbit sets of simple modules. The other is given
+by the finite-dimensional points of universal localisations at orbit
+matrices. Their mixed order changes at free rank one. All hypotheses
+are verified for arbitrary periods, numbers of generators and finite-order
+linear twists, over arbitrary fields. Statements labelled as theorems,
+lemmas, corollaries and examples are proved.
+\end{abstract}
+
+\section{Assumptions and statement}
+Use cochain grading. Let $A$ be a connected locally finite
+nonnegatively graded $k$-algebra with zero differential, and
+$h\in A$ a homogeneous regular normal element of degree $n>0$.
+Put $G=A/(h)$ and $B=A[h^{-1}]$. Normality and regularity give a
+degree-preserving automorphism $\theta$ with $ha=\theta(a)h$ and a
+two-sided Ore localization flat on each side (as either module it is
+a direct limit of shifted free rank-one modules). For a perfect module
+call its cohomology \emph{eventually invertible under $h$} if right or
+left multiplication as appropriate gives bijections in all sufficiently
+high degrees. We use the following hypotheses.
+\begin{enumerate}
+\item $G$ has infinite total dimension. It admits a degree-zero outer
+derivation $G\to G\otimes k\ell\otimes G$ taking a positive homogeneous
+element $v$ to $1\otimes\ell\otimes1$, $|v|=|\ell|$.
+Alternatively $h$ is even and central and on the fibre a tensor of two
+perfect factors is finite only if one factor has finite cohomology.
+\item $B\cong R[u,u^{-1};\sigma]$ as a graded algebra with $|u|=1$,
+$R=B^0=k\langle U_1,\ldots,U_g\rangle$, $g\ge1$, and $uf=\sigma(f)u$.
+For the poset classification suppose $\sigma$ has finite order $L$.
+\item Each finite-dimensional simple right or left $R$-module is the
+degree-zero localized cohomology of a perfect $A$-module on the matching
+side with eventually invertible $h$.
+\end{enumerate}
+There is no restriction on the ground field. The derivation in (1) is a
+checkable sufficient condition; only the implication in Lemma~\ref{detect}
+is used in the classification. Hypothesis (3) ensures surjectivity of
+the proposed labels and supplies sources distinguishing them.
+
+Denote by $\Omega_r,\Omega_l$ the finite-dimensional simple types of
+$R$ on the indicated side modulo twisting by $\sigma$. For a finite
+module $W$, let $S(W)$ be the set of orbits of its composition factors.
+For a square matrix $H$ over $R$ put
+\[
+ O(H)=\{[T]\in\Omega_l:\ H(T^{\sigma^a})\text{ invertible for all }
+ 0\le a<L\}.
+\]
+Left evaluation means the usual block action on columns of elements of
+$T$; on the right use precomposition, hence rows. Write $P^\vee=\RH_A(P,A)$
+for the left perfect dual of a right perfect source. Profiles are the
+subcategories of $\per A$ on which $\RH_A(P,E)$ has finite total
+cohomology. All such Hom complexes have locally finite, bounded-below
+cohomology by finite cells and summands.
+
+\begin{thm}\label{main}
+All profiles occur exactly once in the following two rows, with equality
+of the displayed subset as label equivalence:
+\[
+ \begin{array}{c|c|c}
+  &\text{labels}&\text{inclusion}\\ \hline
+ \mathcal T_F& F\subset\Omega_r\text{ finite} &\text{reverse inclusion of }F\\
+ \mathcal B_O& O=O(H)\subseteq\Omega_l &\text{ordinary inclusion of }O .
+ \end{array}
+\]
+The first row consists of detectors $E$ with eventually invertible $h$,
+labelled by $S(H^0E_h)$. Sources in $\mathcal B_O$ are exactly those for
+which $h$ is eventually invertible on $P^\vee$ and $S(H^0(P^\vee)_h)
+\subseteq O$. The top is $\mathcal T_\varnothing$ and bottom is
+$\mathcal B_\varnothing$. No first-row profile lies in a second-row profile.
+For $g\ge2$, a second-row profile lies in a first-row profile exactly
+when the former is the bottom or the latter is the top. For $g=1$
+identify left and right simple orbits via the closed points of
+$\mathbb A^1_k$. Then $\mathcal B_O\subseteq\mathcal T_F$ if and only if
+$O\cap F=\varnothing$.
+\end{thm}
+
+\section{The closed and open tests}
+\begin{lem}\label{detect}
+For perfect right $E$ and perfect left $Y$, finite cohomology of
+$E\ten_A Y$ is equivalent to both
+\[
+ \begin{gathered}
+ h\text{ eventually invertible on }H^*E\text{ or on }H^*Y,\\
+ H^{i}(E_h\ten_B Y_h)=0\quad(i\gg0).
+ \end{gathered}
+\]
+This lemma requires only hypothesis (1) and the normal localization.
+\end{lem}
+\begin{proof}
+If neither outer module satisfies the first condition, the relative
+two-cut estimate of \othernote{two_cuts}{A lower bound for derived tensor
+products} supplies $\dim H^{b+j}(E\ten_A Y)\ge\dim G^j$ for fixed
+$b$ and all $j\ge0$. It applies because $A\to G$ is onto, the chosen
+element lifts to a cycle, and regularity identifies reduction images
+with cokernels of $h$. Under the alternate central hypothesis the
+same implication follows from Theorem 1 of
+\othernote{central_reduction}{Central reduction for bounded profiles}.
+For one parameter, finite generation over $k[h]$ is equivalent to
+eventual bijectivity: beyond the generator degrees multiplication is
+surjective, and the finite dimensions then stabilize in each residue
+class. Conversely lift bases of the finitely many low degrees.
+If $E$ satisfies the condition, $E\to E_h$ is a high-degree cohomology
+isomorphism, since the localization of a graded module at a regular normal
+element on the ring is computed by fractions. Tensor its cone with $Y$.
+Vanishing in high degrees is preserved by the finite cells and retracts
+in $Y$. Associativity identifies the second tensor with
+$E_h\ten_B Y_h$. The same argument with the sides reversed applies if
+$Y$ satisfies the condition. This proves both implications.
+\end{proof}
+
+For finite-order $\sigma$ the homogeneous unit $u^{2L}$ is even and
+graded central in $B$. It makes the localized tensor periodic, turning
+high-degree vanishing into acyclicity. This uses no centrality for an
+odd $h$. Even without periodicity, if the right factor $E$ is eventually
+invertible, one may evaluate $\RH_B(P_h,E_h)$ in high degrees.
+If the left factor $P^\vee$ is eventually invertible, one may instead
+evaluate $E_h\ten_B(P^\vee)_h$ there. Perfect duality gives these
+identifications on both charts.
+
+\begin{lem}\label{chart}
+Every perfect dg module over $B$ is quasi-isomorphic to its graded
+cohomology with zero differential and to the cone of a finite matrix
+of degree-zero free modules $B^a\to B^b$. If the cohomology of the
+original object over $A$ has eventually invertible $h$, then the
+degree-zero part of its localized cohomology is finite dimensional.
+\end{lem}
+\begin{proof}
+Taking degree zero is an equivalence of graded right $B$-modules with
+right $R$-modules, inverse $W\mapsto W\otimes_R B$; multiplication
+by $u$ proves the componentwise assertion. Consecutive components are
+twists, and there is an analogous left equivalence. Submodules of free
+$R$-modules are free. For a finite ambient basis, choose leading words
+using a right-compatible degree-lexicographic order with a module
+position. Choose one monic vector for each prefix-minimal leading word
+in its position. Their right multiples are independent by distinct
+leading words and span by leading-word reduction. In particular the
+image of every finite matrix is finite free, the kernel splits off
+the domain and is finite projective, hence free. This gives coherence.
+The left statement follows by reversing words. It follows by the long
+exact sequence and coherence (kernels, cokernels and extensions) that
+cohomology of any perfect dg $B$-module is finitely presented as a
+graded module. Retracts preserve finite presentation.
+
+Present this cohomology by an injective matrix $B^a\to B^b$ over $R$,
+using the equivalence to place every generator in degree zero. Lift the
+free generators to cycles and each relation to a primitive of its image.
+The resulting map from the cone induces an isomorphism on cohomology.
+The cone also maps quasi-isomorphically to the graded cokernel. Finally
+localization agrees with eventually invertible cohomology in high
+degrees, which are finite dimensional, and $u$ identifies all components.
+\end{proof}
+
+\section{Proof of the classification}
+For an eventually invertible detector, apply Hom from the presentation
+of $P_h$ into the graded module induced by $W=H^0(E_h)$. The map between
+free terms in each degree is evaluation of the matrix on a twist of $W$
+(up to cochain signs which are units). Its cone is acyclic exactly when
+the map is bijective in every twist. A rectangular matrix of unequal
+ranks cannot be bijective on a nonzero finite module. For square
+matrices a composition series gives a block triangular evaluation with
+square diagonal blocks. Hence evaluation on all simple factors and their
+twists is necessary and sufficient. This proves one implication of
+reverse inclusion. For the other, consider an orbit present in $F'$
+and absent from $F$. The annihilator of a finite-dimensional simple
+is maximal two-sided: its faithful image is finite-dimensional primitive,
+hence simple artinian. Equal annihilators identify the simple on the
+same side. The Chinese remainder theorem for the finitely many distinct
+maximal two-sided ideals of the chosen types and all twists gives
+$f\in R$ acting by one on the types of $F$ and by zero on the chosen
+orbit. No absolute simplicity or separability was used. Clear the
+denominator by multiplying on the left by $h^d$, giving an element
+of $A^{dn}$. The cone of this left multiplication between shifted
+free right $A$-modules supplies a witness. On localization the extra
+homogeneous unit only shifts the set of twists being tested. Direct
+sums of lifts in (3) realise all finite labels, including the empty one.
+
+For every other detector Lemma~\ref{detect} requires $h$ eventually
+invertible on $Y=P^\vee$. Write $T=H^0Y_h$. Use
+Lemma~\ref{chart} to present $E_h$ instead and tensor with the graded
+left module induced by $T$. A rectangular unequal-size presentation
+forces $T=0$, and a square presentation $H$ gives precisely
+$S(T)\subseteq O(H)$. All labels are realised: clear the denominators of
+$H$ with a common $h^d$ and take as detector $G$ plus the cone of the
+resulting matrix over $A$. The $G$ summand has zero localization and
+infinite cohomology killed by $h$; as a right or left $A$-module it
+is perfect by regularity. This construction also works for a matrix
+with kernel. The identity and zero matrices give $\Omega_l$ and the
+empty domain. Duals of left lifts in (3) distinguish any two unequal
+domains. Perfect double duality follows on cells and summands.
+The source $G$ belongs to every first-row profile and no second-row
+profile: its right resolution is a single free multiplication cone,
+so Hom from it tests eventual invertibility of $h$ on the detector.
+
+To check mixed inclusions, suppose $P$ lies in the second row and test
+it against a first-row detector with finite module $W$. A finite
+$d$-dimensional right $R$-module $W$ has the free presentation
+\[
+ 0\longrightarrow W\otimes k^g\otimes R\longrightarrow W\otimes R
+ \longrightarrow W\longrightarrow0,qquad
+ w\otimes i\otimes r\longmapsto w\otimes U_i r-wU_i\otimes r .
+\]
+Leading first letters prove injectivity and word reduction proves
+exactness in the middle. On a nonzero left $T$, the dimensions of its
+two free terms after evaluation are $gd\dim T$ and $d\dim T$. For
+$g\ge2$, $d>0$, acyclicity is impossible. The intersection is therefore
+exactly the sources with $T=0$ and eventually invertible $h$, namely
+$\mathcal B_\varnothing=\UU_A$. In rank one use the primary decomposition
+over the PID $k[U]$. The resolution by a power of a monic irreducible
+has zero derived tensor with a different primary module and nonzero
+cokernel with a module for the same prime. Running over all twists
+shows that acyclicity is equivalent to disjoint orbit supports. All
+finite supports can be tested by the lifts. This proves
+Theorem~\ref{main}. For $g=1$, nonempty domains are precisely the
+complements of finite orbit sets, by determinants over the PID. With
+identity twist, labelling the second row by the excluded points plus
+infinity identifies the whole order with finite subsets of the closed
+points of $\mathbb P^1_k$ in reverse inclusion, together with a new
+bottom. Over a finite field there are still infinitely many closed points.
+
+\section{Universal localisation and its precise limitation}
+For a square matrix $H$ on free right $R$-modules let $R_{\Sigma(H)}$
+be Cohn's universal localisation, with
+$\Sigma(H)=\{\sigma^a H:0\le a<L\}$. A finite-dimensional left module,
+viewed as a representation into its $k$-endomorphism ring, extends to
+the localisation precisely when each block evaluation is invertible.
+Indeed the inverse block operators are forced, and adjoining their
+entries subject to both inverse identities constructs the extension.
+Thus the class of all such finite modules has exactly those finite
+simple factors in $O(H)$, by the square triangular test. It follows
+that the second row is the poset of essential images on
+finite-dimensional left modules of these orbitwise square-matrix
+localisations, ordered by inclusion. A finite collection of matrices
+is combined by a block sum. The assertion concerns these images;
+\href{https://arxiv.org/abs/0810.1401}{Krause--\v Stov\'i\v cek}
+identify universal localisations with homological epimorphisms for
+hereditary rings, a result about the full module categories.
+
+\begin{ex}[Two different localisations with the same profile label]
+Take two disjoint cyclic generator orbits $u_a,v_a$ of equal length.
+Invert all $u_a v_a$, or invert all $u_a$ and $v_a$ individually.
+On finite-dimensional left modules these conditions coincide. On a
+countably infinite-dimensional space let every $u_a$ be the backward
+shift and every $v_a$ the forward shift. The products act as identity,
+but neither shift is invertible. This representation extends only to
+the first localisation. The induced ring epimorphisms are inequivalent
+under $R$, including after orbit closure. This excludes any unrestricted
+bijection with the epimorphisms themselves.
+\end{ex}
+
+\begin{ex}[A hereditary open chart for which extensions matter]
+Let $R$ be the path algebra of $1\to2$, put $A=R[t]$ with $|t|=2$,
+and use left modules in this example. The representations
+$(k\xrightarrow{1}k)$ and $(k\xrightarrow{0}k)$ have the same
+composition factors. Extend them by $k[t]$; both are perfect since $R$
+is hereditary. Hom from the cone of the map of vertex projectives
+representing the arrow evaluates that arrow in every positive even
+degree. One detector gives finite Hom and the other gives infinite
+Hom. Maps between unlike projectives need not induce square diagonal
+blocks on simple factors. Heredity alone cannot justify the first-row
+simple-factor test.
+\end{ex}
+
+\section{A class with arbitrary periods and numbers of generators}
+For $n,r\ge1$ and $Q\in\mathrm{GL}_r(k)$ consider
+\[
+ A_{n,r,Q}=k\langle x,z_1,\ldots,z_r\rangle/
+ \big(x^n z_i-\textstyle\sum_j Q_{ij}z_j x^n\big),\quad
+ |x|=|z_i|=1 .
+\]
+\begin{cor}\label{family}
+If $Q$ has finite order, Theorem~\ref{main} applies with $h=x^n$,
+$g=nr$ and the twists of the free generators described below. For
+arbitrary $Q$, Lemmas~\ref{detect} and~\ref{chart} and the perfect lifts
+still hold with the indicated infinitely many possible twists.
+These rings occur as residue-field Koszul duals of proper augmented
+dg algebras. For $n=2$ the nonpositive kernels can be taken two-term.
+\end{cor}
+\begin{proof}
+Rewrite $x^n z_i$ to $\sum_j Q_{ij}z_jx^n$. Length-lex order with $x$
+largest decreases. No proper overlap among leading words is possible,
+as each ends in a $z$ and all its nontrivial proper prefixes are powers
+of $x$. Disjoint replacements commute linearly; induction on order
+gives a unique normal form. Normal words consist of blocks $x^a z_i$,
+$0\le a<n$, followed by a power of $x$. Right multiplication by $x^n$
+is injective. Moving $x^n$ past letters implements the invertible
+linear substitution $Q$ and fixes $x$, giving normality and left
+regularity. The quotient by $x^n$ is $(k[x]/x^n)*k\langle z_1,\ldots,z_r
+\rangle$, with the required free partial derivative and nonzero
+$z_1$-powers in every degree.
+
+In the localization put $U_{i,a}=x^a z_i x^{-(a+1)}$.
+Conjugation by $x$ moves $a$ to $a+1$ and sends the last column to
+$\sum_j Q_{ij}U_{j,0}$. These rules define an automorphism of the free
+algebra on $nr$ generators. The skew Laurent algebra so defined maps
+to the localization by the displayed formulas. In the other direction
+send $z_i$ to $U_{i,0}x$ and $x$ to the Laurent generator; the maps
+respect the relations and are inverse. If $Q^d=1$ then $\sigma^{nd}=1$.
+
+Given any finite right module $W$, in the induced localized module
+take its nonnegative-degree part $M$. It is generated by its degree-zero
+basis. A presentation has these generators and, for each basis vector
+$w$, the $nr$ relations
+\[
+         w x^a z_i-(wU_{i,a})x^{a+1},\qquad 0\le a<n .
+\]
+Their right multiples are independent: filter normal words by the number
+of $z$'s, use the maximal input filtration degree, and observe that the
+leading outputs begin with distinct initial blocks and a specified basis
+vector. All corrections have one fewer $z$, also after reduction. The
+series of $A$ is $1/((1-t)(1-r\sum_{j=1}^n t^j))$, by the word basis.
+Thus the graded cokernel has series $\dim(W)/(1-t)$ and maps onto
+$M$, which has exactly that series. This is a finite free resolution.
+The opposite algebra has the reversed relation with inverse linear
+substitution; the same argument gives left lifts. Multiplication by
+$x$ on these nonnegative tails is bijective between successive
+components in their allowed degrees.
+
+For completeness take the strictly unital augmented minimal
+$A_\infty$-algebra whose reduced basis consists of $r+1$ degree-zero
+letters and $r$ outputs of degree $1-n$. Give its reduced bar dual the
+free generators $x,z_i$ of degree one and $y_i$ of degree $n$ with
+$d y_i=x^nz_i-\sum_jQ_{ij}z_jx^n$, $dx=dz_i=0$.
+This specifies the signs and identities: the graded derivation squares
+to zero; equivalently the only reduced operation has arity $n+1$ and
+its outputs never re-enter it. For $n=1$ this specifies ordinary
+radical multiplication. At fixed weight (letters weight one, $y_i$
+weight $n+1$) filter by the lexicographic expansion $y_i\mapsto x^n z_i$.
+The leading differential expands only these monomials. In a fixed
+expanded word its disjoint occurrences each supply a contractible
+two-term choice, with tensor signs from homogeneous degrees. Words
+with no occurrences survive in degree equal to weight and are already
+cycles. The finite filtration proves that the bar dual projects
+quasi-isomorphically to $A_{n,r,Q}$. Degreewise bar duals are ordinary
+here because generator degrees are positive.
+
+The bar--cobar strictification of the finite minimal model is
+nonpositive: a cobar generator on a nonempty bar word of $b$ letters
+has degree the sum of their cohomological degrees minus $b-1$.
+It can even be chosen finite-dimensional. Use the internal weights
+above on the original letters and outputs. The bar--cobar comparison
+to the minimal model is weight preserving on cohomology, so the
+subcomplex in weights $>n+1$ is acyclic and is a two-sided ideal.
+Truncating it leaves finitely many words and the same quasi-isomorphism
+type. The comparison is the usual augmented bar--cobar equivalence,
+as in \href{https://arxiv.org/abs/math/9910179}{Keller's treatment of
+minimal models and strictification}. The finite-cohomology category is
+generated by the residue field by truncation and finite length of the
+local degree-zero heart. When $n=2$, a concrete strict two-term family
+is given in the companion notes (for general $Q$ use $b_i r=
+\sum_j Q_{ji} w_j$, $rb_i=w_i$ in the strict table there).
+\end{proof}
+
+For $Q=I,n=2,r=1$ this reproduces the two rows, the swap and the mixed
+order from the earlier six-dimensional example. For larger $n$ it is a
+theorem about proper dg algebras; a two-term kernel realisation by an
+ordinary universal localisation is claimed only when the cohomological
+amplitude satisfies the manuscript's realisation theorem. The
+factorisation of complex free loci by
+\href{https://arxiv.org/abs/1907.04328}{Helton--Klep--Vol\v ci\v c}
+further labels nonempty domains by finite sets of stable atomic factors,
+saturated under the finite twist, as in the original example. The
+arbitrary-field classification above uses no algebraic closure.
+
+\begin{ex}[A symmetric disjoint-support rule is impossible]
+In this family with $nr\ge2$, let $M_0$ lift the one-dimensional right
+zero tuple and take $G=A/(x^n)$ as another right perfect. Then
+$\RH_A(G,M_0)$ is finite and $\RH_A(M_0,G)$ is infinite. For the
+first claim the resolution of $G$ tests $x^n$, which is bijective on
+the tail of $M_0$. For the second, the displayed resolution of $M_0$
+gives in degree $i$ a map from $G^i$ to
+$\bigoplus_{a=0}^{n-1}\bigoplus_{j=1}^r G^{i+a+1}$.
+Appending $z_1$ embeds the normal words of $G^i$ in $G^{i+1}$,
+and $z_1^i$ is nonzero. The target is strictly larger in every
+nonnegative degree and the cokernels survive in the Hom cone.
+Thus no assignment of a single set to each object can detect this
+bounded Hom relation by disjointness of the two assigned sets.
+\end{ex}
+\end{document}

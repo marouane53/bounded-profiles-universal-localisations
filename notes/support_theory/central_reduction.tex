@@ -1,0 +1,150 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage{support-notes}
+\title{Central reduction for bounded profiles with several parameters}
+\author{\workingauthor}\date{\coursedate}
+\begin{document}\maketitle
+\begin{abstract}
+For a regular sequence of positive even central elements we separate
+boundedness of a derived Hom into vanishing on the punctured central
+charts and a single test on the closed fibre. If the fibre detects
+unbounded tensors of two perfect factors, the closed test is finite
+generation of one individual cohomology module over the parameter ring.
+A two-parameter example has detectors with identical free cohomology
+over that ring and different bounded profiles. Results in this note
+are proved; the script checks specific instances.
+\end{abstract}
+
+\section{A central support test}
+Take a locally finite, nonnegatively graded associative algebra $A$
+over a field, with zero differential. Suppose $s_1,\ldots,s_c$ are
+positive even homogeneous central elements, each a non-zero-divisor
+on the preceding quotient, with nonzero final quotient $G$.
+Write $S=k[t_1,\ldots,t_c]$ acting by $t_i=s_i$, $|t_i|=|s_i|$.
+Finiteness over $S$ refers to this specified action. Use perfect right
+$A$-modules $P,E$, $Y=P^\vee=\RH_A(P,A)$ perfect left, and
+$K=\RH_A(P,E)\simeq E\ten_A Y$. Bars denote derived reduction to $G$.
+Properness of $A$ is unnecessary. For an augmented dg algebra $D$ with
+$D_{\fd}(D)=\thick(k)$ and $\RH_D(k,k)\simeq A$, the equivalence
+$\RH_D(k,-)$ carries its bounded profiles to these profiles on $\per A$.
+Indeed the isomorphism on all shifted endomorphisms of $k$ extends by
+triangles and summands to full faithfulness and gives essential image
+$\per A$.
+
+\begin{thm}\label{central}
+A perfect source $P$ belongs to $\UU_E$ precisely when
+\[
+ E[s_i^{-1}]\ten_{A[s_i^{-1}]}Y[s_i^{-1}]\simeq0
+ \quad(1\le i\le c),\qquad
+ \dim_k H^*(\bar E\ten_G\bar Y)<\infty.                 \tag{1}
+\]
+Suppose in addition that for perfect right $M$ and left $N$ over $G$,
+finite total $H^*(M\ten_G N)$ implies finite total $H^*M$ or $H^*N$.
+Then the last condition in (1) is equivalent to
+\[
+                    H^*E\text{ is finite over }S
+          \quad\text{or}\quad H^*Y\text{ is finite over }S .       \tag{2}
+\]
+In particular a closed fibre admitting the derivative of
+\othernote{two_cuts}{A lower bound for derived tensor products}
+satisfies the additional hypothesis when $H(G)$ is infinite; a
+finite-dimensional $G$ satisfies it trivially.
+\end{thm}
+
+\begin{proof}
+For any locally finite bounded-below $S$-complex $C$ let $C//t$ denote
+the cone of $C[-|t|]\xrightarrow{t} C$. For one parameter, $H^*C$ is
+finite-dimensional exactly when $C[t^{-1}]$ is acyclic and $H^*(C//t)$
+is finite-dimensional. In fact finite cohomology is killed by a power
+of $t$ and both implications in this direction follow. In the other
+direction the long exact cohomology sequence of the cone makes $t$
+bijective in sufficiently high degrees. In each such degree $H^*C$
+embeds in its localization and hence vanishes. Local finiteness and
+the lower bound finish the argument. Iterate this test: localizations
+of iterated cones at $t_i$ vanish if $C[t_i^{-1}]$ vanishes, since
+central localization is flat. From finite cohomology of the last cone
+deduce finiteness of the preceding ones one at a time. Conversely the
+iterated cones of a finite-cohomology complex have finite cohomology.
+
+For finite cells $P,E$ the graded pieces of $K$ are locally finite and
+bounded below. This property passes to their retracts on cohomology.
+Localization commutes with perfect Hom and gives the first terms of
+(1). At one regular central element, $A/(s)$ is represented by
+$\Cone(s:A[-|s|]\to A)$ as an $A$-bimodule in the derived category;
+both outer actions on the cone are legitimate because the degree is
+even. Applying $\RH_A(P,-)$ to the multiplication triangle of $E$ and
+then extension-restriction adjunction identifies $K//s$ with Hom of
+the two reduced perfects over $A/(s)$. Reduction preserves perfect
+duals, as is checked on free modules and then by thick closure.
+Iteration over the regular sequence yields
+$K//(s_1,\ldots,s_c)\simeq \bar E\ten_G\bar Y$ as $k$-complexes,
+with the remaining central actions at each stage. This proves (1).
+
+We record the graded Nakayama step. For $C$ as above,
+$H^*(C//(t_1,\ldots,t_c))$ is finite-dimensional exactly when
+$H^*C$ is finitely generated over $S$. If $H^*C$ is finite over $S$,
+the cone sequence expresses its next cohomology as an extension of a
+shifted kernel by a cokernel. Both are finite over $S/(t_1)$ by
+noetherianity, and finiteness over the remaining polynomial ring suffices
+for induction. Conversely apply induction to $C//t_1$. The quotient
+$H^*C/t_1H^*C$ embeds in $H^*(C//t_1)$ and is finite over the
+noetherian remaining polynomial ring. Lift homogeneous generators.
+Induction on degree, using $|t_1|>0$ and the lower bound, proves that
+they generate $H^*C$ over $S$. This also works when the parameter action
+has a kernel. Apply the criterion separately to $E$ and $Y$, whose
+iterated cones are their derived reductions on underlying complexes.
+The fibre hypothesis gives necessity in (2). For sufficiency, tensor
+a finite-cohomology fibre factor with a perfect factor, using cells and
+retracts. This proves the theorem.
+\end{proof}
+
+\section{What the hypotheses detect}
+\paragraph{Proved obstruction to dropping the fibre.}
+In $A=k[s,t,z]$ with variables of degree two, take
+$E=A/(s,t)$, $P=A$. The regular sequence makes $E$ perfect. Both open
+localizations of $K$ vanish but $H^*K=k[z]$ is infinite.
+There is also an obstruction to replacing the fibre by (2) without
+testing its Tor. Take $A=k[s,t,u,v]$, all degrees two, use parameters
+$s,t$, set $E=A/(s,t,u)$ and take the dual of the perfect left
+$Y=A/(v)$ as source. Neither cohomology module is finite over $k[s,t]$.
+Their derived tensor is $k$ by the disjoint Koszul resolutions. On the
+fibre $k[u,v]$ the two surviving directions meet only in finite total
+Tor. The universal assertion (1) still applies.
+
+\paragraph{Proved obstruction to ordinary central projective support.}
+Set $A_0=k\langle x,z\rangle/(x^2z-zx^2)$ in generator degree one and
+$A=A_0[t]$ with $t$ central of degree two. The sequence $s=x^2,t$
+is regular. Its fibre $k\langle x,z\rangle/(x^2)$ has a free $z$.
+Let $M_i=k[x]$ with $z$ acting by $i x$, $i=0,1$, and zero
+differential. Each is perfect over $A_0$: set $u=z-i x$ and present
+its kernel in $A_0$ freely by the two initial blocks $u,xu$ using
+the words avoiding $xxu$. Let $E_i=M_i\otimes_k k[t]$. Both have
+identical graded cohomology as $k[s,t]$-modules, free on generators in
+degrees zero and one. Take $P$ to be the exterior tensor product of
+$\Cone(z:A_0[-1]\to A_0)$ with $k[t]/(t)$. The Hom complex into $E_i$
+is the tensor over $k$ of the Hom complexes of these two factors,
+by finite cells. The second is a shift of $k$. In the first, precomposition
+by $z$ is zero for $i=0$ and an isomorphism in high degrees for $i=1$.
+Thus $P\in\UU_{E_1}$ and $P\notin\UU_{E_0}$, in all characteristics.
+Even the full central modules of these detectors, hence their supports
+on $\operatorname{Proj} k[s,t]$, lose this distinction.
+
+\paragraph{Interpretation and priority.}
+The cone and graded Nakayama steps are standard central-operator
+arguments. \href{https://doi.org/10.1007/s002220000090}{Avramov--Buchweitz}
+describe pair supports over commutative complete intersections;
+\href{https://arxiv.org/abs/math/0702654}{Avramov--Iyengar} realise
+closed subsets for central cohomological operations subject to finiteness
+and vanishing hypotheses. \href{https://arxiv.org/abs/1912.12009}{Pollitz}
+constructs supports for pairs of dg modules over Koszul complexes.
+The extra condition (2) here is a consequence of rigidity in a possibly
+noncommutative closed fibre; neither global finite generation over the
+centre nor a tensor product formula for individual central supports
+is assumed. \href{https://arxiv.org/abs/0910.0642}{BIK stratification}
+and \href{https://arxiv.org/abs/1510.06773}{BIKP tensor-ideal
+classification} concern categories with different structural hypotheses.
+Equation (1) describes bounded Hom. It does not assert a classification
+of all localising subcategories or construct a projective scheme from
+an arbitrary sequence. A full general poset classification for several
+parameters is open in this work.
+\end{document}

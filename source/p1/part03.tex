@@ -1,0 +1,154 @@
+
+\section{The actual singularity kernel}\label{sec:actual-kernel}
+
+Throughout this section, let \(\lambda:R\to S\) be a homological ring epimorphism satisfying \textup{(B1)--(B3)}.  In particular, the results apply to stably flat universal localisations satisfying these conditions.  Put
+\[
+ \cT=\Db(R\text{-}\modcat),\quad
+ \cT_S=\Db(S\text{-}\modcat),\quad
+ \cP=\per(R),\quad
+ \cP_S=\per(S),\quad
+ \cK=\Kb(\lambda).
+\]
+Let \(\Phi=S\Ltensor_R-\) and let \(U\) be restriction of scalars.
+
+The boundedness assertion in the next lemma uses only \textup{(B1)--(B3)}.  Homologicality enters later through the fully faithful derived restriction functor, the localisation unit triangles, and the invertible counit.
+
+\begin{lemma}[Bounded derived adjunction]\label{lem:bounded-adjunction}
+Under \textup{(B1)--(B3)}, extension and restriction of scalars restrict to an adjunction
+\[
+ \Phi=S\Ltensor_R-:\Db(R\text{-}\modcat)
+ \rightleftarrows
+ \Db(S\text{-}\modcat):U.
+\]
+For every object in either bounded category, the corresponding unit or counit, and every triangle completing that morphism, lie in the asserted bounded categories.
+\end{lemma}
+
+\begin{proof}
+Let \(M\) be a finitely generated left \(R\)-module.  Since \(R\) is left noetherian, \(M\) has a projective resolution by finitely generated projective left \(R\)-modules.  Tensoring with \(S\) gives a complex of finitely generated projective left \(S\)-modules.  Since \(S\) is left noetherian, every cohomology module of this complex is finitely generated, and \textup{(B2)} makes those modules vanish outside a finite range.  Hence \(\Phi M\in\Db(S\text{-}\modcat)\).  Every object of \(\Db(R\text{-}\modcat)\) is assembled from its finitely many cohomology modules by standard truncation triangles, so exactness gives \(\Phi X\in\Db(S\text{-}\modcat)\) for every such \(X\).
+
+Restriction is exact, so \(H^n(UY)=U(H^nY)\).  Applying \textup{(B3)} to finitely generated \(S\)-modules concentrated in degree zero shows that these restricted modules are finitely generated over \(R\); hence \(UY\in\Db(R\text{-}\modcat)\).  The two bounded categories are full triangulated subcategories of their unbounded derived categories, so the unbounded adjunction restricts.  The endpoints of every unit and counit lie in the stated bounded category, and therefore so does its cone.
+\end{proof}
+
+\begin{lemma}[The compact kernel]\label{lem:compact-intersection}
+By definition,
+\[
+ \cK\cap\cP=\Kc_\lambda.
+\]
+If, in addition, \(\lambda\) is a stably flat universal localisation at a set \(\Sigma\) of maps between finitely generated projective modules, then the substantive compact-generation identification is
+\[
+ \Kc_\lambda=\thick\langle\Cone(\Sigma)\rangle.
+\]
+\end{lemma}
+
+\begin{proof}
+Since \(\per(R)\subseteq\Db(R\text{-}\modcat)\), the definitions give
+\[
+ \cK\cap\cP
+ =\bigl(\cK_\lambda\cap\Db(R\text{-}\modcat)\bigr)\cap\per(R)
+ =\cK_\lambda\cap\per(R)
+ =\Kc_\lambda.
+\]
+For the additional assertion, stable flatness gives
+\(\cK_\lambda=\Loc\langle\Cone(\Sigma)\rangle\), and every displayed cone is compact.  The Thomason--Neeman theorem therefore identifies the compact objects of this localising subcategory with \(\thick\langle\Cone(\Sigma)\rangle\), which is precisely \(\Kc_\lambda\).
+\end{proof}
+
+\begin{lemma}\label{lem:preimage-perfect}
+Let
+\[
+ \cL=\Phi^{-1}(\cP_S)
+ =\{X\in\cT\mid \Phi X\in\per(S)\}.
+\]
+Then
+\[
+ \cL=\thick(\cP,\cK).
+\]
+\end{lemma}
+
+\begin{proof}
+The inclusion \(\thick(\cP,\cK)\subseteq\cL\) follows from
+\(\Phi(\cP)\subseteq\cP_S\) and \(\Phi(\cK)=0\).
+
+For the reverse inclusion, let \(X\in\cL\), and write \(Y=\Phi X\in\cP_S\).  By (B3), \(U(Y)\in\cT\).  Since \(Y\in\thick(S)\), one has
+\(U(Y)\in\thick(U(S))\).
+
+The localisation unit at \(R\) fits into a triangle
+\[
+ K_R\longrightarrow R\longrightarrow U(S)\longrightarrow K_R[1].
+\]
+The counit \(\Phi U\to\id_{D(S)}\) is an isomorphism, so applying \(\Phi\) shows \(\Phi K_R=0\).  By \textup{(B3)}, \(U(S)\in\cT\); since \(R\in\cT\), the triangle gives \(K_R\in\cT\), and therefore \(K_R\in\cK\).  It follows that
+\(U(S)\in\thick(\cP,\cK)\), hence also \(U(Y)\in\thick(\cP,\cK)\).
+
+Finally, the unit triangle at \(X\) is
+\[
+ K_X\longrightarrow X\longrightarrow U\Phi X\longrightarrow K_X[1].
+\]
+Here \(K_X\in\cK\), while \(U\Phi X=U(Y)\) lies in
+\(\thick(\cP,\cK)\).  Thus \(X\) lies there as well.
+\end{proof}
+
+We use a standard elementary observation which is sometimes hidden in quotient notation.
+
+\begin{lemma}\label{lem:subcategory-quotient-embedding}
+Let \(\cP\subseteq\cL\subseteq\cT\) be full triangulated subcategories, with \(\cP\) thick in \(\cT\).  Then the induced functor
+\[
+ \cL/\cP\longrightarrow\cT/\cP
+\]
+is fully faithful.
+\end{lemma}
+
+\begin{proof}
+A morphism in \(\cT/\cP\) between objects \(L_1,L_2\in\cL\) is represented by a roof
+\[
+ L_1\xleftarrow{s}Z\longrightarrow L_2,
+ \qquad \Cone(s)\in\cP.
+\]
+Completing \(s\) to a triangle shows that \(Z\in\cL\), because both
+\(L_1\) and \(\Cone(s)\) lie in \(\cL\).  Thus every roof and every common refinement may be taken inside \(\cL\), which proves fullness and faithfulness.
+\end{proof}
+
+By \Cref{lem:preimage-perfect}, the singularity defect of \Cref{def:singularity-defect} has the concrete form
+\[
+ \Defsg(\lambda)=\cL/\cP
+\]
+for a homological ring epimorphism satisfying \textup{(B1)--(B3)}.
+
+\begin{theorem}[Actual singularity-kernel theorem]\label{thm:actual-kernel}
+Let \(\lambda:R\to S\) be a homological ring epimorphism satisfying \textup{(B1)--(B3)}.  Then extension of scalars induces an exact functor
+\[
+ \overline\Phi:\Dsg(R)\longrightarrow\Dsg(S)
+\]
+whose object-kernel is identified with the fully faithful subcategory \(\Defsg(\lambda)\):
+\[
+ \kerob(\overline\Phi)=\Defsg(\lambda)\subseteq\Dsg(R).
+\]
+Moreover there is a Verdier quotient equivalence
+\[
+ \Dsg(R)/\Defsg(\lambda)\xrightarrow{\sim}\Dsg(S).
+\]
+No idempotent completion is required in either assertion.
+\end{theorem}
+
+\begin{proof}
+Since \(\Phi(\per(R))\subseteq\per(S)\), the functor descends to singularity categories.  An object \(X\in\cT\) maps to zero precisely when
+\(\Phi X\in\cP_S\), that is, precisely when \(X\in\cL\).  By
+\Cref{lem:subcategory-quotient-embedding}, the object-kernel in the sense of \Cref{def:object-kernel} is the fully faithful quotient \(\cL/\cP=\Defsg(\lambda)\).
+
+The third isomorphism theorem for Verdier quotients gives
+\[
+ (\cT/\cP)/(\cL/\cP)\simeq\cT/\cL.
+\]
+Because \(\cK\subseteq\cL\), another application gives
+\[
+ \cT/\cL\simeq (\cT/\cK)/(\cL/\cK).
+\]
+Under the bounded localisation equivalence of \Cref{thm:appendix-bounded-localisation}, the subcategory \(\cL/\cK\) is exactly \(\cP_S\): by definition, it consists of the objects whose images are perfect.  Hence
+\[
+ \cT/\cL\simeq\cT_S/\cP_S=\Dsg(S).
+\]
+All these are ordinary Verdier quotient equivalences.  Idempotent completion enters only later, when \(\DeltaB(\lambda)\) is compared with \(\Defsg(\lambda)\).
+\end{proof}
+
+\begin{remark}\label{rem:prior-localization}
+General localisation theorems for singularity categories are known in broader recollement settings, notably for proper dg algebras and, more recently, for weakly approximable triangulated categories; see \cite{JinYangZhou,SunZhangZhang} and the comparison in \Cref{sec:literature}.  The point of \Cref{thm:actual-kernel} is the explicit formula in terms of the bounded kernel of a homological universal localisation.  The next section derives the comparison with the compact-kernel quotient from classical compact factorisation.
+\end{remark}
+

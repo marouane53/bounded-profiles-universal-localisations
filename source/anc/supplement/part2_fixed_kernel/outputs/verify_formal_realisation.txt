@@ -1,0 +1,26 @@
+Formal two-term kernel realisation certificates over Q
+The lower-left U is killed by lambda; BOTH Morita pairings are zero.
+field: dim Gamma=1, dim U=1, dim R=4, dim S=4
+  associative R and multiplicative lambda: PASS
+  S_R=(pR)^2 and _R S=(Re)^2, by basis action maps: PASS
+  H^(-1,0,1) End(T)^op = (1, 1, 0); strict dg inclusion: PASS
+dual_regular: dim Gamma=2, dim U=2, dim R=8, dim S=8
+  associative R and multiplicative lambda: PASS
+  S_R=(pR)^2 and _R S=(Re)^2, by basis action maps: PASS
+  H^(-1,0,1) End(T)^op = (2, 2, 0); strict dg inclusion: PASS
+dual_simple: dim Gamma=2, dim U=1, dim R=7, dim S=8
+  associative R and multiplicative lambda: PASS
+  S_R=(pR)^2 and _R S=(Re)^2, by basis action maps: PASS
+  H^(-1,0,1) End(T)^op = (1, 2, 0); strict dg inclusion: PASS
+crossed_semisimple: dim Gamma=2, dim U=2, dim R=8, dim S=8
+  associative R and multiplicative lambda: PASS
+  S_R=(pR)^2 and _R S=(Re)^2, by basis action maps: PASS
+  H^(-1,0,1) End(T)^op = (2, 2, 0); strict dg inclusion: PASS
+matrix_regular: dim Gamma=4, dim U=4, dim R=16, dim S=16
+  associative R and multiplicative lambda: PASS
+  S_R=(pR)^2 and _R S=(Re)^2, by basis action maps: PASS
+  H^(-1,0,1) End(T)^op = (4, 4, 0); strict dg inclusion: PASS
+Infinite Tor vanishing follows from the verified projective decompositions,
+not from computing a finite initial segment of a resolution.
+The theorem, rather than the finite sample, covers every finite Gamma-bimodule U.
+ALL CHECKS PASSED

@@ -1,0 +1,6 @@
+rank(y)=2, dim ker(y)=2, dim yC=2  => ker(y)=yC, 1-periodic resolution of N=C/(y)
+rank(x)=2, dim ker(x)=2, dim xC=2  => ker(x)=xC, 1-periodic resolution of M=C/(x)
+Tor_0^C(M,N) dim = 1 ; Tor_i^C(M,N) dim (i>=1) = 0   (expected: k and 0)
+Tor_0^C(M,M) dim = 2 ; Tor_i^C(M,M) dim (i>=1) = 2   (expected: M, M  i.e. dim 2, 2)
+images of 1 under N->C->N: [[0, 0], [0, 0]]  => all zero, stable End_C(N) = End_C(N) = k[x]/(x^2), dim 2 (eq. 13)
+dim A = 7 ; kernel of e_1A -> k_A is M_A with dim 2 not divisible by 4 => pd(k_A)=infinity (bounded extension fails)

@@ -1,0 +1,329 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A cubic higher multiplication creates infinitely many bounded profiles}}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\Dfd}{D_{\rm fd}}
+\newcommand{\per}{\operatorname{per}}
+\newcommand{\UU}{\mathcal U}
+\newcommand{\thick}{\operatorname{thick}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Cone}{\operatorname{Cone}}
+\newcommand{\RHom}{\operatorname{RHom}}
+\setlength{\emergencystretch}{1em}
+\title{A cubic higher multiplication creates\\ infinitely many bounded profiles}
+\author{Marouane Lamharzi Alaoui\\
+\small Research notes on two-term dg kernels and bounded profiles of universal localisations}
+\date{18 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We exhibit a six-dimensional commutative local differential graded algebra
+over any field. Its formal cohomology algebra has two bounded profiles.
+The nonformal algebra admits an infinite antichain, including over finite
+fields. Six is the least possible total dimension for a change of poset
+among strict two-term models with local degree-zero cohomology and residue
+field $k$. More precisely, reverse inclusion of finite sets of closed points
+of the affine line embeds in its profile poset. A second, period-two
+detector gives an additional intermediate profile outside that embedding.
+Combined with the manuscript's realisation theorem, this changes the
+marked bounded defects of ordinary universal localisations at fixed
+graded kernel cohomology.
+\end{abstract}
+
+\section{The pair}
+Use left dg modules and cochain grading over a field $k$. For
+$E\in\Dfd(D)$ set
+\[
+ \UU_E=\{X\in\Dfd(D)\mid \dim_k\bigoplus_n\Ext_D^n(X,E)<\infty\}.
+\]
+The marked bounded defect is $\UU_E/\per D$. Each profile is thick and
+contains $\per D$, so passage to this quotient preserves and reflects
+inclusion. Write $\mathcal P$ for the monic irreducibles in $k[T]$,
+equivalently the closed points of $\mathbb A^1_k$.
+
+\begin{thm}\label{main}
+There is a commutative two-term local dg algebra $D$ of total dimension
+six such that $F=H^*(D)$ with zero differential has exactly two
+profiles, while the profile poset of $D$ contains an order-embedded copy
+of $(\{L\subset\mathcal P:\,L\text{ finite}\},\supseteq)$.
+There is also a proper intermediate profile outside this copy.
+Both singularity categories are nonzero.
+\end{thm}
+
+Take $D^0=\langle1,a,b,s\rangle$, $D^{-1}=\langle r,w\rangle$.
+The complete list of nonzero radical products and differentials is
+\[
+             a^2=s,\qquad br=rb=w,\qquad dr=s .
+\]
+The radical cube vanishes, $s$ kills the radical, and negative elements
+multiply to zero. This checks associativity, graded commutativity, and
+the Leibniz rule in every characteristic. Thus $H^0(D)=k\oplus ka\oplus kb$,
+$H^{-1}(D)=kw$, with all radical products in cohomology zero.
+In homotopy transfer take $h(s)=r$ and $h$ zero on the other basis
+elements. In the convention $m_3(i,j,k)=i h(jk)-h(ij)k$ on degree-zero
+radical inputs, the two nonzero values are
+\[
+              m_3(b,a,a)=w,\qquad m_3(a,a,b)=-w .
+\]
+Both survive in characteristic two. Every normalized Hochschild coboundary
+in the relevant degree vanishes on reduced triples, because the radical
+squares to zero and kills $kw$. Higher arities vanish by degree.
+Consequently a single nonzero ternary operation, with the two coefficients
+required by this model, gives the difference from $F$.
+
+This is a jump in a flat one-parameter family. Over $k[t]$ retain the
+same six free basis vectors and differential, and set $br=rb=t w$.
+The underlying complex splits into its free cohomology plus the
+contractible pair $r\mapsto s$, and its graded cohomology algebra is
+$F\otimes_k k[t]$. At $t=0$ the projection killing $r,s$ is a dg
+quasi-isomorphism to $F$. In any field-valued fibre with $t\ne0$,
+rescaling $w$ identifies the fibre with the base change of $D$.
+
+\section{The Koszul dual and its normal words}
+Let $x,z$ be dual to $a,b$, in degree one. The dual of the shifted
+class $w$ has degree two and is denoted $y$. The reduced bar construction
+on the augmented minimal model gives a model for $\RHom_D(k,k)$,
+\[
+ K=k\langle x,z,y\rangle,\qquad dx=dz=0,\qquad dy=x^2z-zx^2 .
+\]
+Indeed dualising the two cubic coefficients gives the displayed
+commutator up to an overall sign, absorbed into $y$. Reversing the
+word convention changes it by a sign as well. The grading is positive
+on the generators, so degreewise duality introduces no completed
+infinite sums in any fixed degree.
+
+One can check the sign from the strict model before transfer. Write $u,v$
+for the shifted duals of $s,r$, in degrees one and two. With rescaled
+generator signs the strict reduced bar dual has
+$du=v-x^2$, $dv=0$, and $dy=vz-zv$, with $dx=dz=0$. For example, in
+the suspended bar convention $b_1([i])=-[di]$ and
+$b_2([i|j])=(-1)^{|i|}[ij]$, the terms $[b|r]$ and $[r|b]$ give
+opposite signs. Replacing $v$ by the generator $v-x^2$ and $y$ by
+$y-(uz+zu)$ splits off a free pair with $du=v-x^2$; the new $y$ has
+differential $x^2z-zx^2$. The kernel of the projection deleting the pair
+is acyclic: split it into words alternating the original generators'
+subalgebra with positive tensor powers of the contractible pair.
+Each summand contracts over $k$.
+
+\begin{lem}\label{normal}
+The map $K\to A=k\langle x,z\rangle/(x^2z-zx^2)$ sending $y$ to zero
+is a quasi-isomorphism for $A$ with zero differential. The words in
+$x,z$ avoiding $xxz$ form a basis of $A$. In particular its series is
+$1/((1-t)(1-t-t^2))$.
+\end{lem}
+\begin{proof}
+Give $x,z$ weight one and $y$ weight three. At each fixed weight filter
+words by lexicographic order of the word obtained by expanding $y$ to
+$xxz$, with $x>z$. Replacing $y$ by $zxx$ strictly lowers that order.
+The associated graded differential replaces $y$ by $xxz$ with its
+cochain sign. Fix an expanded word. No two occurrences of $xxz$ overlap,
+since it has no proper nonempty suffix equal to a prefix. Each occurrence
+can independently appear as $y$ or as $xxz$. Its two choices give a
+two-term complex with differential an isomorphism, with tensor product
+signs from the degrees of the fixed intervening letters and the other
+choices. The subcomplex contracts if there is any occurrence. Otherwise
+one basis word survives in degree equal to the weight. The finite
+filtration therefore has cohomology concentrated in that degree.
+All surviving classes lift to the indicated words in $x,z$. In $A$ the
+rewrite $xxz\mapsto zxx$ terminates in fixed length. Its only possible
+simultaneous rewrites are disjoint and commute, proving uniqueness of
+normal form. The projection identifies these two bases. Every normal word
+is a sequence of blocks $z,xz$ followed by a power of $x$, giving the series.
+\end{proof}
+
+The functor $\RHom_D(k,-)$ identifies $\Dfd(D)=\thick(k)$ with the
+perfect \emph{right} dg modules over $A$. Indeed the functor takes the
+generator to the free rank-one module and induces the isomorphism on its
+graded endomorphisms. Full faithfulness and essential surjectivity on
+the thick closures follow by cones and summands. Here $\thick(k)=\Dfd(D)$
+by truncation and finite length in the heart. In particular the finite
+free cones constructed below correspond to actual finite-cohomology
+$D$-modules even though their cohomology on the $A$ side is infinite.
+The use of right modules makes matrix entries act on free columns by
+left multiplication and on detector coefficients by right multiplication.
+
+\section{Detectors and witnesses}
+First fix $\lambda\in k$ and set $u=z-\lambda x$. The relation becomes
+$x^2u=ux^2$. The normal words from Lemma~\ref{normal} work in $x,u$
+as well. Give $M_\lambda=k[x]$ the graded right action
+$z\mapsto\lambda x$. There is an exact sequence of graded right modules
+\[
+ 0\longrightarrow A[-1]\oplus A[-2]
+  \xrightarrow{(u,\,xu)} A\longrightarrow M_\lambda\longrightarrow0 .
+\]
+A normal word involving $u$ begins either with $u$ or with $xu$.
+Prefixing either block to any normal word produces a normal word, and
+the two images are disjoint. This proves exactness and makes $M_\lambda$
+perfect as a dg $A$-module. A shift $[-j]$ places a generator in degree $j$.
+
+For $p\in\mathcal P$, write $k_p=k[T]/(p)$, $\alpha_p=T\bmod p$,
+$d_p=\deg p$. Use the same construction over $k_p$ at $\lambda=\alpha_p$,
+then restrict scalars to $A$. Denote the resulting right module by
+$M_p=k_p[x]$. It is perfect, because $A\otimes_k k_p$ is finite free over
+$A$. It has dimension $d_p$ in every nonnegative degree. Define
+$E_p\in\Dfd(D)$ to be its preimage under the equivalence above.
+For a monic irreducible $q$ let $T_q$ be the matrix of multiplication by
+$T$ on $k_q$ in its power basis, and let $X_q$ correspond to
+\[
+ C_q=\Cone\big(A[-1]^{d_q}
+         \xrightarrow{\ z I-xT_q\ } A^{d_q}\big).
+\]
+
+\begin{lem}\label{incidence}
+$X_q\in\UU_{E_p}$ if and only if $q\ne p$.
+\end{lem}
+\begin{proof}
+Apply $\RHom_A(-,M_p)$ to the defining triangle of $C_q$. In sufficiently
+high degrees the induced map on the two free terms is multiplication by
+$x$ times the constant matrix $\alpha_p I-T_q^{\mathsf t}$ over $k_p$,
+up to a common cochain sign and the choice of row convention. Multiplication
+by $x$ identifies successive homogeneous components of $M_p$. The matrix
+has determinant $q(\alpha_p)$, zero precisely for $q=p$. In that case
+the kernel and cokernel persist in every high degree, and otherwise both
+vanish there. The low degrees are finite and the complexes are bounded
+below. The test works for inseparable residue extensions as well.
+\end{proof}
+
+For finite $L\subset\mathcal P$ take $E_L=\bigoplus_{p\in L}E_p$,
+including $E_{\varnothing}=0$. Its profile is the intersection of the
+individual profiles. By Lemma~\ref{incidence}, $X_q\in\UU_{E_L}$ exactly
+when $q\notin L$. It follows that $\UU_{E_L}\subseteq\UU_{E_{L'}}$
+exactly when $L\supseteq L'$. There are infinitely many monic irreducibles
+over every field, by the product-plus-one argument. The singleton sets
+give the infinite antichain. Each nonempty $L$ gives a proper profile,
+because $\Ext_D^*(k,E_L)$ is infinite. It also contains a nonperfect
+object: take $q\notin L$; $X_q$ is nonperfect since it has infinite Ext
+to the finite detector $E_q$.
+
+As a check on the role of the witnesses, replacing $X_q$ by $E_q$ in
+Lemma~\ref{incidence} would give a false statement. For scalar points
+$\lambda,\mu$, the two-term free resolution of $M_\lambda$ gives in
+every high degree a map from one copy of $k$ to two copies of $k$ after
+applying $\RHom_A(-,M_\mu)$. Its cokernel is always nonzero. In particular
+$\Ext_D^*(E_\lambda,E_\mu)$ is unbounded even at distinct scalar points.
+
+For $F$, the augmentation ideal $J=ka\oplus kb\oplus kw$ has $J^2=0$.
+Lemma 1 of the companion note shows that every finite object modulo
+perfects is a sum of shifted copies of $k$. Briefly, cut a bounded-above
+minimal resolution below all cohomology, discarding a finite cell
+submodule $P'$. In the quotient, what remains is a shift of the smart
+truncation at the cut of $P'$. Both terms lie in $JP'$, so this is just
+a complex of vector spaces. Every nonzero object therefore generates the
+quotient as a thick subcategory. The zero and residue-field detectors
+give both endpoints, and $k$ survives because its formal reduced bar
+dual is the free algebra on generators of degrees $1,1,2$. This proves
+the two-profile assertion.
+
+\section{A detector outside the closed-point family}
+Let $N$ have one-dimensional graded pieces $k e_n$, $n\ge0$,
+and actions $e_n x=e_{n+1}$, $e_n z=\lambda_n e_{n+1}$, where
+$\lambda_{2i}=0$, $\lambda_{2i+1}=1$. It is a right $A$-module since
+$\lambda_{n+2}=\lambda_n$. We claim it has the resolution
+\[
+ 0\longrightarrow A[-1]\oplus A[-2]
+ \xrightarrow{(z,\,xz-x^2)}A\xrightarrow{1\mapsto e_0}N\longrightarrow0.
+\]
+The indicated two relations annihilate $e_0$. For injectivity, take
+nonzero inputs and filter normal words by the number of $z$'s. In maximal
+input filtration degree the leading outputs are $z$ and $xz$ prefixed to
+normal words, disjoint sets. The correction $-x^2$ cannot increase the
+number of $z$'s under normalisation. Thus the two-column map is injective.
+By Lemma~\ref{normal} its graded cokernel has series
+$(1-t-t^2)H_A(t)=1/(1-t)$; the surjection onto $N$ is an isomorphism.
+Let $E_N$ be the object's preimage. Test it by the cone $C$ of left
+multiplication by $zx-xz$ from $A[-2]$ to $A$. On $M_p$ this commutator
+acts by zero for every $p$. On $N$ it acts in degree $n$ by
+$(\lambda_n-\lambda_{n+1})e_{n+2}$, always an isomorphism, including
+in characteristic two. The preimage of $C$ lies in $\UU_{E_N}$ and
+outside every $\UU_{E_L}$ for nonempty $L$; it is nonperfect since
+its Ext to $E_p$ is unbounded. Also $k\notin\UU_{E_N}$, since $N$ has
+infinite cohomology. This proves the last assertion of Theorem~\ref{main}.
+
+\section{Sharpness of the dimension}
+\begin{cor}
+Let $D'$ be a finite-dimensional unital dg algebra supported in degrees
+$-1,0$ over $k$, with $H^0(D')$ local and residue field $k$. If
+$\dim_k D'\le5$, its bounded-profile poset is isomorphic to the poset
+of its formal cohomology algebra. Thus six is minimal for the change in
+Theorem~\ref{main}, even among associative models in this class.
+\end{cor}
+\begin{proof}
+Write $h_i=\dim H^i(D')$ and $s=\operatorname{rank}d$. Then
+$\dim D'=h_0+h_{-1}+2s$. With $s=0$ the differential is zero, and
+$h_{-1}=0$ likewise implies formality by projection to $H^0$. If $h_0=1$,
+a strictly unital minimal model has no reduced degree-zero inputs; degree
+considerations exclude all higher operations. The only remaining case in
+dimension at most five has $(h_0,h_{-1},s)=(2,1,1)$. The degree-zero
+algebra is the dual numbers and its radical kills the one-dimensional
+negative cohomology on both sides. The sole possible higher coefficient
+is $m_3(t,t,t)=\gamma w$. For $\gamma=0$ it is formal, and all nonzero
+values are equivalent by rescaling $w$. Thus the nonzero case has the
+augmented derived type of Example 3.11. Theorem 3 of the companion note
+classifies both posets there as two-element chains. This proves the bound.
+\end{proof}
+
+\section{Realisation, scope and prior work}
+The matrix construction of Theorem 3.7 of the manuscript uses $\dim
+R=3\dim D^0+\dim D^{-1}$ and target dimension $4\dim D^0$. It gives
+a full-profile ordinary localisation of dimensions $14\to16$ for $D$
+and $10\to12$ for $F$. Corollary 3.10 then realises each detector
+profile as a marked bounded defect for its respective kernel. The
+dimension counts refer to the initial full-profile maps.
+
+Geometric detection of pairwise Ext vanishing is classical for ordinary
+complete intersections, as in \href{https://doi.org/10.1007/s002220000090}{Avramov and Buchweitz}, and
+\href{https://arxiv.org/abs/1912.12009}{Pollitz} treats pairs of dg modules
+over Koszul complexes. In particular, his Proposition 3.3.1 gives finite
+generation over degree-two polynomial operators for a derived complete
+intersection. Applied to its residue field this bounds Betti numbers by
+a polynomial. Lemma~\ref{normal} instead gives exponential growth, which
+excludes that derived-complete-intersection case for our augmented model.
+The point distinction in Lemma~\ref{incidence}
+has that character, although it is proved directly from finite free
+resolutions over the displayed one-relator algebra. The Koszul-dual
+calculation uses the classical nonoverlap mechanism in
+\href{https://doi.org/10.1016/0021-8693(82)90104-1}{Anick's work};
+the link between higher products and relation coefficients has precedents
+in \href{https://arxiv.org/abs/math/0606144}{Lu, Palmieri, Wu and Zhang}.
+The formal endpoint is consistent with the rigidity of split
+commutative dg extensions studied by
+\href{https://arxiv.org/abs/1508.00748}{Avramov, Iyengar, Nasseh and
+Sather-Wagstaff}. The comparison at a fixed graded cohomology algebra,
+the explicit six-dimensional strict model, and the passage to marked
+defects are the claims for which priority still requires review.
+
+\paragraph{Starting point for a classification.}
+The element $x^2$ is central. There is an exact presentation of its
+graded localisation,
+\[
+ A[(x^2)^{-1}]\cong k\langle U,V\rangle[X,X^{-1};\sigma],
+ \qquad \sigma(U)=V,\quad\sigma(V)=U .
+\]
+The skew relation is $Xf=\sigma(f)X$. Send $x$ to $X$ and $z$ to
+$UX$. Conversely take $U=zx^{-1}$ and $V=xzx^{-2}$; conjugation by
+$x$ interchanges them because $x^2$ is central. These formulas are
+mutually inverse. In particular the degree-zero algebra in this
+localisation is the free associative algebra on two generators.
+
+Every pair of operators $T_0,T_1$ on a finite-dimensional space $W$
+already gives a perfect detector on the original $A$ side. Put $W$ in
+each nonnegative degree, let $x$ act by the identity between successive
+copies and let $z$ act by $T_0,T_1$ alternately. The degree-zero
+generators have degree-one relations $v z-(T_0v)x$ and degree-two
+relations $v xz-(T_1v)x^2$ for $v$ in a basis of $W$. The filtered
+injectivity proof for $N$ works verbatim: the two leading prefixes are
+disjoint and matrix coefficients in the correction terms introduce no
+$z$. The cokernel has series $\dim(W)/(1-t)$ and surjects onto the
+specified module. This proves perfection for all such pairs.
+Determining when distinct pairs give the same profile, and accounting
+for perfect complexes whose cohomology does not have eventually
+invertible $x$, remain open here. The explicit extra profile in Section 4
+shows that the finite closed-point family alone is insufficient.
+\end{document}

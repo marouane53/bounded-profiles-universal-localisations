@@ -1,0 +1,201 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage{support-notes}
+\title{Linear-recurrence zero sets in the Ext of finite modules}
+\author{\workingauthor}\date{\coursedate}
+\begin{document}\maketitle
+\begin{abstract}
+Every scalar linear recurrence over a field can be encoded, up to an
+initial segment, by Ext between ordinary finite modules over a split
+local algebra with radical cube zero. The source is cyclic and has a
+totally acyclic rank-one complete resolution; the target has dimension
+two. A six-dimensional example over $\mathbb F_p(t)$ gives an
+irrational pair Poincar\'e series and arbitrarily long zero intervals.
+For the larger class of normal-element dg kernels there is a growth
+dichotomy, an eventual periodicity theorem in characteristic zero and
+an automaticity theorem in positive characteristic. Results below
+are proved.
+\end{abstract}
+
+\section{An elementary realisation in ordinary modules}
+\begin{thm}\label{recur}
+Given $Q\in{\rm GL}_r(k)$, $v\in k^r$, a row $\ell\in (k^r)^*$ and
+$c\in k$, set $a_j=c+\ell Q^jv$ and $b_j=\mathbf1_{a_j=0}$.
+There is a split local $k$-algebra $L_Q$ of dimension $2r+2$ with
+radical cube zero and finite right modules $M_v,N_{c,\ell}$ of
+dimensions $r+1,2$ such that for every $j\ge1$,
+\[
+             \dim_k\Ext^j_{L_Q}(M_v,N_{c,\ell})=b_{j-1}+b_j .
+                                                        \tag{1}
+\]
+The minimal free resolution of $M_v$ extends in both directions to
+a totally acyclic complex of free rank-one modules. Thus every scalar
+linear recurrence of order $d\ge1$ is represented by (1) in all
+sufficiently high degrees with $\dim L_Q\le 2d+2$.
+\end{thm}
+\begin{proof}
+Take basis $1,a,b_1,\ldots,b_r,w_1,\ldots,w_r$. The only nonzero
+radical products are
+\[
+              a b_i=w_i,\qquad b_i a=-\sum_j Q_{ji}w_j .
+\]
+This table is associative since all triple radical products vanish.
+The radical is the span of the nonunit basis, its square is
+$W=\langle w_i\rangle$, and its quotient field is $k$.
+For a column $s=(s_i)$ write $l(s)=a+\sum_i s_i b_i$. Then
+\[
+ l(s)l(s')=\sum_j(s'_j-(Qs)_j)w_j,\qquad
+ l(s)L_Q=k l(s)\oplus W.
+\]
+Left multiplication by $l(s)$ on the right regular module has rank
+$r+1$, so its kernel has dimension $r+1$. It contains
+$l(Qs)L_Q$ by the product formula, hence is exactly that ideal.
+Set $M_v=L_Q/l(v)L_Q$. Its free resolution has one copy of $L_Q$
+in each homological degree and successive maps to the left given
+by left multiplication by $l(v),l(Qv),l(Q^2v),\ldots$.
+All entries belong to the radical, so the resolution is minimal.
+Since $Q$ is invertible, it continues exactly to negative degrees.
+Also $L_Q l(s)=k l(s)\oplus W$, as the $b_i l(s)$ span $W$ by
+invertibility of $Q$. Thus the kernel of right multiplication by
+$l(s)$ is $L_Q l(Q^{-1}s)$ by the same dimension argument.
+Dualizing the doubly infinite complex into $L_Q$ yields exactly
+these right multiplications and is exact. This proves total acyclicity
+(and hence total reflexivity of its syzygies).
+
+Give $N$ basis $e,f$ with $e a=c f$, $e b_i=\ell_i f$.
+The radical kills $f$, and $W$ kills $N$, so this defines a module,
+also for the zero functional. In the Hom complex each term is $N$,
+and the differential from degree $j$ to $j+1$ sends $e$ to $a_jf$
+and $f$ to zero. Its rank is $1-b_j$ and successive differentials
+compose to zero. Subtracting the two adjacent ranks from $\dim N=2$
+gives (1). In degree zero the dimension is $1+b_0$.
+
+Realize any recurrence by its companion matrix $J$ on $k^d$, an
+initial column and a coordinate row. In the Fitting decomposition
+for $J$, its nilpotent summand contributes zero once $j\ge d$.
+Restricting to the stable image gives the required invertible $Q$
+and $c=0$. If this image is zero take $r=1$, $Q=1$, $v=0$.
+Only a finite initial segment can change. No factorisation or
+separability of the characteristic polynomial is needed.
+\end{proof}
+
+This algebra sits in the normal-element class. In the reduced bar-dual
+convention with degree-zero products giving degree-two words, the
+differentials are $dy_j=xz_j-\sum_i Q_{ji}z_i x$, with $x,z_i,y_j$
+all of degree one. Leading words $xz_j$ have no overlaps, so the
+dual projects quasi-isomorphically to $A_{1,r,Q}$ by the filtered
+word proof in \othernote{normal_localisations}{Bounded profiles and
+finite-dimensional points of universal localisations}. Reversing the
+bar word convention replaces the presentation by its opposite; the
+right-module proof above fixes the side independently. In particular
+the residue-field Poincar\'e series of $L_Q$ is
+$1/((1-u)(1-r u))$ even in the next example.
+
+\begin{cor}\label{frobenius}
+Over $k=\mathbb F_p(t)$ there is a six-dimensional ordinary algebra
+as above with a cyclic three-dimensional source and two-dimensional
+target whose pair Poincar\'e series over $\mathbb Q$ is
+\[
+         1+(1+u)\sum_{a\ge0}u^{p^a}.
+\]
+The groups have unbounded gaps and infinitely many nonzero terms.
+In particular eventual disjointness from a single generic divisor
+or vanishing through a fixed finite window cannot certify boundedness.
+\end{cor}
+\begin{proof}
+Set $Q=\operatorname{diag}(t,t+1)$, $v=(1,1)^{\rm tr}$,
+$\ell=(-1,1)$, $c=-1$. The scalar is
+$(t+1)^j-t^j-1$. Its zeros are precisely the positive powers
+$p^a$, including $p^0=1$: write $j=p^a m$ with $p\nmid m$ and,
+if $m>1$, compare the coefficient of $t^{p^a}$. Also $a_0=-1$.
+Formula (1) gives the asserted integer series and $\dim\operatorname{Hom}=1$.
+A rational series has an eventual linear recurrence. A sufficiently
+long consecutive run of zeros in such a recurrence forces the rest
+of the tail to vanish. This contradicts the next power of $p$.
+For the geometric failure see the explicit dense two-dimensional
+torus orbit in \othernote{orbit_closures}{Orbit closures on
+representation spaces}. Here each term of the source's minimal
+resolution still has rank one.
+\end{proof}
+
+\section{A growth and degree-support theorem for the whole family}
+Let $A=A_{n,r,Q}$ for $n,r\ge1$ and $Q\in{\rm GL}_r(k)$ arbitrary.
+For $P,E\in\per A$ set $Y=P^\vee$, $G=A/(x^n)$ and
+$e_i=\dim H^i\RH_A(P,E)$. The same statements hold for the corresponding
+objects in $D_{\fd}$ of its finite-dimensional dg model.
+\begin{thm}\label{dichotomy}
+If neither $H^*E$ nor $H^*Y$ has eventually bijective $x^n$, then
+there is a fixed $b$ with $e_{i+b}\ge\dim G^i$ for all $i\ge0$.
+Otherwise the $e_i$ are bounded for $i\gg0$.
+In this second case they are eventually periodic in characteristic
+zero and form a $p$-automatic sequence up to an initial segment in
+characteristic $p$. Consequently in the whole family the set of
+nonzero high Ext degrees is eventually periodic in characteristic
+zero and $p$-automatic in characteristic $p$. For $nr\ge2$ the
+first alternative has exponential growth.
+\end{thm}
+\begin{proof}
+The first estimate is the relative bound in \othernote{two_cuts}{A
+lower bound for derived tensor products}. Here $G=(k[x]/x^n)*
+k\langle z_1,\ldots,z_r\rangle$ contains $z_1^i$ for every $i$.
+If $r\ge2$ its words include the free words in two $z$'s. If $n\ge2$
+they include words in the two distinct blocks $z_1,xz_1$; for example
+$z_1z_1,xz_1$ give two independently concatenable length-two blocks.
+Thus $nr\ge2$ gives an exponential lower bound along a subsequence
+(indeed in all degrees by appending $z_1$).
+
+In the second case the normal-element test identifies the tensor with
+its localization on high cohomology. The tame side gives a fixed finite
+module on the chart, and the other side is the cone of a finite matrix.
+In degree $i$ evaluation on the twisted tuple gives a linear map
+between vector spaces of fixed finite dimensions. Each $e_i$ is the
+sum of a kernel dimension and the preceding cokernel dimension,
+up to a fixed shift and choice of cone convention; equivalently for
+a tensor cone one has the cokernel in degree $i$ and kernel in degree
+$i+1$. Hence the $e_i$ are bounded. Each rank inequality is a finite
+Boolean combination of polynomial-minor vanishings in the iterated
+tuple. In characteristic zero the return lemma in the orbit-closure
+note makes each such set eventually periodic. In characteristic $p$
+the linear action on the $nr$ generators makes each evaluated minor
+a linear recurrence by the same tensor-power argument as for a full
+determinant there. Derksen's theorem makes the zero sets $p$-automatic.
+These sets are closed under finite Boolean operations and integer
+shifts (finite automata can implement addition with carry). There are
+only finitely many rank values. This proves the assertion for the
+dimension sequence. In the first case every sufficiently high Ext
+degree is nonzero, proving the final assertion about both cases.
+\end{proof}
+
+\paragraph{Realisation with genuine two-term dg cohomology.}
+The paired zero set can also be realised without an adjacent-index
+sum at a doubled index. Start with $a_j=\ell Q^jv$ and take
+$A_{2,r+1,Q'}$, $Q'=\operatorname{diag}(Q,1)$. Lift the one-dimensional
+right chart tuple with even slot $(v,0)$ and odd slot $(0,\ldots,0,1)$
+to the perfect nonnegative tail module $M$. Let $P$ be the cone of
+$\sum_i\ell'_i z_i:A[-1]\to A$, $\ell'=(\ell,1)$.
+In successive degrees of $M$ the map on Hom from its two free terms
+is the scalar $a_j$ in degree $2j$ and $1$ in degree $2j+1$.
+The kernel--cokernel sequence gives
+$\dim H^{2j}\RH(P,M)=\dim H^{2j+1}\RH(P,M)=\mathbf1_{a_j=0}$
+for $j\ge1$. The strict two-term realization of this $A$ has graded
+cohomology independent of $Q'$. This provides prescribed recurrence
+tails inside the two-term setting of the manuscript.
+
+\paragraph{Priority and limits.}
+Parameter-dependent syzygies in the quantum exterior algebra are
+classical, including the work of Schulz and
+\href{https://arxiv.org/abs/1511.01418}{Erdmann}. Unbounded delays
+before eventual Ext vanishing occur in
+\href{https://arxiv.org/abs/math/0306001}{Jorgensen--\c Sega}.
+\href{https://arxiv.org/abs/1706.06470}{Piontkovski} realises
+linear-orbit return times in Hilbert functions, including irrational
+series in positive characteristic. The arithmetic example above is
+Lech's, discussed by \href{https://arxiv.org/abs/math/0510583}{Derksen}.
+The additional assertion here is the ordinary-module formula (1)
+with the stated algebra size, cyclic totally reflexive source and
+two-dimensional target, together with the classification consequences
+for the dg family. The arithmetic is an input. We make no priority
+claim for irrational homological series in general or for arbitrary
+sets of integers. Eventual boundedness tests infinitely many zeros
+rather than existence of a single zero in a recurrence.
+\end{document}

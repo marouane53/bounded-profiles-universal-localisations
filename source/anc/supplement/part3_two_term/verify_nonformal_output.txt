@@ -1,0 +1,22 @@
+Nonformal crossed-module localisation over Q
+dim A = 5; dim M = 4; dim R = 19 ; dim S = 20
+Associativity, bimodule laws, Peiffer identity and dga Leibniz: PASS
+lambda multiplicative on all basis pairs: PASS
+S_R = (pR)^2 and _R S = (Re)^2, all basis actions: PASS
+Strict dg map D -> End_R(T)^op, all products and differentials: PASS
+Transferred structure on D:
+dim H^-1 = 1 ; dim H^0 = 2 ; dim H^1 = 0
+Nonzero m3 entries in the chosen cohomology basis: {'(1, 1, 1)': ['1']}
+Hochschild cocycle identity: PASS
+rank(delta:C2->C3) = 0
+rank([delta | m3]) = 1
+m3 is a Hochschild coboundary: False
+Transferred structure computed independently from the presentation cone:
+dim H^-1 = 1 ; dim H^0 = 2 ; dim H^1 = 0
+Nonzero m3 entries in the chosen cohomology basis: {'(1, 1, 1)': ['1']}
+Hochschild cocycle identity: PASS
+rank(delta:C2->C3) = 0
+rank([delta | m3]) = 1
+m3 is a Hochschild coboundary: False
+Formal same-cohomology comparison: m3 = 0: PASS
+ALL CHECKS PASSED

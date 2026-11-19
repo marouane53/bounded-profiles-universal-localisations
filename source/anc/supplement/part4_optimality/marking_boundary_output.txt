@@ -1,0 +1,6 @@
+Full-profile marking boundary over Q
+dim R = 4; dim S = 1; target is the direct-factor projective Rf = fR
+End(T)^op: all basis products and zero differential: PASS
+H End(T)^op by nonzero degree = {-2: 1, 0: 2}
+Image of the degree-zero simple at vertex two: H = {-2: 1}: PASS
+ALL CHECKS PASSED

@@ -1,0 +1,720 @@
+
+\section{Marks-periodic self-injective Nakayama localisations}\label{sec:nakayama}
+
+Throughout this section, \(k\) is algebraically closed.  This hypothesis is used when invoking Marks' classification and projectivity results.  The explicit path-space and matrix calculations below are characteristic-independent, but they do not by themselves extend the classification theorem to arbitrary fields.
+
+This section uses right modules.  Equivalently, it applies the preceding left-module results to the opposite algebra.  The cyclic Nakayama algebras below are isomorphic to their opposites after reversing the cycle.
+
+Let
+\[
+ A_d=\widetilde A^d_{2d}
+ =k\widetilde Q_{2d}/\mathfrak r^d,
+ \qquad d\ge3,
+\]
+where
+\[
+ \widetilde Q_{2d}:1\xrightarrow{\alpha_1}2\longrightarrow\cdots
+ \longrightarrow2d\xrightarrow{\alpha_{2d}}1
+\]
+and \(\mathfrak r\) is the arrow ideal.  Put \(P_i=e_iA_d\).  Then
+\[
+ P_i=(S_i,S_{i+1},\ldots,S_{i+d-1})
+\]
+is uniserial of length \(d\).  The standard projective presentation of \(S_i\) is
+\[
+ P_{i+1}\xrightarrow{\alpha_i}P_i\twoheadrightarrow S_i\to0,
+\]
+and we write
+\[
+ C_i=[P_{i+1}\xrightarrow{\alpha_i}P_i]
+\]
+with degrees \(-1,0\).
+
+Under this standing hypothesis, Marks' classification gives non-semisimple homological epimorphisms indexed by periodic simple collections
+\begin{equation}\label{eq:marks-collection}
+ \Sigma_J=\{S_j,S_{j+d}\mid j\in J\},
+ \qquad
+ \varnothing\ne J\subset\mathbb Z/d\mathbb Z,
+ \qquad
+ |J|\le d-2.
+\end{equation}
+We denote the corresponding universal localisation by
+\(\lambda_J:A_d\to S_J\).
+
+\subsection{Two-sided projectivity and the family comparison}
+
+We first record a consequence of Marks' projectivity theorem which is useful beyond the subfamily computed below.
+
+\begin{theorem}[Comparison for self-injective Nakayama epimorphisms]\label{thm:all-nakayama-comparison}
+Let \(k\) be an algebraically closed field, let \(A\) be a connected finite-dimensional self-injective Nakayama \(k\)-algebra, and let
+\(\lambda:A\to S\) be a finite-dimensional homological ring epimorphism occurring in Marks' classification.  Then \(\lambda\) is a universal localisation at a finite collection of maps between finitely generated projectives, and \(S\) is projective both as a left and as a right \(A\)-module.  Consequently the bounded localisation hypotheses and perfect restriction hold.  The comparison
+\[
+ \rho_\lambda:\DeltaB(\lambda)\longrightarrow\Defsg(\lambda)
+\]
+is fully faithful and induces an equivalence
+\[
+ \Kar\DeltaB(\lambda)\xrightarrow{\sim}\Defsg(\lambda).
+\]
+\end{theorem}
+
+\begin{proof}
+A connected self-injective Nakayama algebra is representation-finite, hence belongs to the classes for which the Tachikawa condition used in \cite[Corollary~3.7]{Marks15} holds.  Marks' corollary and classification theorem \cite[Theorem~5.14]{Marks15} show that every such finite-dimensional homological epimorphism is a universal localisation, that its target is again self-injective, and that \({}_AS\) is projective.  The classification uses a finite orthogonal collection, so the localisation is finite.  The opposite map
+\[
+ A^{\op}\longrightarrow S^{\op}
+\]
+is again a finite-dimensional homological ring epimorphism from a connected self-injective Nakayama algebra.  Applying the same result to the opposite map shows that \(S_A\) is projective.  Thus derived extension and restriction preserve bounded finite-dimensional complexes, while restriction sends perfect \(S\)-complexes to perfect \(A\)-complexes.  Apply \Cref{thm:unconditional-comparison}.  Finally \(\Dsg(A)\) is idempotent complete by \cite[Corollary~2.4]{ChenRadicalSquareZero}, so its thick subcategory \(\Defsg(\lambda)\) is idempotent complete.
+\end{proof}
+
+\begin{proposition}[Projectivity of the periodic-family target]\label{prop:marks-projectivity}
+Assume that \(k\) is algebraically closed.  For every localisation \(\lambda_J\) in \eqref{eq:marks-collection}, the finite-dimensional target is projective both as a left and as a right \(A_d\)-module.  Consequently (B1)--(B3) and perfect restriction hold.
+\end{proposition}
+
+\begin{proof}
+This is the projectivity assertion in \Cref{thm:all-nakayama-comparison}, specialised to the periodic collection \(\Sigma_J\).
+\end{proof}
+
+\begin{corollary}[Marks--Nakayama comparison]\label{cor:marks-comparison}
+Assume that \(k\) is algebraically closed.  For every \(\lambda_J\) in \eqref{eq:marks-collection},
+\[
+ \rho_{\lambda_J}:\DeltaB(\lambda_J)
+ \xrightarrow{\sim}
+ \Defsg(\lambda_J)
+\]
+is an equivalence before idempotent completion.  Both categories are idempotent complete.
+\end{corollary}
+
+\begin{proof}
+The silting object \(T_J\) and its non-positive endomorphism dga
+\[
+ B_J=\tau_{\le0}\RHom_{A_d}(T_J,T_J)^{\op},
+ \qquad
+ \Gamma_J=H^0(B_J),
+\]
+are constructed in \Cref{lem:nakayama-silting,prop:nakayama-heart} below.  If the line components of \(J\) have lengths \(m_1,\ldots,m_s\), then
+\[
+ \Gamma_J\cong
+ \prod_{a=1}^s(kA_{m_a}/\rad^2)
+ \times
+ \prod_{a=1}^s(kA_{m_a}/\rad^2).
+\]
+Put \(N=2\sum_{a=1}^s m_a\).  Then
+\[
+ \rad(\Gamma_J)^2=0,
+ \qquad
+ \Gamma_J/\rad(\Gamma_J)\cong k^N.
+\]
+Corti{\~n}as' Proposition~2.5.2(i)~\cite{Cortinas11}, together with the comparison in Schlichting's Section~7.1~\cite{Schlichting06}, gives
+\[
+ K_{-1}(\Gamma_J)
+ \cong K_{-1}(k^N)
+ \cong K_{-1}(k)^{\oplus N}
+ =0;
+\]
+the middle isomorphism uses additivity, and the final vanishing uses regularity of the field and Schlichting's Example~9.5.  Since \(B_J\) is non-positive, \Cref{lem:connective-negative-k} yields
+\[
+ K_{-1}(\Kc_{\lambda_J})
+ \cong K_{-1}(\per B_J)
+ \cong K_{-1}(\Gamma_J)
+ =0.
+\]
+Thus \(\operatorname{SObs}_0(\lambda_J)=0\) by \eqref{eq:sobs-negative-k}.  Apply \Cref{thm:negative-k-vanishing,cor:negative-k-completeness}.
+\end{proof}
+
+\subsection{The complete cone-Hom table}
+
+The path-space calculation in this subsection is valid over an arbitrary field; algebraic closedness is needed only when the result is applied to the classification-dependent family above.
+
+For right projectives,
+\[
+ \Hom_{A_d}(P_a,P_b)\cong e_bA_de_a.
+\]
+This is one-dimensional precisely when the unique oriented path from \(b\) to \(a\) has length less than \(d\), and is zero otherwise.
+
+The mapping complex from \(C_i\) to \(C_j\) is
+\begin{equation}\label{eq:nakayama-mapping-complex}
+ \Hom(P_i,P_{j+1})
+ \xrightarrow{\delta^{-1}}
+ \Hom(P_{i+1},P_{j+1})\oplus\Hom(P_i,P_j)
+ \xrightarrow{\delta^0}
+ \Hom(P_{i+1},P_j),
+\end{equation}
+in degrees \(-1,0,1\).  With the middle summands ordered as displayed and with the path bases fixed by orientation,
+\begin{equation}\label{eq:nakayama-differentials}
+ \delta^{-1}(f)=(f\alpha_i,\alpha_jf),
+ \qquad
+ \delta^0(a,b)=\alpha_ja-b\alpha_i.
+\end{equation}
+These signs are the standard cochain mapping-complex signs.
+
+\begin{theorem}[Cone-Hom table]\label{thm:nakayama-hom-table}
+Let \(m=j-i\) in \(\mathbb Z/2d\mathbb Z\), represented by
+\(0\le m\le2d-1\).  The dimensions and differential matrices of
+\eqref{eq:nakayama-mapping-complex} are
+\[
+\begin{array}{cccc}
+\toprule
+ m & (\dim C^{-1},\dim C^0,\dim C^1)
+   & [\delta^{-1}]&[\delta^0]\\
+\midrule
+ 0 &(0,2,1)&0&(1\ -1)\\
+ 1 &(0,0,1)&0&0\\
+ 2\le m\le d-1 &(0,0,0)&0&0\\
+ d &(1,0,0)&0&0\\
+ d+1 &(1,2,0)&\binom{1}{1}&0\\
+ d+2\le m\le2d-1 &(1,2,1)&\binom{1}{1}&(1\ -1).\\
+\bottomrule
+\end{array}
+\]
+Their ranks and the resulting cohomology dimensions are
+\[
+\begin{array}{ccc}
+\toprule
+ m &(\operatorname{rk}\delta^{-1},\operatorname{rk}\delta^0)
+   &(\dim H^{-1},\dim H^0,\dim H^1)\\
+\midrule
+ 0 &(0,1)&(0,1,0)\\
+ 1 &(0,0)&(0,0,1)\\
+ 2\le m\le d-1 &(0,0)&(0,0,0)\\
+ d &(0,0)&(1,0,0)\\
+ d+1 &(1,0)&(0,1,0)\\
+ d+2\le m\le2d-1 &(1,1)&(0,0,0).\\
+\bottomrule
+\end{array}
+\]
+In particular,
+\[
+ H^r\RHom_{A_d}(C_i,C_j)\cong k
+\]
+exactly for
+\[
+ (j-i,r)=(0,0),(1,1),(d,-1),(d+1,0),
+\]
+and vanishes otherwise.
+\end{theorem}
+
+\begin{proof}
+All indices are cyclic modulo \(2d\).  For each of the four Hom-spaces in \eqref{eq:nakayama-mapping-complex}, existence is decided by whether the relevant oriented path has length less than \(d\).
+
+For \(m=0\), the degree-zero term consists of the two identities and the degree-one term is generated by \(\alpha_i\).  Formula \eqref{eq:nakayama-differentials} gives the row matrix \((1\ -1)\).
+
+For \(m=1\), only
+\(\Hom(P_{i+1},P_{i+1})\) in degree one survives.  For
+\(2\le m\le d-1\), every required path wraps through at least \(d\) arrows, so all terms vanish.
+
+For \(m=d\), the degree-minus-one term is generated by the unique path of length \(d-1\) from \(i+d+1\) to \(i\); composing it with either adjacent arrow gives a path of length \(d\), hence zero.  Thus it survives in degree \(-1\).
+
+For \(m=d+1\), the degree-minus-one path has length \(d-2\), and both of its one-arrow extensions survive.  With the chosen path bases they are the two basis vectors in degree zero, so \(\delta^{-1}\) is \(\binom11\).  There is no degree-one term.
+
+Finally, for \(d+2\le m\le2d-1\), all three degrees occur.  The same path-concatenation calculation gives
+\(\delta^{-1}=\binom11\) and
+\(\delta^0=(1\ -1)\).  Their composite is zero, each has rank one, and the complex is exact.  This proves the table, including all wrap-around cases and signs.
+\end{proof}
+
+\begin{remark}[Independent computation]\label{rem:nakayama-code}
+The table is characteristic-independent: the displayed nonzero matrices have rank one over every field, including characteristic two, where \((1,-1)=(1,1)\).  It was checked by an exact-matrix script over \(\mathbb Q\) for every offset for \(d=3,4,5\), and a separate script repeats the rank and cohomology checks over \(\mathbb F_2\).  Both scripts construct the path spaces, verify \(\delta^0\delta^{-1}=0\), and compare the resulting ranks with the theorem.  All checks pass, and the scripts and captured outputs accompany the paper.
+\end{remark}
+
+\subsection{Silting generators, hearts, and cancellation}
+
+Choose a cut of the cyclic order so that each connected component of \(J\) is a line segment.  Choose a height function
+\(\ell:J\to\mathbb Z\) satisfying
+\[
+ \ell(j+1)=\ell(j)+1
+\]
+inside every line component, and extend it by
+\(\ell(j+d)=\ell(j)\).  Put
+\[
+ V_J=J\cup(J+d),
+ \qquad
+ T_J=\bigoplus_{i\in V_J}C_i[\ell(i)].
+\]
+
+\begin{lemma}\label{lem:nakayama-silting}
+The object \(T_J\) is a compact silting generator of the compact localisation kernel.
+\end{lemma}
+
+\begin{proof}
+It is a direct sum of shifts of exactly the cone generators, hence thickly generates the compact kernel.  By \Cref{thm:nakayama-hom-table}, an unshifted nonzero class has degree \(0,1,-1,0\) in the four exceptional offsets.  After shifting, its degree is
+\(r+\ell(i)-\ell(j)\).  These become respectively
+\[
+ 0,\quad 1-1=0,\quad -1,\quad 0-1=-1.
+\]
+Thus there are no positive self-extensions.
+\end{proof}
+
+Let \(Q_J\) be the disjoint union of the linearly oriented line quivers on the line components of \(J\) and their \(d\)-translates.  There is an arrow \(i\to i+1\) whenever the two vertices are adjacent in one of these components.
+
+\begin{proposition}[Heart algebra]\label{prop:nakayama-heart}
+Let
+\[
+ B_J=\tau_{\le0}\RHom_{A_d}(T_J,T_J)^{\op},
+ \qquad
+ \Gamma_J=H^0(B_J).
+\]
+Then
+\[
+ \Gamma_J\cong kQ_J/\rad^2.
+\]
+If the line components of \(J\) have lengths
+\(m_1,\ldots,m_s\), then
+\[
+ \Gamma_J\cong
+ \prod_{a=1}^s(kA_{m_a}/\rad^2)
+ \times
+ \prod_{a=1}^s(kA_{m_a}/\rad^2).
+\]
+Moreover
+\[
+ \gl(kA_m/\rad^2)=m-1.
+\]
+\end{proposition}
+
+\begin{proof}
+The degree-zero classes after shifting are the identities and the classes at offset one.  If \(a_i:T_i\to T_{i+1}\) is such an adjacent morphism, then \(a_i\) lies in
+\(e_{i+1}H^0\RHom(T_J,T_J)e_i\).  After taking the opposite in the definition of \(B_J\), its class lies in
+\(e_i\Gamma_Je_{i+1}\).  Thus, with the left-to-right path convention fixed in \Cref{sec:preliminaries}, these classes give precisely the arrows \(i\to i+1\) of \(Q_J\).  A composition of two consecutive arrows would be a degree-zero class at offset two, which is absent from \Cref{thm:nakayama-hom-table}; therefore all length-two paths vanish.  No relation occurs in length zero or one.
+
+For \(\Lambda_m=k(1\to\cdots\to m)/\rad^2\), the radical of the indecomposable left projective \(\Lambda_me_r\), for \(r>1\), is the simple at \(r-1\), while the first simple is projective.  Hence
+\(\operatorname{pd}S_r=r-1\) and the global dimension is \(m-1\).
+\end{proof}
+
+\begin{lemma}[Cone-to-simple calculation]\label{lem:cone-simple}
+For right \(A_d\)-modules,
+\[
+ H^q\RHom_{A_d}(C_i,S_j)\cong k
+\]
+exactly when
+\[
+ (j-i,q)=(0,0)\quad\text{or}\quad(1,1),
+\]
+and it vanishes otherwise.
+\end{lemma}
+
+\begin{proof}
+The Hom complex has only
+\[
+ \Hom^0(C_i,S_j)=\Hom(P_i,S_j),
+ \qquad
+ \Hom^1(C_i,S_j)=\Hom(P_{i+1},S_j).
+\]
+For right projectives, \(\Hom(P_a,S_j)\cong k\) exactly when \(a=j\).  In either nonzero case the other term is zero, so no differential occurs.
+\end{proof}
+
+Define
+\[
+ N_J=\bigoplus_{i\in V_J}S_i[\ell(i)].
+\]
+The next proposition constructs a strict commuting right \(\Gamma_J\)-action on a dg representative of \(N_J\).  Its image in the derived category is characterized as follows: the idempotent at \(i\) projects to the summand \(S_i[\ell(i)]\), and the arrow \(\beta_i:i\to i+1\) acts on the right by the canonical nonzero class
+\[
+ S_i[\ell(i)]\longrightarrow S_{i+1}[\ell(i+1)]
+\]
+coming from \(\Ext^1_{A_d}(S_i,S_{i+1})\).  This prescription has radical-square-zero products in the derived category: for \(d\ge3\),
+\[
+ \Omega^2S_i\cong S_{i+d},
+\]
+so \(\Ext^2(S_i,S_{i+2})=0\).
+
+\begin{lemma}[Single-cohomology dg bimodules]\label{lem:single-cohomology-bimodule}
+Let \(B\) be a non-positive dg \(k\)-algebra, let \(\Gamma\) be an ordinary \(k\)-algebra, and let \(X\) be a left \(B\)-right \(\Gamma\) dg bimodule.  If
+\[
+ H^q(X)=0\qquad(q\ne0),
+\]
+then
+\[
+ X\simeq H^0(X)
+ \qquad\text{in }D(B\otimes_k\Gamma^{\op}),
+\]
+where \(H^0(X)\) is regarded as an \(H^0(B)\)-\(\Gamma\) bimodule and restricted along the canonical dg-algebra map \(B\to H^0(B)\).
+\end{lemma}
+
+\begin{proof}
+Put \(C=B\otimes_k\Gamma^{\op}\).  Since \(B\) is non-positive and \(\Gamma\) is concentrated in degree zero, \(C\) is non-positive.  The good truncation of the underlying dg \(C\)-module is therefore again a dg \(C\)-module and gives a zigzag
+\[
+ X\longleftarrow\tau_{\le0}X\longrightarrow H^0(X).
+\]
+The left arrow is a quasi-isomorphism because \(H^{>0}(X)=0\), and the right arrow is a quasi-isomorphism because \(H^{<0}(X)=0\).  On \(H^0(X)\), every element of \(B^{<0}\) acts trivially for degree reasons.  If \(b=dc\in B^0\) is a boundary and \(x\) is a degree-zero cycle, then
+\[
+ b[x]=[(dc)x]=[d(cx)]=0.
+\]
+Thus the induced left action factors through \(H^0(B)\), while the right \(\Gamma\)-action is retained.  Equivalently, \(X\) lies in the heart of the standard \(t\)-structure on \(D(C)\), whose objects are \(H^0(B)\)-\(\Gamma\) bimodules.  Consequently no additional higher operation remains to be specified.
+\end{proof}
+
+Put
+\[
+ F_J=T_J\Ltensor_{B_J}-:D(B_J)\longrightarrow D(A_d^{\op}),
+ \qquad
+ G_J=\RHom_{A_d}(T_J,-).
+\]
+The functor \(F_J\) is the dg Morita equivalence onto the localisation kernel generated by \(T_J\).
+
+\begin{lemma}[Morita adjunction with coefficients]\label{lem:morita-with-coefficients}
+Let \(\Gamma\) be an ordinary \(k\)-algebra.  The tensor--Hom adjunction above lifts to
+\[
+ F_J^\Gamma=T_J\Ltensor_{B_J}-:
+ D(B_J\otimes_k\Gamma^{\op})
+ \rightleftarrows
+ D((A_d\otimes_k\Gamma)^{\op}):G_J^\Gamma,
+\]
+where \(G_J^\Gamma=\RHom_{A_d}(T_J,-)\) retains the commuting right \(\Gamma\)-action.  The coefficientwise unit and counit become the ordinary unit and counit after forgetting \(\Gamma\), and the forgetful functors detect isomorphisms.  In particular, if the underlying Morita counit is an isomorphism, so is the coefficientwise counit.
+\end{lemma}
+
+\begin{proof}
+Choose the displayed bounded projective representative of \(T_J\), a cofibrant replacement on the \(B_J\)-side, and compute tensor and Hom on these models.  The usual tensor--Hom formulas preserve every commuting right \(\Gamma\)-action.  In particular, evaluation satisfies
+\[
+ \varepsilon\bigl((t\otimes f)\gamma\bigr)
+ =(f\gamma)(t)=f(t)\gamma,
+\]
+so the counit is right \(\Gamma\)-linear.  Forgetting \(\Gamma\) does not change the underlying complexes; it therefore detects quasi-isomorphisms and hence is conservative on the derived categories.
+\end{proof}
+
+\begin{proposition}[Bimodule cancellation]\label{prop:nakayama-cancellation}
+There is an isomorphism in \(D((A_d\otimes_k\Gamma_J)^{\op})\), the derived category of complexes with commuting right \(A_d\)- and \(\Gamma_J\)-actions,
+\[
+ M_J:=T_J\Ltensor_{B_J}\Gamma_J
+ \xrightarrow{\sim}
+ N_J.
+\]
+Here \(\Gamma_J\) is a left \(B_J\)-right \(\Gamma_J\) bimodule through the canonical map \(B_J\to H^0(B_J)=\Gamma_J\) on the left and the regular action on the right.
+\end{proposition}
+
+\begin{proof}
+We first show that \(N_J\) lies in the localisation kernel.  For every periodic pair \(i,i+d\) there is an exact sequence
+\begin{equation}\label{eq:nakayama-four-term}
+ 0\longrightarrow S_{i+d}
+ \longrightarrow P_{i+1}
+ \xrightarrow{\alpha_i}P_i
+ \longrightarrow S_i\longrightarrow0.
+\end{equation}
+By \Cref{prop:marks-projectivity}, extension of scalars is exact in the present right-module convention.  The map \(\alpha_i\) becomes an isomorphism after localisation.  Applying extension of scalars to \eqref{eq:nakayama-four-term} therefore kills both \(S_i\) and \(S_{i+d}\).  Hence every summand of \(N_J\) belongs to the kernel.
+
+Write
+\[
+ \mathsf T_i=C_i[\ell(i)],
+ \qquad
+ \mathsf N_i=S_i[\ell(i)].
+\]
+For each \(i\), let
+\[
+ u_i\in H^0\RHom_{A_d}(\mathsf T_i,\mathsf N_i)
+\]
+be the class of the shifted quotient \(C_i\to S_i\).  If \(i,i+1\) are adjacent in a line component, let
+\[
+ v_i\in H^0\RHom_{A_d}(\mathsf T_i,\mathsf N_{i+1})
+\]
+be the class represented before shifting by the quotient
+\(P_{i+1}\twoheadrightarrow S_{i+1}\) in degree one.  For fixed \(r\), \Cref{lem:cone-simple} shows that \(G_J(\mathsf N_r)\) has cohomology only in degree zero, with basis \(u_r\) and, when \(r-1,r\) are adjacent, \(v_{r-1}\).  Precomposition identifies this left \(\Gamma_J\)-module with \(\Gamma_Je_r\).  More precisely, \Cref{lem:single-cohomology-bimodule} with right algebra \(k\) gives an isomorphism
+\[
+ \theta_r:\Gamma_Je_r\xrightarrow{\sim}G_J(\mathsf N_r)
+ \quad\text{in }D(B_J)
+\]
+whose map on cohomology sends \(e_r\) to \(u_r\) and, when present, the incoming arrow \(\beta_{r-1}\) to \(v_{r-1}\).  Since \(\mathsf N_r\) lies in the kernel, the Morita counit is an isomorphism, and
+\[
+ \varphi_r:=\varepsilon_{\mathsf N_r}\circ F_J(\theta_r):
+ F_J(\Gamma_Je_r)\xrightarrow{\sim}\mathsf N_r
+\]
+gives
+\begin{equation}\label{eq:nakayama-column-cancellation}
+ F_J(\Gamma_Je_r)\simeq\mathsf N_r
+ \qquad\text{in }D(A_d^{\op}).
+\end{equation}
+
+The regular bimodule \(\Gamma_J\) has a strict right \(\Gamma_J\)-action, so
+\(M_J=F_J^{\Gamma_J}(\Gamma_J)\) is a strict dg
+\((A_d^{\op},\Gamma_J)\)-bimodule.  Its underlying right \(A_d\)-object decomposes by columns, and
+\(\varphi=\bigoplus_r\varphi_r\) identifies it with
+\(\bigoplus_r\mathsf N_r=N_J\).  We use this very dg bimodule, together with \(\varphi\), as the strict coefficient object denoted by \(N_J\) for the remainder of the proof; its underlying right \(A_d\)-object is the displayed direct sum.  No general strictification assertion is being invoked.
+
+To identify its action, let
+\(R_{\beta_i}:\Gamma_Je_i\to\Gamma_Je_{i+1}\) be right multiplication by \(\beta_i\), and denote by \(\nu_i:\mathsf N_i\to\mathsf N_{i+1}\) the induced map under the column identifications.  Naturality of the Morita counit and the triangle identities give a commutative square in \(D(B_J)\):
+\[
+ \begin{array}{ccc}
+ \Gamma_Je_i & \xrightarrow{R_{\beta_i}} & \Gamma_Je_{i+1}\\
+ \big\downarrow\rlap{\(\scriptstyle\theta_i\)} &&
+ \big\downarrow\rlap{\(\scriptstyle\theta_{i+1}\)}\\
+ G_J(\mathsf N_i) & \xrightarrow{G_J(\nu_i)} & G_J(\mathsf N_{i+1}).
+ \end{array}
+\]
+Since \(R_{\beta_i}(e_i)=\beta_i\), the map \(G_J(\nu_i)\) sends \(u_i\) to \(v_i\).  Thus \(\nu_i\) is precisely the prescribed nonzero Ext class.  Products of two arrow maps are strictly zero on this representative because they are induced by products in \(\rad^2\Gamma_J=0\).
+
+We now verify the full bimodule identification explicitly.  Let
+\[
+ a_i\in H^0\RHom_{A_d}(\mathsf T_i,\mathsf T_{i+1})
+\]
+be the normalized adjacent class and let
+\(\beta_i=a_i^{\op}\in e_i\Gamma_Je_{i+1}\).  The \(u_i\)'s and \(v_i\)'s form a \(k\)-basis of \(H^0G_J^{\Gamma_J}(N_J)\).  Precomposition on the left and the strict action on the right give
+\[
+ \beta_i u_{i+1}=v_i=u_i\beta_i.
+\]
+The vertex idempotents act by
+\[
+ e_ru_i=\delta_{ri}u_i,
+ \qquad
+ u_ie_r=\delta_{ir}u_i,
+\]
+and
+\[
+ e_rv_i=\delta_{ri}v_i,
+ \qquad
+ v_ie_r=\delta_{r,i+1}v_i.
+\]
+Every product of a radical generator with a \(v_i\) is zero.  On the left this is the absence of a degree-zero cone--Hom class at offset two; on the right it is the strict relation \(\rad^2\Gamma_J=0\).  Hence
+\[
+ \Phi:\Gamma_J\longrightarrow H^0G_J^{\Gamma_J}(N_J),
+ \qquad
+ e_i\longmapsto u_i,
+ \quad
+ \beta_i\longmapsto v_i,
+\]
+equivalently \(1\mapsto\sum_i u_i\), is an isomorphism of
+\(\Gamma_J\)-\(\Gamma_J\) bimodules.  By
+\Cref{lem:single-cohomology-bimodule},
+\[
+ G_J^{\Gamma_J}(N_J)\simeq H^0G_J^{\Gamma_J}(N_J)\simeq\Gamma_J
+ \qquad\text{in }D(B_J\otimes_k\Gamma_J^{\op}).
+\]
+No hidden higher operation remains because this bimodule lies in the heart of the standard \(t\)-structure.  Since \(N_J\) lies in the kernel, \Cref{lem:morita-with-coefficients} shows that the coefficientwise Morita counit is an isomorphism.  Applying \(F_J^{\Gamma_J}\) in the coefficient category gives
+\[
+ M_J=F_J^{\Gamma_J}(\Gamma_J)
+ \simeq F_J^{\Gamma_J}G_J^{\Gamma_J}(N_J)
+ \xrightarrow{\ \varepsilon_{N_J}\ }N_J,
+\]
+and every arrow in this display is right \(\Gamma_J\)-linear.
+\end{proof}
+
+\begin{theorem}[Intrinsic Nakayama defects]\label{thm:nakayama-intrinsic}
+Assume that \(k\) is algebraically closed.  For every Marks-admissible \(J\), the object \(T_J\) is \(A_d\)-bounded and
+\[
+ \DeltaB(\lambda_J)
+ \simeq
+ \Dfd(B_J)/\per(B_J).
+\]
+If \(J\ne\varnothing\), this category is nonzero.  Moreover
+\[
+ \Defsg(\lambda_J)
+ =\thick_{\Dsg(A_d)}\{S_i\mid i\in V_J\},
+\]
+and
+\[
+ \Kar\bigl(\Dfd(B_J)/\per(B_J)\bigr)
+ \xrightarrow{\sim}
+ \Defsg(\lambda_J).
+\]
+\end{theorem}
+
+\begin{proof}
+By \Cref{prop:nakayama-heart}, \(\Gamma_J\) has finite global dimension.  By \Cref{prop:nakayama-cancellation}, \(M_J\) is a bounded complex.  If \(g=\gl\Gamma_J\), every finite-dimensional left \(\Gamma_J\)-module has a projective resolution of length at most \(g\).  Tensoring such a resolution with the fixed bounded complex \(M_J\) gives common lower and upper cohomological bounds.  Hence \(M_J\) has fixed finite Tor-amplitude.  The heart-amplitude theorem gives the intrinsic formula.
+
+To prove nonvanishing, choose \(i\in V_J\).  The finite-dimensional left \(B_J\)-module \(\Gamma_Je_i\) lies in \(\Dfd(B_J)\), and
+\[
+ F_J(\Gamma_Je_i)=M_Je_i\cong S_i[\ell(i)].
+\]
+If \(\Gamma_Je_i\) were perfect over \(B_J\), its image would lie in
+\(\thick(T_J)=\Kc_{\lambda_J}\subseteq\per(A_d)\).  But \(A_d\) is self-injective and \(S_i\) is nonprojective; a finitely generated module over a self-injective algebra has finite projective dimension only when it is projective.  Thus \(S_i\notin\per(A_d)\), a contradiction.
+
+Because \(B_J\) is non-positive,
+\(\Dfd(B_J)=\thick(\Gamma_J\text{-}\modcat)\).  The finite global dimension of \(\Gamma_J\) further gives
+\(\Gamma_J\text{-}\modcat\subseteq\thick(\Gamma_J)\), and hence
+\(\Dfd(B_J)=\thick(\Gamma_J)\).  Therefore the equality describing \(\Defsg\) follows from
+\[
+ \Kb(\lambda_J)=F_J(\Dfd(B_J))
+ =\thick_{\Db(A_d)}(M_J)
+ =\thick_{\Db(A_d)}\{S_i\mid i\in V_J\},
+\]
+together with the definition of \(\Defsg\).  Finally apply
+\Cref{cor:marks-comparison}.
+\end{proof}
+
+\subsection{The complete \texorpdfstring{\(\widetilde A^3_6\)}{A63} comparison}\label{subsec:a63}
+
+Under the standing algebraically closed-field convention, let \(A=A_3=\widetilde A^3_6\) and localise at
+\(\Sigma=\{S_1,S_4\}\).  Marks identifies the target, up to Morita equivalence, with \(\widetilde A^2_4\) \cite[Example~5.13]{Marks15}.  Put
+\[
+ C_1=[P_2\xrightarrow{\alpha_1}P_1],
+ \qquad
+ C_4=[P_5\xrightarrow{\alpha_4}P_4],
+ \qquad
+ T=C_1\oplus C_4.
+\]
+
+\begin{proposition}[The kernel dga and its minimal resolutions]\label{prop:a63-dga}
+The object \(T\) is compact silting.  Its non-positive dg endomorphism algebra is the dg algebra \(B\) with
+\[
+ B^0=ke_1\oplus ke_4,
+ \qquad
+ B^{-1}=ka\oplus kb,
+ \qquad
+ d=0,
+\]
+where
+\[
+ a\in e_4Be_1,
+ \qquad
+ b\in e_1Be_4,
+\]
+and all products of two negative arrows vanish.  Thus
+\(\Gamma=H^0(B)=k\times k\).
+
+If \(L_1,L_4\) are the simple left \(B\)-modules, then
+\[
+ 0\to L_4[1]\to Be_1\to L_1\to0,
+ \qquad
+ 0\to L_1[1]\to Be_4\to L_4\to0.
+\]
+Their totalised minimal semi-free dg resolutions have underlying graded modules
+\[
+ P_1^{\#}=Be_1\oplus Be_4[2]\oplus Be_1[4]\oplus Be_4[6]\oplus\cdots,
+\]
+\[
+ P_4^{\#}=Be_4\oplus Be_1[2]\oplus Be_4[4]\oplus Be_1[6]\oplus\cdots.
+\]
+For \(P_1\), let \(x_n\) denote the generator of its \(n\)-th summand, of degree \(-2n\). The differential is
+\[
+ dx_0=0,\qquad dx_{2r+1}=a x_{2r},\qquad
+ dx_{2r+2}=b x_{2r+1}\quad(r\ge0),
+\]
+extended by the dg module rule. For \(P_4\), interchange \(e_1,e_4\) and \(a,b\). These are totalised dg modules: the shifts include both the internal degree and the resolution degree.
+In particular \(L_1,L_4\notin\per(B)\).
+\end{proposition}
+
+\begin{proof}
+The case \(d=3\) of \Cref{thm:nakayama-hom-table} gives
+\[
+ H^*\RHom(C_i,C_i)=k[0]
+ \quad(i=1,4),
+\]
+and one cross class in degree \(-1\) in each direction.  There are no positive classes, so \(T\) is silting.  Since no degree \(-2\) term exists, all products of the two negative classes vanish, and the displayed dg algebra is a strict model of the good truncation.
+
+The radical of \(Be_1\) is generated by the degree \(-1\) arrow \(a\) and is isomorphic to \(L_4[1]\); similarly
+\(\rad(Be_4)\cong L_1[1]\).  The two short exact sequences follow.  Each displayed differential has degree one and its square is zero because \(ab=ba=0\). Every radical basis element is the image of the next generator; the augmentation therefore has cohomology exactly the indicated simple in degree zero. Filtering by the summands gives a semi-free filtration. The resolutions are minimal because every differential lands in the graded radical.  Tensoring with \(\Gamma=B/(a,b)\) kills all differentials and leaves infinitely many nonzero graded Betti terms, so neither simple is perfect.
+\end{proof}
+
+\begin{proposition}[The bounded kernel]\label{prop:a63-bounded-kernel}
+The heart bimodule is
+\[
+ M_T=T\Ltensor_B\Gamma\cong S_1\oplus S_4.
+\]
+Consequently
+\[
+ \Kb(\lambda)=\thick_{\Db(A)}(S_1,S_4),
+ \qquad
+ \DeltaB(\lambda)\simeq\Dfd(B)/\per(B)\ne0.
+\]
+\end{proposition}
+
+\begin{proof}
+This is the unshifted case of \Cref{prop:nakayama-cancellation}.  Since
+\(\Gamma=k\times k\) is semisimple, \(M_T\) has Tor-amplitude concentrated in the cohomological range occupied by \(S_1\oplus S_4\), and the heart-amplitude theorem applies.  The standard heart modules generate \(\Dfd(B)\), so their images \(S_1,S_4\) generate the bounded kernel.  Nonvanishing also follows from \Cref{prop:a63-dga}.
+\end{proof}
+
+Write \(M(i,\ell)=P_i/\rad^\ell P_i\).  Since \(A\) is self-injective, the canonical functor identifies
+\[
+ \Dsg(A)\simeq\underline{\modcat}\text{-}A,
+\]
+the stable module category; see Buchweitz, Theorem~4.4.1~\cite{Buchweitz}.
+
+\begin{lemma}[Stable kernel calculation]\label{lem:a63-stable}
+Let
+\[
+ X_0=S_1,
+ \qquad
+ X_1=M(5,2),
+ \qquad
+ X_2=S_4,
+ \qquad
+ X_3=M(2,2).
+\]
+Then
+\[
+ X_{r+1}\cong X_r[1]
+ \quad(r\in\mathbb Z/4\mathbb Z),
+\]
+and
+\[
+ \dim_k\underline{\Hom}_A(X_r,X_s[q])
+ =
+ \begin{cases}
+ 1,&s+q-r\equiv0\pmod4,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+The thick subcategory generated by \(S_1,S_4\) is
+\[
+ \add(X_0,X_1,X_2,X_3),
+\]
+and every distinguished triangle in it is isomorphic to a finite direct sum of trivial triangles.
+\end{lemma}
+
+\begin{proof}
+For a nonprojective uniserial module,
+\[
+ \Omega M(i,\ell)\cong M(i+\ell,3-\ell).
+\]
+Solving \(\Omega Y=X\) gives
+\[
+ S_1[1]\cong M(5,2),
+ \quad
+ M(5,2)[1]\cong S_4,
+ \quad
+ S_4[1]\cong M(2,2),
+ \quad
+ M(2,2)[1]\cong S_1.
+\]
+
+A direct calculation with the four uniserial representations gives
+\[
+ \Hom_A(X_r,X_s)=
+ \begin{cases}
+ k,&r=s,\\
+ 0,&r\ne s.
+ \end{cases}
+\]
+The nonzero diagonal endomorphisms do not factor through projectives, so the same formula holds stably.  Replacing \(X_s\) by its \(q\)-fold suspension yields the displayed congruence formula.
+
+The additive subcategory generated by the four modules is closed under suspension.  After decomposing source and target into the four isotypic parts, every morphism is a direct sum of matrices over \(k\), one matrix for each \(X_r\), because all off-diagonal stable Hom-spaces vanish.  Independent changes of bases in source and target reduce each matrix to \(\operatorname{diag}(I_t,0)\).  Its cone is therefore a direct sum of cones of isomorphisms and zero maps, hence belongs to the same additive category.  Thus it is thick and contains \(S_1,S_4\).  Conversely it is contained in their thick closure.  The same normal form shows that every triangle is isomorphic to a finite direct sum of trivial triangles.
+\end{proof}
+
+By \Cref{cor:marks-comparison}, pre-completion essential surjectivity and idempotent completeness are already known for every Marks-admissible localisation; the next theorem identifies the first member explicitly as the split four-periodic category.
+
+\begin{theorem}[Complete first comparison]\label{thm:a63-comparison}
+Let \(k\) be algebraically closed.  For the localisation of \(\widetilde A^3_6\) at \(\{S_1,S_4\}\), whose target is Morita equivalent to \(\widetilde A^2_4\), the comparison functor is an equivalence before idempotent completion
+\[
+ \rho_\lambda:\DeltaB(\lambda)
+ \xrightarrow{\sim}
+ \Defsg(\lambda).
+\]
+Both categories are equivalent to the split four-periodic triangulated category
+\[
+ \vect_k^{\mathbb Z/4}
+\]
+of finite-dimensional \(\mathbb Z/4\)-graded vector spaces, with suspension given by cyclic degree shift.  In \(\DeltaB(\lambda)\), let
+\[
+ Y_0=S_1,
+ \qquad Y_1=S_1[1],
+ \qquad Y_2=S_4,
+ \qquad Y_3=S_4[1].
+\]
+Their images in \(\Dsg(A)\) are represented respectively by
+\[
+ S_1,
+ \quad M(5,2),
+ \quad S_4,
+ \quad M(2,2).
+\]
+The four objects \(Y_r\) are the graded simples under the displayed equivalence, and
+\[
+ \dim_k\Hom_{\DeltaB(\lambda)}(Y_r,Y_s[q])
+ =\dim_k\Hom_{\Defsg(\lambda)}(\rho Y_r,\rho Y_s[q])
+ =\begin{cases}
+ 1,&s+q-r\equiv0\pmod4,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+\end{theorem}
+
+\begin{proof}
+By \Cref{prop:marks-projectivity} and
+\Cref{thm:unconditional-comparison}, \(\rho_\lambda\) is fully faithful.  By
+\Cref{prop:a63-bounded-kernel}, the actual singularity kernel is the thick stable subcategory generated by \(S_1,S_4\).  By
+\Cref{lem:a63-stable}, every object of this target is a finite direct sum of the four suspension-orbit objects, all of which lie in the triangulated image of \(\DeltaB(\lambda)\).  Hence the comparison is essentially surjective before idempotent completion.  The same lemma gives the morphism formula and identifies the split triangulated structure with \(\vect_k^{\mathbb Z/4}\).
+\end{proof}
+

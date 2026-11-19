@@ -1,0 +1,17 @@
+Exact connective-realisation certificates over Q
+thin control: H = {-1: 1, 0: 1}; fibre H = {0: 1}
+sphere degree -2: H = {-2: 1, 0: 1}; fibre H = {-1: 1}
+exterior two: H = {-2: 1, -1: 2, 0: 1}; fibre H = {-1: 1, 0: 2}
+nonformal tensor: H = {-2: 1, -1: 3, 0: 2}; fibre H = {-1: 1, 0: 6}
+Nonformal tensor: <t,t,t> represented by w; indeterminacy dimension 1; 0 excluded: PASS
+sphere: degree -2 graded-symmetric Frobenius pairing rank 2: PASS
+exterior: degree -2 graded-symmetric Frobenius pairing rank 4: PASS
+formal two-term: H Theta(Rp) = {0: 1, 1: 1} = H(D[-1]); H Theta(Re) = {}: PASS
+nonformal two-term: H Theta(Rp) = {0: 1, 1: 2} = H(D[-1]); H Theta(Re) = {}: PASS
+Sphere Schur ring: dim R = 6; dim eRe = 3; End(T)^op H by every degree = {-2: 1, -1: 0, 0: 1, 1: 0}
+Sphere strict dg map and idempotent-component cohomology = {0: {-2: 1, 0: 1}, 1: {}, 2: {}}: PASS
+Exterior Schur ring: dim R = 16; dim hRh = 9; End(T)^op H by every degree = {-2: 1, -1: 2, 0: 1, 1: 0, 2: 0}
+Exterior strict dg map, uv = -vu, and component cohomology = {0: {}, 1: {}, 2: {}, 3: {-2: 1, -1: 2, 0: 1}}: PASS
+Independent rank reductions over F_2, F_3, F_101: PASS
+All finite complexes checked in their ENTIRE degree ranges; no truncated Tor test used.
+ALL CHECKS PASSED

@@ -1,0 +1,153 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage{support-notes}
+\title{A rank criterion for a cubic higher product to change bounded profiles}
+\author{\workingauthor}\date{\coursedate}
+\begin{document}\maketitle
+\begin{abstract}
+In a matrix family of finite-dimensional commutative local two-term dg
+algebras with constant graded cohomology, the formal two-element profile
+poset persists on every deficient-rank stratum. Precisely the square
+invertible matrices give the full noncommutative localisation poset.
+A general obstruction for radical-square-zero cohomology explains why
+many nonzero ternary products still yield only two profiles. These
+statements are proved over every field.
+\end{abstract}
+
+\section{Two obstructions read directly from the ternary operation}
+Let a proper augmented nonpositive dg algebra $D$ over $k$ have
+cohomology $k\oplus V\oplus W[1]$ with $V,W$ in degree zero before
+shifting, finite dimensional, and zero products between all reduced
+elements. A strictly unital augmented minimal model has only
+$m_3:V^{\otimes3}\to W$ besides ordinary multiplication, by degrees.
+The normalized Hochschild coboundaries into $W$ vanish on reduced
+degree-zero triples. Write $X=V^*$ and
+$\Phi:W^*\to X^{\otimes3}$ for the dual tensor, using a consistent
+word convention. The reduced bar dual is
+\[
+ K=T(X\oplus W^*),\quad |X|=1,\quad |W^*|=2,\qquad
+ dX=0,\quad d\eta=\Phi(\eta).
+\]
+Changing the overall sign on degree-two generators or reversing words
+only changes conventions. The augmentation generates $D_{\fd}(D)$ by
+truncation and finite length, so this category identifies with
+$\per K$ by the functor $\RH_D(k,-)$.
+
+\begin{prop}\label{obstruction}
+If $\Phi$ has a nonzero kernel or if its image is contained in
+$X_0^{\otimes3}$ for a proper subspace $X_0\subset X$, the profile
+poset has exactly two elements. For a nonzero reduced cohomology
+algebra the formal comparison likewise has exactly two.
+\end{prop}
+\begin{proof}
+In the first case choose a basis containing a kernel vector $v$ in
+degree two. No generator differential contains $v$ and $dv=0$. In
+the second case choose $v$ in a complement to $X_0$ in degree one.
+In either case $K=C*T(kv)$ as a dg algebra, so the outer derivation
+killing $C$ and differentiating $v$ is a chain map. The augmentation
+of $C$ retracts onto $T(kv)$, so $H^*K$ is infinite. By the two-cut
+theorem $\RH_K(P,E)\simeq E\ten_KP^\vee$ is finite exactly when
+$H^*E$ or $H^*P^\vee$ is finite. Accordingly every detector has the full
+profile or $\UU_K$, with endpoints realized by $0,K$. The free module
+$K$ as source distinguishes them. For a zero differential on the whole
+tensor algebra any reduced generator works.
+\end{proof}
+
+The smallest possible $X_0$ is obtained by taking the span of all
+one-slot outputs of contractions of the tensors in $\operatorname{im}\Phi$
+against covectors in their other two slots. Indeed membership in
+$X_0\otimes X\otimes X$ and its two permutations is equivalent, by
+a basis adapted to $X_0$, to membership in $X_0^{\otimes3}$.
+This is a field-linear test. The converse of the proposition is false:
+$dy=x^3$ on one generator of each degree has injective tensor and
+uses the whole space. The earlier proof for Example 3.11 gives exactly
+two profiles in that case.
+
+\section{A flat matrix family}
+Fix $r,m\ge1$ and a matrix $C=(c_{ji})\in M_{m\times r}(k)$. Define
+$D(C)$ with degree-zero basis $1,a,b_1,\ldots,b_r,h$ and degree-minus-one
+basis $e,w_1,\ldots,w_m$. Together with the unit the entire nonzero
+multiplication and differential table is
+\[
+ a^2=h,\qquad b_i e=e b_i=\sum_j c_{ji}w_j,\qquad d e=h .
+\]
+Triple radical products vanish by construction; $h$ annihilates the
+radical, giving the Leibniz identity also on two negative factors.
+Thus this is a graded-commutative dg algebra even in characteristic two.
+Cohomology consists of the classes of $1,a,b_i,w_j$ with all reduced
+products zero. The underlying complex splits off $k e\xrightarrow{\sim}kh$.
+The same formulas over $k[c_{ji}]$ give a bounded complex of finite
+free modules, with free constant graded cohomology under arbitrary base
+change. Applying the contraction $h\mapsto e$ gives
+$m_3(b_i,a,a)=\sum_j c_{ji}w_j$ and
+$m_3(a,a,b_i)=-\sum_j c_{ji}w_j$ in the convention of the baseline.
+Hence $C\ne0$ gives a nonzero Hochschild class in every characteristic.
+
+\begin{thm}\label{rank}
+For $D(C)$, the profile poset differs from that of formal cohomology
+if and only if $r=m=\rank C$. In the other cases it has exactly two
+elements. In the exceptional case the entire poset is the two-row
+classification of \othernote{normal_localisations}{Bounded profiles and
+finite-dimensional points of universal localisations}, with $g=2r$ and
+the simultaneous exchange of the two generators in each pair.
+In particular it contains an infinite antichain over every field.
+\end{thm}
+\begin{proof}
+The cubic differential is $d y_j=[x^2,\sum_i c_{ji} z_i]$ on the dual
+generators. Row and column basis changes put $C$ in rank normal form
+over $k$. If its rank $d<m$, there is a free degree-two cycle $y_j$.
+If $d<r$, there is a free degree-one cycle $z_i$. Proposition
+\ref{obstruction} applies. When $r=m=d$, the filtered bar computation
+in the normal-localisation note, with $n=2,Q=I$, gives the Koszul dual
+$A_{2,r,I}$. Explicitly the leading words $xxz_i$ have no proper
+overlaps, and in each fixed expanded word their replacements resolve
+independent contractible pairs. This gives the quasi-isomorphism to
+the quotient by the commutators. All hypotheses of the localisation
+theorem are proved there, including perfect lifts on both sides.
+There are infinitely many distinct simple orbits: let all free
+generators act by the class of $T$ on $k[T]/p$ for a monic irreducible
+$p$. These modules are simple, fixed by the exchange, and distinct
+for distinct $p$. There are infinitely many choices even over finite
+fields. Singleton supports are pairwise incomparable.
+\end{proof}
+
+In particular full rank of a rectangular matrix is insufficient. Nonzero
+higher products of arbitrarily large rank occur with just two profiles.
+In the square family the locus with an infinite antichain is exactly
+the principal open $\det C\ne0$. This is a proved statement for this
+family, not a universal semicontinuity principle.
+
+\paragraph{Quantitative check and ordinary realisation.}
+The normal words after rank reduction avoid $xxz_i$ for $1\le i\le d$,
+with $r+1$ letters of degree one and $m-d$ additional degree-two letters.
+The forbidden patterns have no overlaps. Appending a degree-one or
+degree-two letter gives the recurrence with series
+\[
+ \sum_{n\ge0}\dim\Ext_{D(C)}^n(k,k)t^n
+ =\big[1-(r+1)t-(m-d)t^2+d t^3\big]^{-1}.
+\]
+For the subtraction, any admissible prefix followed by $xxz_i$ has no
+other occurrence straddling that suffix, so the subtracted copies
+are disjoint. The filtered argument remains valid with the free
+degree-two letters: one may take the free product of the active
+quasi-isomorphism with the free cycles. Its alternating augmentation-ideal
+tensor decomposition preserves quasi-isomorphisms over $k$.
+
+All these kernels are strictly two-term and proper. The manuscript's
+Theorem 3.7 gives full-profile ordinary one-map universal localisations
+of dimensions $3(r+3)+(m+1)\to4(r+3)$. Its Corollary 3.10 realises every
+profile above modulo perfects as a marked bounded defect, with ambient
+rings allowed to vary with the detector. At $r=m=1$ this recovers the
+six-dimensional result. For $r=m>1$ it separates the entire determinantal
+divisor, including nonformal fibres, from its complement.
+
+\paragraph{Status and comparison.}
+The passage from relation coefficients to higher products has precedents
+in \href{https://arxiv.org/abs/math/0606144}{Lu--Palmieri--Wu--Zhang};
+the nonoverlap computation uses the mechanism of
+\href{https://doi.org/10.1016/0021-8693(82)90104-1}{Anick}.
+The conclusion here concerns eventual Hom for all finite dg modules
+and the resulting marked defects. It does not classify arbitrary cubic
+tensors of full variable span. The companion script reports its finite
+ranges and compares independent strict and minimal bar calculations.
+\end{document}

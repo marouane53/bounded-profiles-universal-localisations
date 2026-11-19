@@ -1,0 +1,182 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage{support-notes}
+\title{A lower bound for derived tensor products from a double derivation}
+\author{\workingauthor}\date{\coursedate}
+\begin{document}\maketitle
+\begin{abstract}
+A cycle admitting a noncommutative partial derivative recovers three
+independent homology classes from their product with two inserted copies
+of that cycle. For perfect modules this gives a lower bound in each
+degree, including after passage to a dg algebra quotient. In particular
+over a positive free product every tensor of perfect modules with two
+infinite-cohomology factors contains, degree by degree, a shifted copy of
+the algebra's cohomology. All theorem statements below are proved.
+\end{abstract}
+
+\section{The estimate}
+Fix a field $k$, cochain conventions and a morphism $\pi:A\to G$ of unital
+dg algebras concentrated in nonnegative degrees. Assume their graded pieces
+are finite dimensional. A finite cell module has underlying graded module
+a finite sum of shifted copies of the algebra, with a semi-free
+filtration. Perfect means a retract in the derived category of such a
+module. Let $E$ be perfect right and $Y$ perfect left over $A$.
+Put $\bar E=E\ten_A G$ and $\bar Y=G\ten_A Y$. For a complex $M$ let
+$H^iM$ be its $i$th cohomology. Write
+\[
+ e_p=\rank(H^pE\to H^p\bar E),\quad
+ g_m=\rank(H^m A\to H^m G),\quad
+ y_q=\rank(H^qY\to H^q\bar Y).
+\]
+The outer maps are induced by $\pi$ on underlying complexes.
+Take a one-dimensional complex $L=k\ell$ with $|\ell|=j>0$ and zero
+differential. Suppose there is a degree-zero chain map
+$\delta:G\to G\otimes L\otimes G$ with
+\[
+ \delta(bc)=\delta(b)c+b\delta(c),\qquad
+ \delta(\pi v)=1\otimes\ell\otimes1
+\]
+for a closed $v\in A^j$. The target has the ordinary outer dg bimodule
+structure. Placing the degree in the middle slot avoids sign ambiguities
+in the Leibniz rule. A basic instance is a free product $G=C*T(kv)$,
+with $dv=0$, using the derivation that kills $C$.
+
+\begin{thm}\label{cut}
+There are bounds $p_0(E),q_0(Y)$ such that, for $p\ge p_0$,
+$q\ge q_0$ and every $m\ge0$,
+\[
+          \dim_k H^{p+j+m+j+q}(E\ten_A Y)\ \ge\ e_p g_m y_q .
+\]
+More precisely the kernel of insertion $[e]\otimes[a]\otimes[y]
+\mapsto[e v a v\otimes y]$ in these degrees is contained in the kernel
+of the tensor product of the three reduction maps. The one-insertion
+map $[e]\otimes[y]\mapsto[e v\otimes y]$ gives the analogous bound
+$e_p y_q$ in degree $p+j+q$.
+\end{thm}
+
+\begin{proof}
+First take finite cell representatives with graded bases $e_i,f_b$.
+Their ordinary tensor computes the derived one; its vectors have
+coordinates $e_i a f_b$. Define a $k$-linear two-cut map on this tensor
+by applying $\delta^{(2)}=(1\otimes1\otimes\delta)\delta$ to $\pi(a)$
+and placing the outer factors in $\bar E$ and $\bar Y$ using their
+indicated basis vectors. Project the three non-marker factors to the
+cochain quotients
+\[
+ \tau^{\ge p}\bar E\ \otimes L\otimes\
+ \tau^{\ge m}G\ \otimes L\otimes\ \tau^{\ge q}\bar Y.           \tag{1}
+\]
+These are truncations of $k$-complexes: degree $p$ in the first is
+$\bar E^p/d\bar E^{p-1}$ and higher degrees are untouched. No module
+action is needed on a truncation.
+
+This projected map commutes with differentials. For clarity, before
+projection the two-cut product rule is the sum of cuts both in the
+first factor, a cut in each factor, and both cuts in the second factor;
+in the middle term one multiplies the two adjacent unmarked slots.
+It follows by applying the degree-zero derivation twice. The internal
+differential on $a$ commutes with both cuts. In a term
+$d e_i=\sum_h e_h c_{hi}$ the no-cut contribution in $c_{hi}$ is precisely
+the differential of the outer basis on the target. Any contribution
+cutting $c_{hi}$ has left degree at most
+$|e_h|+|c_{hi}|-j=|e_i|+1-j$ because all the remaining algebra degrees
+are nonnegative. Choose $p$ strictly greater than this for every $i$.
+Similarly a cut in a coefficient of $df_b$ has right degree at most
+$|f_b|+1-j<q$. This accounts for every extra contribution. The signs of
+the no-cut terms agree because the displayed maps on coefficients have
+total degree zero and retain the degrees of both markers; for example the
+sign of the right-basis differential is $(-1)^{|e_i|+|a|}$ on either
+side. The derivations are chain maps, so these observations establish the
+claim even with nonzero internal differential on $G$.
+
+Apply this chain map to a product of cycles $e v a v y$ with outer
+degrees $p,q$ and middle degree $m$. A cut inside $e$ leaves degree
+at most $p-j$ on the left, and a cut inside $y$ leaves degree at most
+$q-j$ on the right. Of the remaining terms only the cuts at the two
+specified $v$'s can survive (1). A first cut later than the first marker
+or a last cut earlier than the last marker consumes strictly positive
+degree from the middle slot; the term is killed by one of the three
+truncations. More explicitly, the sum of the three output degrees is
+$p+m+q$, hence their three lower bounds must all be equalities.
+Cutting a marker twice gives zero because its derivative has scalar
+outer factors. The surviving tensor is precisely
+$\bar e\otimes\ell\otimes\pi(a)\otimes\ell\otimes\bar y$ after projection.
+The Künneth isomorphism over $k$ and preservation of cohomology at each
+cutoff identify its rank as $e_p g_m y_q$. Insertion itself is a chain
+map from the tensor of complexes with the two degree-$j$ markers,
+because $dv=0$. The same argument with a single derivative and the two
+outer truncations proves the one-cut assertion.
+
+For retracts choose cofibrant representatives and split inclusions in
+the derived category into finite cell modules. Derived reduction and
+tensor preserve those retracts. Insertion is natural in the outer
+module variables: on cofibrant models this is ordinary right and left
+linearity, and passing to homology respects homotopies. Therefore a
+relation between insertions for retracts maps to one between insertions
+in the finite cell representatives. Their reductions on homology are
+split injections on the retracts. The finite cell bounds suffice.
+\end{proof}
+
+\begin{cor}\label{rigid}
+If $\pi$ is the identity and $H^*G$ is infinite, then
+$H^*(E\ten_G Y)$ is finite dimensional if and only if $H^*E$ or $H^*Y$
+is finite dimensional. If both are infinite there is an integer $b$ such
+that $\dim H^{m+b}(E\ten_G Y)\ge\dim H^mG$ for every $m\ge0$.
+\end{cor}
+\begin{proof}
+Choose nonzero $H^p E,H^qY$ above the bounds. Local finiteness and a
+lower degree bound ensure such degrees exist. Apply Theorem~\ref{cut}.
+For the converse, tensor the finite-cohomology factor with successive
+cells, shifts and summands of the perfect factor on the other side.
+\end{proof}
+
+In particular the exponential growth rate $\limsup_d(\dim H^d)^{1/d}$
+of such an unbounded tensor equals that of $G$ when the latter exceeds
+one: the upper bound follows by finite triangles from finitely many
+shifts of $G$. Substituting $Y=P^\vee=\RH_G(P,G)$ gives the Ext version.
+It makes every profile either the full category or $\UU_G$, and both
+occur. Noncommutativity, nonsplit residue extensions and characteristic
+two require no alteration.
+
+\paragraph{Proved failure without a derivative.}
+In $G=k[x,z]$ with $|x|=|z|=2$ and zero differential, $G/(x)$ and
+$G/(z)$ are perfect and both have infinite cohomology, while their
+derived tensor has only $k$ in degree zero. The candidate derivative
+$\delta(z)=1\otimes\ell\otimes1,\delta(x)=0$ violates $xz=zx$.
+A derivation to ordinary commutative differentials cannot be substituted
+in the proof; the two independent outer slots are used.
+
+\paragraph{Proved relative version for a normal element.}
+Suppose $A$ has zero differential, $h$ is a positive homogeneous regular
+normal element, $G=A/(h)$, and the above derivative and lift exist.
+If right multiplication by $h$ on $H^*E$ and left multiplication by $h$
+on $H^*Y$ both fail to be eventually bijective, the lower bound of
+Corollary~\ref{rigid} holds with middle $H^mG$. Indeed the respective
+images in reduced cohomology are the cokernels of multiplication by
+$h$ in each degree. For the right factor use the short exact sequence
+of left modules $0\to Ah\to A\to G\to0$ and the free left generator
+$h$ of the ideal. For the left factor use the right generator of $hA$.
+These arguments concern underlying complexes and include the usual shift
+sign in the left-handed case. In particular they do not require $h$
+to be in the graded centre. Eventual surjectivity implies eventual
+bijectivity on locally finite cohomology: along each residue class modulo
+$|h|$ the dimensions eventually decrease weakly, hence stabilize.
+Thus arbitrarily high $e_p,y_q$ are positive, and $H(A)\to H(G)$ is onto.
+This argument avoids replacing an odd central element by an untwisted
+dg transformation.
+
+\paragraph{Literature and status.}
+Outer double derivations are standard in
+\href{https://arxiv.org/abs/math/0410528}{Van den Bergh}.
+Word resolutions over fibre products occur in
+\href{https://arxiv.org/abs/0704.3631}{Moore}. Rigidity of eventual
+Tor over commutative dg trivial extensions and over ordinary fibre
+products is proved by
+\href{https://arxiv.org/abs/1508.00748}{Avramov--Iyengar--Nasseh--Sather-Wagstaff}
+and \href{https://arxiv.org/abs/1603.05711}{Nasseh--Sather-Wagstaff}.
+The estimate here is for a map of positive associative dg algebras,
+perfect outer factors and the ranks of three specified homology maps;
+it identifies an explicit product that survives. These distinctions do
+not settle priority. The companion script tests the chain map with
+signed cell differentials, truncation and a nontrivial quotient.
+\end{document}

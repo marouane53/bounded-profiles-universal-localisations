@@ -1,0 +1,10 @@
+Group block obstruction: k[C3 x C2], characteristic 3
+e_plus=(1+h)/2, e_minus=(1-h)/2: central orthogonal idempotents: PASS
+plus block: basis e,t e,t^2 e; dimension 3; ranks(t,t^2)=(2, 1): PASS
+minus block: basis e,t e,t^2 e; dimension 3; ranks(t,t^2)=(2, 1): PASS
+Cross-block maps and all cross-block Ext vanish: certified by orthogonal blocks
+Each simple has an exact 2-periodic resolution, with maps t and t^2.
+Applying Hom to its own simple kills both differentials: self-Ext dimension 1 in every degree.
+Both simples have the same full projective cohomological support (one point).
+Thus disjoint-support iff eventual pair-Ext vanishing FAILS for arbitrary finite groups.
+ALL CHECKS PASSED

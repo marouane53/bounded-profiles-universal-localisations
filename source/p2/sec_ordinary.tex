@@ -1,0 +1,72 @@
+\section{Ordinary kernels: normal form and two-sidedness}\label{sec:ordinary}
+
+Throughout this section \(C\) is a finite-dimensional \(k\)-algebra, viewed as a dg algebra concentrated in degree \(0\); then \(\Dfd(C)=\Db(C\text{-}\modcat)\) and \(\Dsg(C)\) is the usual singularity category.  For a finite left \(C\)-module \(N\) put
+\begin{equation}\label{eq:UN}
+ \cU_N=\{Y\in\Db(C\text{-}\modcat):\Ext^{\gg0}_C(Y,N)=0\},
+\end{equation}
+where the bound may depend on \(Y\).  By \Cref{lem:module-detector} this agrees with \Cref{def:profile} for \(E=N\).
+
+\subsection{One-point extensions}
+For a finite right \(C\)-module \(M\), the \emph{one-point extension} of Ringel \cite{Ringel84} is
+\[
+ C[M]=\begin{pmatrix}k&M\\0&C\end{pmatrix},\qquad p=e_{11},\qquad e=e_{22}.
+\]
+A left \(C[M]\)-module is a triple \((V,Y,\varphi)\) with \(V\) a \(k\)-space, \(Y\) a left \(C\)-module and \(\varphi:M\otimes_CY\to V\); a right module is a triple \((V,Y',\psi)\) with \(Y'\) a right \(C\)-module and \(\psi:V\otimes_kM\to Y'\).  The corner functor \(j^*=e(-)\) has derived left adjoint \(j_!=C[M]e\Ltensor_C-\) and right adjoint \(j_*=\RHom_C(eC[M],-)\); explicitly
+\begin{equation}\label{eq:ope-functors}
+ j_!Y=(M\Ltensor_CY,\ Y,\ \id),\qquad j_*Y=(0,Y,0).
+\end{equation}
+
+\begin{lemma}\label{lem:ope-stratifying}
+The ideal \(C[M]eC[M]\) is stratifying.  The quotient map \(\lambda_M:C[M]\to k\) is a stably flat universal localisation at \(0\to C[M]e\), its left kernel is \(j_!(D(C))\) with compact part \(\thick(C[M]e)\simeq\per C\), and \(D(k)\to D(C[M])\to D(C)\) is a stratifying recollement.
+\end{lemma}
+
+\begin{proof}
+As a left \(C\)-module \(eC[M]=(0,C)\cong C\) is free, so multiplication \(C[M]e\otimes_CeC[M]\to C[M]eC[M]\) is an isomorphism onto the sum of the two right-hand corners and the higher Tor terms vanish.  The remaining assertions are \Cref{thm:stratifying-delta}.
+\end{proof}
+
+\begin{theorem}[Normal form for ordinary kernels]\label{thm:normal-form}
+Fix a finite-dimensional algebra \(C\).  Among coproduct-preserving, compact-preserving dg Morita embeddings \(F:D(C)\hookrightarrow D(R)\) with \(R\) finite-dimensional, in particular among the kernels of stably flat universal localisations of finite-dimensional algebras at finite \(\Sigma\) whose kernel dg algebra is \(C\), the bounded profiles are exactly the subcategories \(\cU_N\), \(N\in C\text{-}\modcat\).  Every \(\cU_N\) is the profile of the localisation \(\lambda_{D_kN}:C[D_kN]\to k\), whose compact kernel is marked by \(\per C\), and then
+\begin{equation}\label{eq:normal-form-defect}
+ \DeltaB(\lambda_{D_kN})\simeq\cU_N/\per C .
+\end{equation}
+Two modules give the same profile exactly when their far-away left orthogonals \eqref{eq:UN} agree.
+\end{theorem}
+
+\begin{proof}
+Let \(T=F(C)\).  Compact preservation makes \(T\) a bounded complex of finite-dimensional projective \(R\)-modules, so \Cref{cor:pair-invariant} applies to the embedding: the profile is \(\cU_E\) with \(E=D_kT\in\Db(C\text{-}\modcat)\).  \Cref{lem:module-detector} over \(C\) produces a module \(N\) with \(\cU_E=\cU_N\).
+
+Conversely let \(N\) be a finite left \(C\)-module and \(M=D_kN\).  By \Cref{lem:ope-stratifying} and \eqref{eq:ope-functors}, \(Y\in D(C)\) has bounded realisation \(j_!Y\) exactly when both \(Y\) and \(M\Ltensor_CY\) have finite-dimensional total cohomology.  Tensor duality gives
+\[
+ D_k(M\Ltensor_CY)\simeq\RHom_C(Y,D_kM)\simeq\RHom_C(Y,N),
+\]
+so the profile is \(\cU_N\), and \Cref{thm:stratifying-delta} gives \eqref{eq:normal-form-defect}.  The final assertion is a restatement.
+\end{proof}
+
+\begin{remark}
+The theorem is a normal form for the profile, not for the embedding, the recollement, or the ambient algebra; it does not identify different modules with the same orthogonal.  No Gorenstein, commutativity, or finite-global-dimension hypothesis on \(C\) is used.  The passage from a complex detector to a module uses injective truncation; the projective direction would not give a left-orthogonality statement.  In the coordinates of \Cref{thm:detector} the canonical detector of \(\lambda_{D_kN}\) is \(D_k(C[M]e)\cong N\oplus D_kC\); the summand \(D_kC\) imposes no condition on bounded \(Y\) since \(\RHom_C(Y,D_kC)=D_kY\), which is why the reduced detector \(N\) suffices.
+\end{remark}
+
+\subsection{Two-sidedness}
+
+\begin{theorem}[Two-sidedness of one-point extensions]\label{thm:two-sided}
+Let \(N\) be a finite left \(C\)-module, \(M=D_kN\), \(A_N=C[M]\) and \(\lambda_N:A_N\to k\).  Then:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item on the left-module side, \(\Prof=\cU_N\) and \(\DeltaB^{\mathrm{left}}(\lambda_N)\simeq\cU_N/\per C\);
+\item on the right-module side, the profile is all of \(\Db(C^{\op}\text{-}\modcat)\) and \(\DeltaB^{\mathrm{right}}(\lambda_N)\simeq\Dsg(C^{\op})\);
+\item \(\cU_N=\Db(C\text{-}\modcat)\iff\pd_{C^{\op}}M<\infty\iff\pd_{A_N^{\op}}k<\infty\), that is, exactly when the bounded-extension hypothesis \textup{(B2)} of \Cref{sec:preliminaries} holds for \(\lambda_N\) on the left; the corresponding right-module hypothesis always holds, since \({}_{A_N}k=A_Np\) is projective.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) is \Cref{thm:normal-form}.  For (ii), the right kernel functor is \(Y'\mapsto Y'\Ltensor_CeA_N=(0,Y')\), underived because \({}_C(eA_N)\) is free; it preserves bounded finite-dimensional complexes and sends \(C_C\) to the projective right module \(eA_N\).  The right-module version of \Cref{thm:stratifying-delta} gives (ii).
+
+For (iii), if \(\pd(M_C)<\infty\) then \(M\Ltensor_C-\) preserves bounded finite-dimensional complexes, so \(\cU_N\) is everything.  Conversely, if the profile is full then \(M\Ltensor_C(C/\rad C)\) is bounded; choose a minimal projective resolution \(P_\bullet\to M\) by finite right \(C\)-modules.  Its differentials have entries in the radical, so tensoring with \(C/\rad C\) kills them and \(\Tor_n^C(M,C/\rad C)=P_n/P_n\rad C\).  Eventual vanishing and Nakayama's lemma force \(P_n=0\) for \(n\gg0\).  For the second equivalence use the exact sequence of right \(A_N\)-modules
+\[
+ 0\longrightarrow(0,M)\longrightarrow pA_N\longrightarrow k\longrightarrow0 .
+\]
+The minimal right \(C\)-projective resolution of \(M\) inflates termwise to the minimal right \(A_N\)-projective resolution of \((0,M)\): its terms are sums of the old-corner projective \(eA_N\), its differentials are unchanged, and no new-corner projective can occur because the top of \((0,M)\) has no \(p\)-constituent.  Hence \(\pd_{A_N^{\op}}(0,M)=\pd_{C^{\op}}M\), and the sequence gives the equivalence with \(\pd_{A_N^{\op}}k<\infty\).
+\end{proof}
+
+\begin{example}[The AHKLY algebra]\label{ex:ahkly}
+For \(C=E=k[\eps]/(\eps^2)\) and \(N=k\), the algebra \(A_N=E[k]\) is the AHKLY algebra \(kQ/(\beta^2,\alpha\beta)\) of \Cref{sec:preliminaries}; it appears as a triangular algebra in Chen's Example~4.3(2) \cite{ChenSchur09}.  Over the self-injective local algebra \(E\), \(\Ext^{\gg0}(Y,k)=0\) forces \(Y\) to have finite projective dimension, so \(\cU_k=\per E\): the left defect of the corner quotient \(E[k]\to k\) is zero, while its right defect is \(\Dsg(E)\simeq\vect_k\).  In the recollement of \Cref{lem:ope-stratifying}, the left-module kernel of the corner quotient is \(\ker(i^*)=j_!(D(E))\).  The arrow-inversion map \(E[k]\to M_2(k)\) of \Cref{thm:ahkly-left} is a different localisation of the same algebra: since \(M_2(k)\cong(pE[k])^{\oplus2}\) as a right module, its left-module kernel is \(\{X:pX=0\}=\ker(i^!)=j_*(D(E))\), whose profile is full by \eqref{eq:ope-functors}, in agreement with the nonzero defect found there.  The zero defect of \Cref{thm:dual-numbers} is the same phenomenon as (i) here, seen on the opposite module side of that arrow inversion.  Thus the two boundaries of \Cref{sec:periodic-ladder} are the two recollement embeddings \(j_!\) and \(j_*\) of \(D(E)\) into \(D(E[k])\).
+\end{example}

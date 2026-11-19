@@ -1,0 +1,195 @@
+\section{Two-term dg kernels}\label{sec:realisation}
+
+\Cref{thm:ambient} will show that profiles can be cut by detectors: once a kernel dg algebra \(B\) has one realisation with full profile and projective localisation, every far-away orthogonal \(\cU_E\) is realised.  The substantive question is which dg algebras admit such a realisation at all.  This section gives an explicit realisation for every proper dg algebra with cohomology in degrees \(-1,0\), and proves that these are exactly the proper connective dg algebras admitting a standard t-exact marked kernel realisation.  The converse holds for ordinary homological ring epimorphisms without target projectivity.  Full profile alone has a wider scope, as \Cref{ex:marking-boundary} shows.
+
+\begin{question}[Kernel realisation]\label{q:realisation}
+Which proper cohomologically non-positive dg algebras \(B\) are, up to a specified dg Morita identification, kernel dg algebras of stably flat universal localisations of finite-dimensional algebras at finite \(\Sigma\) with full bounded profile?
+\end{question}
+
+By \Cref{thm:heart-amplitude}, for a silting marking full profile is equivalent to fixed finite Tor-amplitude of the heart bimodule; it is a property of the embedding, not of \(B\) alone.
+
+\subsection{Necessary conditions}
+
+\begin{proposition}[Thin generators]\label{prop:thin}
+In every kernel as in \Cref{q:realisation}, the transported sum \(C_0\) of the presentation cones is a classical generator of \(\per B\) with \(\Hom(C_0,C_0[n])=0\) for \(n\notin[-1,1]\).  If \(C_0\) is silting, \(H^n\RHom(C_0,C_0)=0\) for \(n\notin[-1,0]\).
+\end{proposition}
+
+\begin{proof}
+The ambient representative of \(C_0\) is a two-term complex of finite projectives in degrees \(-1,0\); its mapping complex has terms only in degrees \(-1,0,1\) and computes derived Hom.  The cones classically generate the compact kernel by \Cref{lem:compact-intersection}.
+\end{proof}
+
+The statement concerns the existence of a generator with this property; a silting generator obtained by shifting summands, as in \Cref{sec:nakayama}, need not have two-term amplitude.  The silting hypothesis cannot be dropped: for \(R=k\times k\), \(p=(1,0)\), the universal localisation at the zero map \(Rp\to Rp\) is the projection onto the second factor, stably flat with projective target, and its cone \(Rp[1]\oplus Rp\) has \(H^1\) of its endomorphism dg algebra of dimension one.
+
+\begin{proposition}[Higher multiplications]\label{prop:higher-mult}
+Let \(H\) be a minimal \(A_\infty\)-algebra with underlying graded space \(H^{-1}\oplus H^0\).  Then the only possible higher multiplication is
+\[
+ m_3:(H^0)^{\otimes3}\longrightarrow H^{-1},
+\]
+and in a strictly unital model it is a normalised Hochschild \(3\)-cocycle of the algebra \(\Gam=H^0\) with values in the bimodule \(U=H^{-1}\).
+\end{proposition}
+
+\begin{proof}
+The operation \(m_n\) has degree \(2-n\).  For \(n\ge4\) all inputs have non-positive degree and the output has degree at most \(-2\), where \(H\) vanishes; for \(n=3\) a negative input forces the output below \(-1\).  The \(A_\infty\) relation in arity \(3\) makes \(m_2\) associative, and the relation in arity \(4\) on degree-zero inputs is exactly the Hochschild cocycle condition; compositions of two \(m_3\) vanish for degree reasons.  Minimal models exist over a field by the transfer theorem, see \cite[Section~3.3]{Keller01Ainf}.
+\end{proof}
+
+With the graded algebra and identity linear marking fixed, the class of \(m_3\) is the remaining invariant of such a structure.
+
+\begin{lemma}[Gauge classification]\label{lem:gauge}
+Two strictly unital minimal \(A_\infty\)-structures on \(\Gam\oplus U[1]\) with the same associative product on \(\Gam\) and the same bimodule structure on \(U\) are \(A_\infty\)-isomorphic by an isomorphism with identity linear part if and only if their \(m_3\) differ by a Hochschild coboundary.  Thus such structures are classified by \(HH^3(\Gam,U)\).
+\end{lemma}
+
+\begin{proof}
+An \(A_\infty\)-morphism \(f\) with \(f_1=\id\) has components \(f_n\) of degree \(1-n\); on \(\Gam\oplus U[1]\) the only possibly nonzero higher component is \(f_2:\Gam^{\otimes2}\to U\).  The arity-\(2\) morphism equation is vacuous since \(m_1=0\), so \(m_2\) is unchanged; the arity-\(3\) equation reads \(m_3'-m_3=\pm d_{\mathrm{Hoch}}(f_2)\); every higher equation involves a composite with two negative-degree outputs and holds automatically.  Conversely any normalised \(2\)-cochain \(f_2\) defines such an isomorphism.
+\end{proof}
+
+\subsection{Two-term dg algebras as crossed bimodules}
+
+\begin{lemma}[Two-term dg algebras]\label{lem:crossed}
+A unital dg algebra \(D\) with \(D^i=0\) for \(i\notin\{-1,0\}\) is the same as an algebra \(A=D^0\), an \(A\)-bimodule \(M=D^{-1}\), and a bimodule map \(\delta:M\to A\) satisfying
+\begin{equation}\label{eq:peiffer}
+ \delta(m)m'=m\delta(m')\qquad(m,m'\in M);
+\end{equation}
+the product of two elements of \(M\) is zero.  Put \(\Gam=A/\delta(M)\) and \(U=\ker\delta\).  Then \(\delta(M)\) annihilates \(U\) on both sides, \(U\) is a \(\Gam\)-bimodule, \(H^0(D)=\Gam\), \(H^{-1}(D)=U\), and
+\begin{equation}\label{eq:crossed-extension}
+ 0\longrightarrow U\longrightarrow M\xrightarrow{\ \delta\ }A\longrightarrow\Gam\longrightarrow0
+\end{equation}
+is a crossed extension of \(\Gam\) by \(U\) in the sense of Baues--Minian \cite{BauesMinian02}.
+\end{lemma}
+
+\begin{proof}
+The products in degrees \((0,0)\), \((0,-1)\), \((-1,0)\) give the algebra and bimodule structures, and products in degree \(-2\) vanish.  The Leibniz rule with one factor of degree zero says that \(\delta\) is a bimodule map; applied to the zero product \(mm'\) it gives \(0=\delta(m)m'-m\delta(m')\).  Conversely these identities are the Leibniz rule in every degree pair, and the bimodule axioms give associativity.  For \(u\in U\) and \(m\in M\), \eqref{eq:peiffer} gives \(\delta(m)u=m\delta(u)=0\) and \(u\delta(m)=\delta(u)m=0\).
+\end{proof}
+
+\begin{lemma}[The minimal model of a two-term dg algebra]\label{lem:two-term-minimal}
+Let \(D=[M\xrightarrow{\delta}A]\) be as in \Cref{lem:crossed}, with \(\Gam\), \(U\) finite-dimensional.  Choose a \(k\)-linear section \(s:\Gam\to A\) of the projection with \(s(1)=1\), a complement \(M=U\oplus M'\), and for \(x,y\in\Gam\) let \(\beta(x,y)\in M'\) be the unique element with
+\begin{equation}\label{eq:beta}
+ s(x)s(y)-s(xy)=\delta\beta(x,y).
+\end{equation}
+Then the transferred minimal \(A_\infty\)-structure on \(\Gam\oplus U[1]\) has \(m_2\) the product of \(\Gam\) and the bimodule structure of \(U\), and
+\begin{equation}\label{eq:m3-cocycle}
+ m_3(x,y,z)=x\beta(y,z)-\beta(xy,z)+\beta(x,yz)-\beta(x,y)z\in U,
+\end{equation}
+the characteristic cocycle of the crossed extension \eqref{eq:crossed-extension}.  Its class in \(HH^3(\Gam,U)\) is independent of all choices and is the characteristic class of \eqref{eq:crossed-extension}.
+\end{lemma}
+
+\begin{proof}
+Let \(i:\Gam\oplus U[1]\to D\) be \(s\) on \(\Gam\) and the inclusion on \(U\); let \(p:D\to\Gam\oplus U[1]\) be the projection \(A\to\Gam\) on \(A\) and the projection to \(U\) along \(M'\) on \(M\); let \(h:D\to D[-1]\) vanish on \(s(\Gam)\) and on \(M\), and on \(\delta(M)\) let \(h(\delta m')=-m'\) for \(m'\in M'\).  Then \(pi=\id\) and \(ip-\id=dh+hd\): on \(a=s(x)+\delta(m')\) both sides equal \(-\delta(m')\), and on \(m=u+m'\) both sides equal \(-m'\).  The transfer formula gives
+\[
+ m_3(x,y,z)=p\bigl(h(s(x)s(y))\,s(z)\bigr)-p\bigl(s(x)\,h(s(y)s(z))\bigr)
+ =p\bigl(s(x)\beta(y,z)-\beta(x,y)s(z)\bigr),
+\]
+using \(h(s(x)s(y))=h(s(xy))+h(\delta\beta(x,y))=-\beta(x,y)\).  Applying \(\delta\) to the right-hand side of \eqref{eq:m3-cocycle} and expanding with \eqref{eq:beta} gives zero, so that cocycle lies in \(U\); hence the \(M'\)-component of \(s(x)\beta(y,z)-\beta(x,y)s(z)\) equals \(\beta(xy,z)-\beta(x,yz)\), and projecting to \(U\) along \(M'\) yields \eqref{eq:m3-cocycle}.  Different choices of \(s\), \(M'\), or of the transfer data change the minimal structure by an \(A_\infty\)-isomorphism with identity linear part \cite[Section~3.3]{Keller01Ainf}, hence \(m_3\) by a coboundary (\Cref{lem:gauge}).  That \eqref{eq:m3-cocycle} is the characteristic cocycle of the crossed extension is the construction of \cite[Section~3]{BauesMinian02}.
+\end{proof}
+
+\subsection{Realisation of a strict two-term dg algebra}
+
+\begin{theorem}[Realisation of two-term dg algebras]\label{thm:realisation}
+Let \(D=[M\xrightarrow{\delta}A]\) be a finite-dimensional unital dg algebra concentrated in degrees \(-1,0\), and let
+\begin{equation}\label{eq:R-delta}
+ R_\delta=\begin{pmatrix}A&A\\M&A\end{pmatrix},
+ \qquad
+ (a,v,m,b)(a',v',m',b')=\bigl(aa'+v\delta(m'),\ av'+vb',\ ma'+bm',\ bb'+\delta(m)v'\bigr),
+\end{equation}
+the Morita context ring of the pairings \(v\otimes m\mapsto v\delta(m)\) and \(m\otimes v\mapsto\delta(m)v\).  Let \(p=e_{11}\), \(e=e_{22}\), let \(s\) be the upper-right copy of \(1_A\), and \(\sigma:R_\delta p\to R_\delta e\), \(x\mapsto xs\).  Then:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item\label{re:i} the ring map \(\lambda_\delta:R_\delta\to S=M_2(A)\), \((a,v,m,b)\mapsto\begin{pmatrix}a&v\\\delta(m)&b\end{pmatrix}\), is the universal localisation at \(\sigma\);
+\item\label{re:ii} \(S_{R_\delta}\cong(pR_\delta)^{\oplus2}\) and \({}_{R_\delta}S\cong(R_\delta e)^{\oplus2}\); in particular \(\lambda_\delta\) is stably flat;
+\item\label{re:iii} for \(T=\Cone(\sigma)\) there is a strict quasi-isomorphism of dg algebras \(D\to\End^\bullet_{R_\delta}(T)^{\op}\);
+\item\label{re:iv} the Morita functor \(F=T\Ltensor_D-:D(D)\xrightarrow{\sim}\cK_{\lambda_\delta}\) is t-exact for the standard t-structures, with \(H^n(FY)\cong(0,H^nY)\) as \(R_\delta\)-modules through \(R_\delta\to\Gam\); it preserves and reflects finite-dimensional total cohomology, so the bounded profile is all of \(\Dfd(D)\); and the heart bimodule is \(T\Ltensor_D\Gam\simeq h\Gam\), where \(hN=(0,N)\) denotes the \(R_\delta\)-module supported on the lower-right corner, of Tor-amplitude \([0,0]\).
+\end{enumerate}
+Moreover \(\dim_kR_\delta=3\dim_kA+\dim_kM\) and \(\dim_kS=4\dim_kA\).
+\end{theorem}
+
+\begin{proof}
+\emph{Associativity and the ring map.}  The diagonal products are products in \(A\); each off-diagonal associativity identity is one of the bimodule identities for the regular bimodule \(A\) or for \(M\), except the identity \(\bigl((m\cdot v')\cdot m''\bigr)=m\cdot(v'\cdot m'')\), which reads \(\delta(m)v'm''=mv'\delta(m'')\) and follows from \eqref{eq:peiffer} applied to \(m\) and \(v'm''\) since \(\delta\) is a bimodule map; and the identity \((v\cdot m')\cdot v''=v\cdot(m'\cdot v'')\), which is associativity in \(A\).  The unit is \((1,0,0,1)\).  The map \(\lambda_\delta\) is multiplicative because \(\delta(ma'+bm')=\delta(m)a'+b\delta(m')\); its kernel is \(\{(0,0,u,0):u\in U\}\).
+
+\ref{re:i}.  Since \(\lambda_\delta(s)=E_{12}\) has the two-sided inverse \(E_{21}\) between the corner projectives of \(M_2(A)\), \(\lambda_\delta\) inverts \(\sigma\).  Let \(f:R_\delta\to D'\) invert \(\sigma\), put \(p'=f(p)\), \(e'=f(e)\), \(s'=f(s)\), and let \(t\in e'D'p'\) satisfy \(s't=p'\), \(ts'=e'\).  For \(m\in M\) one has \(ms=(0,0,0,\delta(m))\), so \(f(m)=f(m)p'=f(m)s't=f(\delta(m)_e)\,t\), where \(\gamma_e\) denotes \(\gamma\in A\) in the lower-right corner; thus \(f\) is determined on \(M\) by its restriction to the diagonal and by \(t\).  Also \(\gamma_ps=s\gamma_e\) for \(\gamma\in A\), so \(f(\gamma_p)s'=s'f(\gamma_e)\) and the two diagonal copies of \(A\) are identified through \(s'\) and \(t\).  The elements \(p',e',s',t\) are matrix units, and \(\gamma\mapsto f(\gamma_p)+f(\gamma_e)\), \(E_{21}\mapsto t\) defines a ring map \(M_2(A)\to D'\).  It extends \(f\): on \(M\) it sends \(\lambda_\delta(m)=\delta(m)E_{21}\) to \(f(\delta(m)_e)t=f(m)\).  Uniqueness holds because \(t\) is the unique inverse of the corner isomorphism.
+
+\ref{re:ii}.  The right module \(pR_\delta\) is the row \((A,A)\) with action \((x,y)(a,v,m,b)=(xa+y\delta(m),\ xv+yb)\), and each row of \(M_2(A)\) restricted along \(\lambda_\delta\) has this action, so \(S_{R_\delta}\cong(pR_\delta)^{\oplus2}\).  The left module \(R_\delta e\) is the column \((A,A)^{\mathsf T}\) with action \((a,v,m,b)\binom xy=\binom{ax+vy}{\delta(m)x+by}\), and each column of \(S\) has this action, so \({}_{R_\delta}S\cong(R_\delta e)^{\oplus2}\).  A ring epimorphism with projective target on one side has \(\Tor^{R_\delta}_i(S,S)=0\) for \(i>0\); universal localisations are ring epimorphisms, so \(\lambda_\delta\) is stably flat.
+
+\ref{re:iii}.  The endomorphism complex of \(T=[R_\delta p\xrightarrow{s}R_\delta e]\), written with coefficients of right multiplications, is
+\[
+ M\xrightarrow{\ m\mapsto(\delta(m),\delta(m))\ }A\oplus A\xrightarrow{\ (a,b)\mapsto a-b\ }A
+\]
+in degrees \(-1,0,1\): the degree \(-1\) term is \(\Hom_{R_\delta}(R_\delta e,R_\delta p)=eR_\delta p=M\), and its differential consists of the two composites \(x\mapsto xsm\) and \(x\mapsto xms\), which are right multiplications by \(sm=\delta(m)_p\) and \(ms=\delta(m)_e\); the degree \(0\) term is \(pR_\delta p\oplus eR_\delta e\), with differential the commutator with \(s\); the degree \(1\) term is \(pR_\delta e=A\).  Its cohomology is \(U\) in degree \(-1\), \(\{(a,a)\}/\{(\delta m,\delta m)\}\cong\Gam\) in degree \(0\), and \(0\) in degree \(1\).  Send \(a\in A\) to simultaneous right multiplication by \(a\) on \(R_\delta p\) and \(R_\delta e\), and \(m\in M\) to right multiplication by \(m\) as a map \(R_\delta e\to R_\delta p\).  This is compatible with the differentials, \(d(a,a)=0\) and \(d(m)=(\delta m,\delta m)\), and multiplicative in the opposite algebra: composing ``right \(a\), then right \(m\)'' is right multiplication by \(am\), so \(a\cdot^{\op}m=am\) and \(m\cdot^{\op}a=ma\) with the corner at \(e\) acting on the left and the corner at \(p\) on the right, which is why the opposite is required; products of two degree \(-1\) maps vanish because \(T\) has no degree \(-2\) endomorphisms.  The map induces the isomorphisms \(\Gam\to H^0\) and \(U\to H^{-1}\) just computed, so it is a quasi-isomorphism.  By stable flatness, \(\cK_{\lambda_\delta}=\Loc(T)\) and \(\Kc_{\lambda_\delta}=\thick(T)\) (\Cref{lem:compact-intersection}), and dg Morita theory gives \(F\).
+
+\ref{re:iv}.  Restrict \(T\), with its right \(D\)-action through \ref{re:iii}, to the two idempotents.  The \(e\)-component is \(eT=[eR_\delta p\to eR_\delta e]=[M\xrightarrow{\delta}A]=D\) as a right dg \(D\)-module.  The \(p\)-component is \(pT=[A\xrightarrow{1}A]\), on which \(A\) acts by right multiplication and \(m\in M\) acts from degree \(0\) to degree \(-1\) by multiplication by \(\delta(m)\); the degree \(-1\) map \(h\) equal to the identity on \((pT)^0=A\) and zero on \((pT)^{-1}\) is right \(D\)-linear, since on degree \(-1\) elements both \(h(x\cdot m)\) and \(h(x)\cdot m\) vanish for degree reasons, and satisfies \(dh+hd=1\).  Thus \(pT\) is contractible as a right dg \(D\)-module.  For a semi-free \(Y\), \(FY=T\otimes_DY\) has \(e\)-component \(D\otimes_DY=Y\) and contractible \(p\)-component, so \(H^n(FY)\cong(0,H^nY)\) with \(R_\delta\) acting through \(R_\delta\to R_\delta/R_\delta pR_\delta=\Gam\).  This proves t-exactness and the profile assertion.  For \(Y=\Gam\) all identifications commute with the regular right \(\Gam\)-action, giving \(T\Ltensor_D\Gam\simeq h\Gam\).  Independently, \ref{re:ii} and \Cref{thm:kernel-dictionary} give full profile.  The dimension count is immediate.
+\end{proof}
+
+\begin{remark}\label{rem:realisation-benchmarks}
+For \(\delta=0\), \eqref{eq:R-delta} is the Morita context ring with zero pairings of \cite{GreenPsaroudakis14,GaoPsaroudakis17}, and the theorem realises the formal dg algebra \(A\oplus M[1]\); for \(M=0\) it is the localisation \(T_2(A)\to M_2(A)\) of the upper triangular ring, with ordinary kernel \(A\); if \(\delta\) is an isomorphism the kernel is zero.  Matrix-ring universal localisations of exact contexts and their homologicality criterion are due to Chen--Xi \cite{ChenXi19}; the content here is the identification of the kernel of the cone with the prescribed two-term dg algebra, differential included.
+\end{remark}
+
+\subsection{Every thin dg algebra occurs}
+
+Finite strict models for proper connective dg algebras are known over arbitrary fields by Raedschelders--Stevenson \cite[Appendix~A, Theorem~A.3]{Goodbody24}; see \Cref{rem:finite-strict-priority} below.  The next construction gives such a two-term model directly from a prescribed Hochschild class.
+
+\begin{theorem}[Finite crossed models]\label{thm:finite-crossed}
+Let \(\Gam\) be a finite-dimensional algebra, \(U\) a finite-dimensional \(\Gam\)-bimodule, and \(\mu\in HH^3(\Gam,U)\).  There is a finite-dimensional two-term dg algebra \(D=[M\to A]\) with \(H^0(D)=\Gam\), \(H^{-1}(D)=U\) and minimal-model class \([m_3]=\mu\).  Consequently every proper dg algebra \(B\) with \(H^i(B)=0\) for \(i\notin\{-1,0\}\) is quasi-isomorphic to a finite-dimensional two-term dg algebra, and hence, by \Cref{thm:realisation}, is the kernel dg algebra of a stably flat universal localisation \(R\to M_2(A)\) of finite-dimensional algebras at a single map, with target projective on both sides, t-exact kernel embedding, and full bounded profile.
+\end{theorem}
+
+\begin{proof}
+Let \(\Gam^e=\Gam\otimes_k\Gam^{\op}\) and let \(I=\Hom_k(\Gam^e,U)\) with \((qf)(r)=f(rq)\); it is a finite-dimensional injective left \(\Gam^e\)-module, being coinduced from \(k\), and \(\nu:U\to I\), \(\nu(u)(r)=ru\), is an injective \(\Gam^e\)-linear map since \(\nu(u)(1)=u\).  Put \(J=I/U\) with quotient map \(q:I\to J\).  Since \(HH^n(\Gam,I)=\Ext^n_{\Gam^e}(\Gam,I)=0\) for \(n\ge1\), the long exact sequence gives an isomorphism \(\partial:HH^2(\Gam,J)\xrightarrow{\sim}HH^3(\Gam,U)\).  Choose a normalised Hochschild \(2\)-cocycle \(\alpha:\Gam^{\otimes2}\to J\) representing \(\partial^{-1}\mu\) and define
+\[
+ A=\Gam\oplus J,\qquad (x,j)(y,l)=(xy,\ xl+jy+\alpha(x,y)).
+\]
+The cocycle identity is the associativity of this product, normalisation makes \((1,0)\) the unit, and \(J\) is a square-zero ideal.  Let \(M=I\) with \(A\) acting through \(A\to\Gam\), and \(\delta(i)=(0,q(i))\).  Then \(\delta\) is a bimodule map, both sides of \eqref{eq:peiffer} vanish because \(J\) annihilates \(I\), and \Cref{lem:crossed} gives a finite-dimensional two-term dg algebra \(D\) with \(H^0(D)=A/(0\oplus J)=\Gam\) and \(H^{-1}(D)=\ker q=U\).
+
+For the class, use the section \(s(x)=(x,0)\) and a linear section \(j:J\to I\) of \(q\) with \(M'=j(J)\); then \(s(x)s(y)-s(xy)=(0,\alpha(x,y))=\delta(j\alpha(x,y))\), so \(\beta=j\alpha\) in \eqref{eq:beta}, and \Cref{lem:two-term-minimal} gives
+\[
+ m_3(x,y,z)=x\,j\alpha(y,z)-j\alpha(xy,z)+j\alpha(x,yz)-j\alpha(x,y)\,z .
+\]
+This is the Hochschild differential of the lift \(j\alpha\) of \(\alpha\) to \(I\); it takes values in \(U\) and represents \(\partial[\alpha]=\mu\) by the definition of the connecting homomorphism.
+
+For the consequence, let \(B\) be proper with cohomology in \(\{-1,0\}\); if \(B\) is acyclic it is quasi-isomorphic to \(0\), realised by the identity of \(k\) and its contractible cone.  Otherwise the transfer theorem \cite[Section~3.3]{Keller01Ainf} provides a strictly unital minimal \(A_\infty\)-model on \(H^*(B)=\Gam\oplus U[1]\), whose structure is \((m_2,m_3)\) by \Cref{prop:higher-mult}; let \(\mu\) be the class of \(m_3\).  The dg algebra \(D\) just constructed has a minimal model with the same \(\Gam\), \(U\) and class, hence \(A_\infty\)-isomorphic to that of \(B\) by \Cref{lem:gauge}.  Two dg algebras with \(A_\infty\)-isomorphic minimal models are connected by a zigzag of quasi-isomorphisms of dg algebras \cite[Section~3.3]{Keller01Ainf}, \cite[Section~1.3]{LefevreHasegawa03}.  Apply \Cref{thm:realisation} to \(D\).
+\end{proof}
+
+\begin{corollary}[All profiles for a thin kernel]\label{cor:thin-all-profiles}
+For every proper dg algebra \(B\) with cohomology concentrated in degrees \(-1\) and \(0\), the marked bounded defects realised by stably flat universal localisations of finite-dimensional algebras with kernel dg algebra \(B\) are exactly
+\[
+ \{\cU_E/\per B:E\in\Dfd(B)\}.
+\]
+All of them are idempotent complete and coincide with the corresponding singular defects before completion.
+\end{corollary}
+
+\begin{proof}
+Necessity is \Cref{cor:pair-invariant}.  \Cref{thm:finite-crossed} provides a full-profile realisation whose target is projective as a left module over the source, and \Cref{thm:ambient}\ref{amb:d} realises every \(\cU_E\).  The free module of a connective model is a silting compact generator with finite-dimensional endomorphism algebra, so \Cref{cor:finite-dimensional-precompletion,cor:negative-k-completeness} apply.
+\end{proof}
+
+\begin{example}[A non-formal kernel]\label{ex:nonformal}
+Let \(A\) have basis \(1,t,a,b,c\), with unit \(1\) and the only nonzero products of radical basis elements
+\[
+ t^2=c,\qquad ta=b,\qquad at=c,
+\]
+so that \(\rad^3A=0\).  Let \(M\) have basis \(z,l,r,w\), with the only nonzero radical actions
+\[
+ tz=l,\qquad tr=w,\qquad zt=r,\qquad lt=w,
+\]
+and let \(\delta z=a\), \(\delta l=b\), \(\delta r=c\), \(\delta w=0\).  The bimodule laws hold, the only nontrivial mixed check being \((tz)t=w=t(zt)\); \(\delta\) is bimodule-linear, and \eqref{eq:peiffer} holds because the image of \(\delta\) annihilates \(M\).  Hence \(D=[M\to A]\) is a nine-dimensional two-term dg algebra with
+\[
+ \Gam=k[t]/(t^2),\qquad U=kw,\qquad tU=Ut=0 .
+\]
+Since \(t^2=c=\delta(r)\), \Cref{lem:two-term-minimal} with \(s(t)=t\) and \(\beta(t,t)=r\) gives
+\[
+ m_3(t,t,t)=t\,r-r\,t=w\ne0 .
+\]
+For any normalised \(2\)-cochain \(f:\Gam^{\otimes2}\to U\) the Hochschild coboundary satisfies \((d_{\mathrm{Hoch}}f)(t,t,t)=tf(t,t)-f(t^2,t)+f(t,t^2)-f(t,t)t=0\), so \(m_3\) is not a coboundary: \(D\) is not formal, and \(HH^3(\Gam,U)\cong k\) is generated by its class.  \Cref{thm:realisation} realises \(D\) as the kernel of a stably flat universal localisation \(R_\delta\to M_2(A)\) at a single map, with \(\dim_kR_\delta=19\), \(\dim_kM_2(A)=20\), target projective on both sides and full bounded profile.  Its kernel dg algebra therefore carries a nonzero \(m_3\): kernel dg algebras of finite universal localisations of finite-dimensional algebras need not be formal.  The dg algebra, the ring, the two projective decompositions, the strict dg identification and the value of \(m_3\), computed once on \(D\) and once on the presentation-cone algebra, are checked exactly by \texttt{verify\_nonformal.py} (\Cref{app:computation}).
+\end{example}
+
+\begin{remark}[Finite strictification and the crossed model]\label{rem:finite-strict-priority}
+The existence of a finite two-term model also follows from \cite[Appendix~A, Theorem~A.3]{Goodbody24}.  Take a finite non-positive strict model \(C\), and quotient by the dg ideal equal to \(C^i\) in degrees \(i\le-2\), to \(d(C^{-2})\) in degree \(-1\), and to zero in degree zero.  Nonpositivity and the Leibniz rule show that this is a dg ideal.  If \(H^{<-1}(C)=0\), the projection is a quasi-isomorphism onto a finite two-term dg algebra.  Thus finite-model existence is prior work; the construction in \Cref{thm:finite-crossed} explicitly starts from \((\Gam,U,\mu)\) and computes the resulting minimal-model class, before applying the ring-epimorphism realisation of \Cref{thm:realisation}.
+\end{remark}
+
+\input{p2/sec_optimality}
+
+\subsection{Open problems}
+
+The standard t-exact version of \Cref{q:realisation} is settled by \Cref{cor:texact-classification}, and \Cref{prop:negative-cy-obstruction} excludes a class of dg Morita types even without t-exactness.  The general full-profile question remains open, as does realisation by unrestricted ordinary homological epimorphisms after dropping t-exactness and allowing infinite right target projective dimension.  The Schur construction in \Cref{ex:sphere-schur} is a different realisation problem.
+
+\begin{question}\label{q:profile-m3}
+For \Cref{ex:nonformal}, do the posets of far-away orthogonals \(\{\cU_E/\per B\}\) of the non-formal dg algebra and of the formal dg algebra with the same cohomology differ?  The two have different Ext-algebras of the residue field, but eventual orthogonality is not determined by low-degree Ext.
+\end{question}
+
+\begin{question}\label{q:nonsilting}
+The realisation theorem concerns kernels whose cone generator is silting.  Which dg algebras with cohomology in degrees \(-1,0,1\) occur as the endomorphism dg algebra of a presentation cone of a stably flat universal localisation of finite-dimensional algebras, as in the example \(k\times k\) after \Cref{prop:thin}?
+\end{question}

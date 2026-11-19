@@ -1,0 +1,8 @@
+Perfect-complex duality certificate over GF(101)
+degree -2: dim= 2, chain square=PASS
+degree -1: dim= 7, chain square=PASS
+degree  0: dim=10, chain square=PASS
+degree  1: dim= 7, chain square=PASS
+degree  2: dim= 2, terminal isomorphism=PASS
+deliberate sign twist (-1)^(|y||f|) fails a chain square: PASS
+ALL CHECKS PASSED

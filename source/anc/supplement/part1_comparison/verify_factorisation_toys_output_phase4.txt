@@ -1,0 +1,5 @@
+Derived-factorisation toy certificates
+one-way gluing: dim Fact_P(x,x)=0, extra H^-1=0: PASS
+two-way square-zero gluing: dim Fact_P(x,x)=1, extra H^-1=1: PASS
+representative new class in harmful quotient: b*epsilon_p*a
+ALL CHECKS PASSED

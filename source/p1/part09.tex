@@ -1,0 +1,82 @@
+
+\section{The one-sided finite-dimensional Kernel Dictionary}\label{sec:dictionary}
+
+Throughout this section, let \(\lambda:R\to S\) be a homological ring epimorphism of finite-dimensional \(k\)-algebras and assume
+\[
+ S_R\in\per(R^{\op}).
+\tag{E}
+\]
+Put \(F=S\Ltensor_R-\), \(S^\vee=\RHom_{R^{\op}}(S,R)\), and \(F_!=S^\vee\Ltensor_S-\).
+
+\begin{lemma}[Dual adjoint]\label{lem:dual-adjoint}
+Under the standing hypotheses, \(F_!\dashv F\), and \(F_!\) is fully faithful.
+\end{lemma}
+
+\begin{proof}
+Choose a bounded resolution of \(S_R\) by finitely generated projectives.  Termwise finite-projective duality gives
+\[
+ \RHom_R(S^\vee,X)\simeq S\Ltensor_RX
+\]
+as left \(S\)-complexes, and tensor--Hom adjunction gives \(F_!\dashv F\).  The same duality gives
+\[
+ S\Ltensor_RS^\vee\simeq\RHom_{R^{\op}}(S,S).
+\]
+Homologicality makes restriction on right derived categories fully faithful, so the last complex is \(\RHom_{S^{\op}}(S,S)\simeq S\).  Thus the unit \(\id\to FF_!\) is invertible.
+\end{proof}
+
+\begin{proposition}[Compact kernel projection]\label{prop:left-projection}
+Under the standing hypotheses, the inclusion \(j:\cK_\lambda\hookrightarrow D(R)\) has a left adjoint \(\ell\), defined by triangles
+\[
+ F_!F(X)\longrightarrow X\longrightarrow j\ell X\longrightarrow.
+\]
+It preserves compact objects, and \(G=\ell R\) is a compact generator satisfying
+\[
+ \Hom_{\cK_\lambda}(G,X[n])\cong H^n(X).
+\]
+As an object of \(D(R)\), \(G\) is perfect and satisfies \(\Hom(G,G[n])=0\) for \(n<-1\).  If \(S_R\) is projective, \(G\) has a projective representative in degrees \([-1,0]\), and \(\RHom_R(G,G)^{\op}\) has cohomology only in degrees \(-1,0\).
+\end{proposition}
+
+\begin{proof}
+The cone of the counit lies in the kernel because applying \(F\) makes the first map an isomorphism.  For \(K\) in the kernel, adjunction gives \(\RHom_R(F_!F(X),K)=0\), whence
+\[
+ \RHom_{\cK_\lambda}(\ell X,K)\simeq\RHom_R(X,K).
+\]
+Thus \(\ell\dashv j\).  Since \(j\) preserves coproducts, \(\ell\) preserves compactness.  Taking \(X=R\) gives the Hom formula, which detects zero objects.
+
+At \(R\), the counit triangle identifies \(jG\) with \(\Cone(S^\vee\to R)\), so it is perfect over \(R\).  Choose a projective resolution of \(S_R\) in degrees \([-p,0]\).  Its finite-projective dual represents \(S^\vee\) in degrees \([0,p]\), and the cone has no terms below \(-1\).  Taking \(X=G\) in the Hom formula gives the claimed negative self-Hom vanishing.  If \(S_R\) is projective, the cone is two-term, and the same formula also eliminates all positive self-Homs.
+\end{proof}
+
+\begin{theorem}[Finite-dimensional Kernel Dictionary]\label{thm:kernel-dictionary}
+Let \(\lambda:R\to S\) be a finite stably flat universal localisation of finite-dimensional \(k\)-algebras and assume \(S_R\) has finite projective dimension.  Then the raw kernel dga \(\Lambda\) is proper and
+\[
+ \Psi(\Dfd\Lambda)=\Kb(\lambda).
+\]
+Consequently
+\[
+ \Dsg(\Lambda):=\Dfd(\Lambda)/\per(\Lambda)
+ \xrightarrow{\sim}\DeltaB(\lambda),
+\]
+and the composite to \(\Defsg(\lambda)\) is fully faithful and Karoubi dense.
+\end{theorem}
+
+\begin{proof}
+By \Cref{prop:finite-total-hom}, the compact cone generator and \(G=\ell R\) define the same finite-total-Hom subcategory.  For \(G\), the condition is
+\[
+ \sum_n\dim_kH^n(X)<\infty.
+\]
+Over finite-dimensional \(R\) this is equivalent to \(X\in\Db(R\text{-}\modcat)\).  Intersecting with the kernel proves the first equality.  Properness of \(\Lambda\) is automatic because the cone generator is a bounded complex of finite-dimensional projectives.  The bounded specialization in \Cref{cor:relative-dg-bounded} becomes the intrinsic quotient, and \Cref{thm:unconditional-comparison} supplies the comparison.
+\end{proof}
+
+\subsection{Why the AHKLY map is a universal localisation}
+The map \(\lambda:A\to S=M_2(k)\) fixed in \Cref{sec:preliminaries} is homological because \(S_A\cong(e_1A)^{\oplus2}\) is projective.  We verify directly that it is the universal localisation at \(\sigma_L:Ae_1\to Ae_2\).  Let \(f:A\to C\) be a ring map for which \(C\otimes_A\sigma_L\) is invertible, and put \(a=f(\alpha)\).  Its inverse is right multiplication by a unique element
+\(b\in f(e_2)Cf(e_1)\) satisfying
+\[
+ ab=f(e_1),
+ \qquad
+ ba=f(e_2).
+\]
+Since \(\alpha\beta=0\),
+\[
+ f(\beta)=f(e_2)f(\beta)=ba f(\beta)=b f(\alpha\beta)=0.
+\]
+Thus \(f(e_1),f(e_2),a,b\) form a complete set of \(2\times2\) matrix units and determine a unique homomorphism \(M_2(k)\to C\) through which \(f\) factors.  Therefore \(\lambda\) is the universal localisation at \(\sigma_L\), over an arbitrary base field.

@@ -1,0 +1,147 @@
+
+\section{Relative dg models and the finite-total-Hom subcategory}\label{sec:dg-models}
+
+For a homological universal localisation satisfying \textup{(B1)--(B3)}, the compact-kernel comparison identifies the compact-kernel quotient with the actual singularity kernel up to direct summands.  We now compute the compact-kernel quotient itself.
+
+Let
+\[
+ T_\Sigma=\bigoplus_{\sigma\in\Sigma}\Cone(\sigma),
+ \qquad
+ A_\lambda=\End_R^\bullet(T_\Sigma)^{\op}.
+\]
+The opposite convention makes \(T_\Sigma\) a left \(R\)-complex and a right dg \(A_\lambda\)-module.  Put
+\[
+ \Psi_\Sigma=T_\Sigma\Ltensor_{A_\lambda}-:D(A_\lambda)\to D(R).
+\]
+
+\begin{theorem}[Relative dg formula at a thick scale]\label{thm:relative-dg-formula}
+Assume that \(\Sigma\) is finite and that \(\lambda\) is stably flat.  Let \(\cB\subseteq D(R)\) be an essentially small thick subcategory containing \(\Kc_\lambda\), and define
+\[
+ K_{\cB}(\lambda)=\cK_\lambda\cap\cB
+\]
+and
+\[
+ D^{\cB}_\lambda(A_\lambda)
+ =\{Y\in D(A_\lambda)\mid\Psi_\Sigma(Y)\in\cB\}.
+\]
+There is an exact equivalence
+\[
+ K_{\cB}(\lambda)/\Kc_\lambda
+ \xrightarrow{\sim}
+ D^{\cB}_\lambda(A_\lambda)/\per(A_\lambda).
+\]
+No noetherian hypothesis is required.
+\end{theorem}
+
+\begin{proof}
+Neeman--Ranicki gives
+\(\cK_\lambda=\Loc(T_\Sigma)\).  The object \(T_\Sigma\) is a compact generator of this localising category.  Keller--Morita theory therefore yields mutually inverse equivalences
+\[
+ \Psi_\Sigma:D(A_\lambda)\xrightarrow{\sim}\cK_\lambda,
+ \qquad
+ \Theta_\Sigma=\RHom_R(T_\Sigma,-)
+\]
+by Keller's dg Morita theorem~\cite[Theorem~8.2]{Keller94}.
+For completeness, the unit and counit are isomorphisms on the generators
+\(A_\lambda\) and \(T_\Sigma\); the full subcategories on which they are isomorphisms are localising, because \(T_\Sigma\) is compact.  Hence they are isomorphisms everywhere.
+
+The equivalence restricts, by definition, to
+\[
+ D^{\cB}_\lambda(A_\lambda)\xrightarrow{\sim}K_{\cB}(\lambda).
+\]
+It also sends
+\[
+ \per(A_\lambda)=\thick(A_\lambda)
+ \quad\text{to}\quad
+ \thick(T_\Sigma)=\Kc_\lambda.
+\]
+Passing to Verdier quotients gives the statement.
+\end{proof}
+
+\begin{corollary}[Bounded finitely generated specialization]\label{cor:relative-dg-bounded}
+Assume in addition that \(R\) is left noetherian, and put
+\[
+ \Db_\lambda(A_\lambda)
+ =\{Y\in D(A_\lambda)\mid
+   \Psi_\Sigma(Y)\in\Db(R\text{-}\modcat)\}.
+\]
+Then
+\[
+ \DeltaB(\lambda)
+ \xrightarrow{\sim}
+ \Db_\lambda(A_\lambda)/\per(A_\lambda).
+\]
+No noetherian assumption on \(S\), and neither \textup{(B2)} nor \textup{(B3)}, is required.
+\end{corollary}
+
+\begin{proof}
+Apply \Cref{thm:relative-dg-formula} with \(\cB=\Db(R\text{-}\modcat)\).
+\end{proof}
+
+\begin{remark}[Why the noetherian specialization is necessary]\label{rem:nonnoetherian-bounded-scale}
+Let \(R=k[x_1,x_2,\ldots]\) and \(I=(x_1,x_2,\ldots)\).  Both \(R\) and \(R/I\) are finitely generated \(R\)-modules, but the kernel \(I\) of \(R\twoheadrightarrow R/I\) is not finitely generated.  Hence \(R\text{-}\modcat\) is not abelian.  In \(D(R)\), the cone of \(R\to R/I\) has \(I\) as a cohomology module, so the objects with bounded finitely generated cohomology are not closed under cones.  Thus \(\Db(R\text{-}\modcat)\) cannot be used as a thick scale in this generality.
+\end{remark}
+
+The relative subcategory is external to the dg algebra.  Gao--Psaroudakis~\cite[Lemma~4.1]{GaoPsaroudakis18} characterize \(\Dfd(E)\) by finite total Hom from every perfect object.  Kuznetsov--Shinder~\cite{KuznetsovShinder25} develop the category of homologically finite-dimensional dg modules intrinsically for small dg-enhanced triangulated categories.  Our use concerns the image of this intrinsic category under a fixed dg Morita embedding of a localisation kernel into \(D(R)\), together with the additional question whether that image agrees with the ambient bounded kernel.  Transporting the Gao--Psaroudakis characterization through dg Morita equivalence gives the following reformulation.
+
+\begin{proposition}[Generator-independent finite-total-Hom subcategory]\label{prop:finite-total-hom}
+Let \(k\) be a field and let \(\mathcal K\) be a \(k\)-linear algebraic triangulated category with coproducts.  For any compact generator \(T\), put
+\[
+ E_T=\RHom(T,T)^{\op},
+\]
+and let \(F_T:D(E_T)\xrightarrow{\sim}\mathcal K\) be the corresponding dg Morita equivalence.  Then
+\[
+ F_T(\Dfd(E_T))=\mathcal F(\mathcal K),
+\]
+where
+\begin{equation}\label{eq:finite-hom-subcategory}
+ \mathcal F(\mathcal K)
+ =\left\{
+ X\in\mathcal K\ \middle|\
+ \bigoplus_{n\in\mathbb Z}\Hom_{\mathcal K}(C,X[n])
+ \text{ is finite-dimensional for every }C\in\mathcal K^c
+ \right\}.
+\end{equation}
+In particular, \(F_T(\Dfd(E_T))\) is independent of the compact generator \(T\).
+\end{proposition}
+
+\begin{proof}
+Under dg Morita equivalence, \(\per(E_T)\) corresponds to \(\mathcal K^c\).  The assertion is precisely Gao--Psaroudakis's characterization transported from \(D(E_T)\) to \(\mathcal K\).
+\end{proof}
+
+\begin{corollary}[Generator-independence of bounded compatibility]\label{cor:rbounded-generator-independent}
+Let \(R\) be a finite-dimensional \(k\)-algebra and let \(\lambda\) be a finite homological universal localisation whose compact kernel admits a compact silting generator.  For any two compact silting generators \(T,T'\),
+\[
+ F_T(\Dfd(B_T))=F_{T'}(\Dfd(B_{T'}))
+\]
+inside \(\cK_\lambda\).  In particular,
+\[
+ F_T(\Dfd(B_T))=\Kb(\lambda)
+ \quad\Longleftrightarrow\quad
+ F_{T'}(\Dfd(B_{T'}))=\Kb(\lambda).
+\]
+Thus bounded compatibility is independent of the silting generator, even if the two generators lie in different components of the silting graph.
+\end{corollary}
+
+\begin{proof}
+For a compact silting generator \(T\), the dg algebra
+\(B_T=\tau_{\le0}\RHom_R(T,T)^{\op}\) is quasi-isomorphic to the full derived endomorphism algebra, because positive cohomology vanishes.  Hence its finite-dimensional derived category has the same image.  Apply \Cref{prop:finite-total-hom}.
+\end{proof}
+
+\begin{corollary}[Mutation stability without a heart-restriction hypothesis]\label{cor:mutation-stability}
+Let \(R\) be finite-dimensional and let \(T,T'\) be compact silting generators of the same compact localisation kernel.  In particular, they may be related by a finite sequence of Aihara--Iyama mutations.  Then
+\[
+ T\text{ is }R\text{-bounded}
+ \quad\Longleftrightarrow\quad
+ T'\text{ is }R\text{-bounded}.
+\]
+When these conditions hold, both intrinsic dg quotients are equivalent to \(\DeltaB(\lambda)\).
+\end{corollary}
+
+\begin{proof}
+This is the special case of \Cref{cor:rbounded-generator-independent} obtained by taking the two compact silting generators.  No assertion that a mutation torsion pair restricts to a finite-length heart is needed.
+\end{proof}
+
+\begin{remark}
+The HRS-tilt description of silting mutation remains useful for identifying the changed heart; see Angeleri H\"ugel--Laking--\v{S}\v{t}ov\'{i}\v{c}ek--Vit\'{o}ria \cite{ALSV25}.  For bounded compatibility, the Gao--Psaroudakis characterization in \Cref{prop:finite-total-hom} yields the generator-independent statement and avoids the unresolved finite-heart restriction step.
+\end{remark}

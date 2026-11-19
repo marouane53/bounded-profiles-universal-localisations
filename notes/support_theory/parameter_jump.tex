@@ -1,0 +1,250 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage{support-notes}
+\title{Failure of constructibility for bounded Ext at fixed graded cohomology}
+\author{\workingauthor}\date{\coursedate}
+\begin{document}\maketitle
+\begin{abstract}
+In a flat six-dimensional two-term dg family on the complex multiplicative
+group, a fixed perfect cone and a uniformly presented detector have
+bounded total Ext exactly away from the roots of unity. Equality of two
+named detector profiles has the same nonconstructible locus. Even the
+abstract poset distinguishes the two sets: it has an atom precisely at
+infinite-order parameters. This occurs
+with constant graded cohomology and nonzero cubic multiplication
+throughout. We also compute the whole profile order of the infinite-order
+quantum plane on the Koszul-dual side. These statements are proved.
+\end{abstract}
+
+\section{A fixed pair in a flat family}
+Let $\Lambda=k[q,q^{-1}]$. Over $\Lambda$ take $D^0$ with basis
+$1,a,b,h$, $D^{-1}$ with basis $e,w$, and define
+\[
+ a^2=h,\qquad e b=w,\qquad b e=q w,\qquad d e=h .
+\]
+All other radical products and differentials vanish.
+The table is associative and Leibniz because triple products vanish
+and $h$ kills the radical. The complex splits as free cohomology
+plus a contractible pair, and every fibre has the same graded
+cohomology algebra with square-zero radical. The two values of the
+ternary operation are $q w$ and $-w$. At least one is nonzero and
+normalized coboundaries on reduced inputs vanish.
+
+The residue-field dual in every field-valued fibre is
+$A_q=k\langle x,z\rangle/(x^2z-qzx^2)$ in generator degree one.
+This calculation works over $\Lambda$ as well. Before transfer the
+strict reduced bar dual is free on $x,z,u$ in degree one and $v,y$ in
+degree two, with signs chosen so that
+$du=v-x^2$, $dy=vz-qzv$ and $dx=dz=dv=0$.
+In the suspended bar convention the terms on $[e|b]$ and $[b|e]$
+have opposite multiplication signs. Replacing $v$ by $v-x^2$ and $y$
+by $y-(uz+qzu)$ leaves $dy=x^2z-qzx^2$ on the remaining variables;
+the extra pair contracts. Its deletion is a quasi-isomorphism by the
+alternating word decomposition into tensor products with contractible
+free pairs. Filtering by the expansion $y\mapsto xxz$, the independent
+disjoint occurrences of $xxz$ give contractible two-choice complexes
+with unit leading coefficient. Thus projection onto the displayed
+quotient is a quasi-isomorphism. The normal words avoiding $xxz$ form
+a degreewise free $\Lambda$-basis. All these maps commute with base
+change. These are also the relative endomorphisms of the augmentation:
+the augmented relative bar resolution has terms free over $D$, since
+the radical is free over $\Lambda$; it computes derived Hom out of
+$\Lambda$ (its usual length filtration is semi-free after resolving the
+split underlying chain pairs). Equivalently one may use the explicit
+bar endomorphism action by deconcatenation and augmentation. The finite
+cones below consequently define uniform objects of $\thick_D(\Lambda)$
+on the dg side. Only the fibrewise equivalence to $D_{\fd}$ is used.
+
+For a scalar $\lambda$ define the graded right module $M_\lambda$,
+free of rank one over the base in each nonnegative degree, by
+\[
+ e_i x=e_{i+1},\quad e_{2j}z=\lambda q^j e_{2j+1},\quad
+ e_{2j+1}z=0 .
+\]
+The relation follows from multiplication by $q$ every two steps. There
+is a free presentation $0\to A[-1]\oplus A[-2]\to A\to M_\lambda\to0$
+with first arrow $(z-\lambda x,\,xz)$. Its leading normal prefixes $z,xz$
+are disjoint and the lower term has one fewer $z$, proving independence.
+Every normal word starting in $z$ or $xz$ reduces in the cokernel by
+these relations and induction on the number of $z$'s to a multiple of
+a power of $x$. The map to $M_\lambda$ proves these powers are free
+over the base. This proof gives exactness over $\Lambda$ and in all fibres.
+Use the fixed cone $C=\Cone(z-x:A[-1]\to A)$.
+
+\begin{thm}\label{jump}
+Over $k=\mathbb C$, $C\in\UU_{M_1}$ exactly at parameters $q$
+of infinite multiplicative order. Furthermore
+$\UU_{M_1}=\UU_{M_2}$ exactly at the same parameters. Neither locus
+is Zariski constructible, open or closed.
+\end{thm}
+\begin{proof}
+In high degrees the map computing Hom from $C$ to $M_1$ is the scalar
+$q^j-1$ in even degrees $2j$ and $-1$ in odd degrees. The kernel or
+cokernel contributes to the high groups of the cone whenever the scalar
+is zero. The even scalar vanishes infinitely often exactly at roots of
+unity. For $M_2$ at any root of unity the scalar $2q^j-1$ never vanishes.
+Thus $C$ separates the two profiles at every such parameter.
+
+For infinite-order $q$, localize at the normal element $x^2$. Both
+targets are eventually invertible there. As in Lemmas 2 and 3 of
+\othernote{normal_localisations}{Bounded profiles and finite-dimensional
+points of universal localisations}, any perfect source on the localization
+has a finite degree-zero matrix presentation over the free algebra
+on $U=zx^{-1}, V=xzx^{-2}$, and its high Hom into either target is
+computed there. This step uses no periodicity assumption. On the
+degree-$2j$ and degree-$(2j+1)$ components the coefficients specialize
+at $(\lambda q^j,0)$ and $(0,\lambda q^{j+1})$. An unequal rectangular
+matrix cannot pass. For a square matrix $H$, the two required tests
+are that $\det H(t,0)$ and $\det H(0,t)$ are nonzero polynomials in
+one commuting indeterminate. Indeed a nonzero polynomial has only finitely
+many roots and an infinite-order progression with $\lambda\ne0$ has
+distinct terms. A zero polynomial fails at every corresponding degree.
+The criteria coincide at $\lambda=1,2$. Finally roots of unity form an
+infinite subset with infinite complement in the complex torus; a
+constructible subset of an irreducible algebraic curve is finite or
+cofinite. This proves all assertions.
+\end{proof}
+
+For the membership assertion alone the field can be arbitrary and one
+asks whether its chosen unit is torsion. The geometric nonconstructibility
+assertion is on complex points. No single exponent bound detects eventual
+vanishing in this family. Each individual degree remains a finite rank
+test. This result refutes general constructibility of fixed-pair boundedness
+and of equality for uniformly given detector profiles. A stronger, intrinsic statement follows.
+
+\begin{thm}\label{atom}
+For all $n,r\ge1$ with $g=nr\ge2$, the profile poset for
+$A_{n,r,qI}$ over $\mathbb C$ has an atom (a minimal element strictly above
+its bottom) if and only if $q$ has infinite order. In particular this
+isomorphism-invariant property has a nonconstructible locus in every
+constant-cohomology two-term family with $n=2$, including the family above.
+\end{thm}
+\begin{proof}
+The bottom is $\UU_A$: a perfect source $P$ is in it iff the left
+perfect dual $Y=P^\vee$ has finite cohomology. This suffices for
+bounded tensor with every perfect detector. If $q$ has finite order,
+use the full two-row theorem in free rank $g$. Each finite first-row label
+can be enlarged by a new simple orbit, strictly decreasing its profile
+while retaining the source $G=A/(x^n)$, which is outside the bottom.
+For a nonempty second-row domain $O(H)$ choose a simple tuple
+$(S_1,\ldots,S_g)$ in it, of dimension $d$. The tuples
+$(S_1+cI,S_2,\ldots,S_g)$ remain simple for
+every $c\in\mathbb C$. Every one of the finitely many twisted
+invertibility conditions has a determinant polynomial in $c$ nonzero
+at zero, so all hold on a cofinite set. The trace of $S_1+cI$ distinguishes
+infinitely many isomorphism classes, since $d\ne0$ in $\mathbb C$.
+Their finite twist orbits are still infinite in number. Pick two
+distinct such orbits. By the Chinese remainder argument in the
+localisation theorem a polynomial $f$ kills one orbit and is identity
+on the other. The domain of $H\oplus f$ is a proper nonempty subdomain.
+Consequently no profile covers the bottom in these fibres.
+
+Now let $q$ have infinite order. Take the tame detector whose localized
+simple is the one-dimensional zero tuple; write $M_0$ for its perfect lift.
+Its profile contains $G$ and omits $A$, so it is proper and above
+the bottom (the free resolution of $G$ has dual with infinite cokernel
+$G$ up to shift). We show that it lies inside every eventually invertible
+detector profile. A source in $\UU_{M_0}$ has a localized presentation
+matrix $H$ that evaluates bijectively at the zero tuple, so it is
+square and $H(0)$ is invertible. For any finite tuple on the
+localization the $n$th power of the twist scales all $g$ operators
+by $q$. The twists thus lie in $n$ progressions of scalar multiples
+of fixed tuples (using $q^{-1}$ for the reverse convention). In each progression
+the evaluation determinant is a polynomial in $q^j$ with nonzero
+constant, since that constant is a power of $\det H(0)$.
+It has finitely many exceptional degrees. This proves the inclusion
+for every such detector, including those with zero localization.
+
+For a detector failing eventual invertibility, the relative cut bound
+forces $Y=P^\vee$ to be eventually invertible for each source in its
+profile. If this source also lies in $\UU_{M_0}$, tensor the localized
+free resolution of the one-dimensional zero tuple (ranks $g$ and one)
+with $Y_h$. Whenever $H^0(Y_h)\ne0$, the two evaluated terms have
+different dimensions in every degree, so the localized tensor cannot
+be bounded above. Thus $H^0(Y_h)=0$. Eventual invertibility and the
+degree-one unit on the chart give finite total cohomology of $Y$.
+The intersection with $\UU_{M_0}$ is therefore exactly the bottom.
+No profile lies strictly between the bottom and $\UU_{M_0}$.
+For $n=2$ use the strict table $b_i e=q w_i$, $e b_i=w_i$,
+$a^2=h$, $de=h$. The bar computation above works independently for
+each $b_i$ and the underlying cohomology stays free and constant.
+\end{proof}
+
+\section{A boundary calculation in free rank one}
+Let $A=k\langle x,z\rangle/(xz-qzx)$ and let $q\in k^\times$ have
+infinite order. This is the period-one case of the normal family.
+Here the open ring is $k[U]$, $U=zx^{-1}$, with $\sigma U=qU$.
+In the finite-order case its classification gives the orbit version of
+finite subsets of the projective line plus a bottom. Infinite order
+has a different order already in this small rank.
+
+\begin{thm}\label{six}
+For this $A$ and any infinite-order $q$ over any field, there are
+exactly six bounded profiles. From the top down the covering relations
+are
+\[
+ \mathrm{top}\ >\ T_{\rm mov}\ >
+ \{T_0,B_{\rm all}\}\ >\ B_{\rm mov}\ >\ \mathrm{bottom},
+\]
+where the two middle entries are incomparable and every adjacent-level
+pair in the display is a cover.
+\end{thm}
+\begin{proof}
+The normal-element test applies with fibre $k[z]$. Eventually invertible
+detectors have finite degree-zero localized modules over $k[U]$. All
+nonzero closed points have infinite scaling orbits: a nonzero algebraic
+root of a monic irreducible with finite orbit would be permuted by a
+power of $q$, forcing a further power to equal one. This does not use
+separability. For a localized square presentation $H$, put $f=\det H$.
+On a finite primary module the map is invertible precisely when $f$
+is nonzero at the corresponding point. Along the twists of a nonzero
+point, a fixed nonzero polynomial can fail only finitely many times,
+in either direction of twisting. At the zero point it must pass every
+time. Thus a zero target on the localization gives the full profile;
+a nonzero target supported away from zero gives $T_{\rm mov}$, requiring
+a square presentation with $f\ne0$; a target with a zero primary factor
+gives $T_0$, requiring also $f(0)\ne0$. These conditions concern one
+injective presentation from the chart lemma; the underlying acyclicity
+test makes them independent of its choice. The source $A$ separates
+the full profile, and the cone of $z$ distinguishes the other two.
+
+For a detector failing eventual invertibility, the source dual must
+be eventually invertible. Its finite degree-zero localized module $N$
+is then tested against the presentation of the detector. A rectangular
+unequal-rank or identically singular presentation requires $N=0$
+(the bottom). A nonzero determinant vanishing at zero allows just those
+$N$ supported away from zero, including $0$ ($B_{\rm mov}$).
+Nonvanishing at zero allows all $N$ ($B_{\rm all}$). $A$, $G\oplus
+\Cone(z)$ and $G=A/(x)$ realise these choices. Duals of the left
+one-dimensional modules at 1 and 0 separate the three.
+
+The source $G$ is in each first-row profile and no second-row profile.
+For a possible reverse inclusion, take finite right and left modules
+on the localization. Tensoring their primary resolutions in each twist
+can have nonzero high cohomology infinitely often precisely when
+both supports contain zero. Two finite sets of nonzero closed points
+can coincide under only finitely many twists because all their orbits
+are infinite. Hence $B_{\rm all}\subset T_{\rm mov}$ and
+$B_{\rm mov}\subset T_0$, whereas $B_{\rm all}\not\subseteq T_0$.
+These are exactly the stated comparisons. The closed and open tests are
+valid even though no positive power of $x$ is central here.
+\end{proof}
+
+\paragraph{Prior work and scope.}
+The orbit mechanism has a close predecessor in the four-dimensional
+quantum exterior algebra: the modules studied by
+\href{https://www.cambridge.org/core/services/aop-cambridge-core/content/view/26516CA33D32E5B50A8C291AEE0EB145/S1446788716000331a.pdf/ext-finite-modules-for-weakly-symmetric-algebras-with-radical-cube-zero.pdf}{Erdmann}
+have syzygies which scale the parameter; the paper also cites Schulz
+and earlier explicit computations. Bergh studies vanishing symmetry
+for \href{https://arxiv.org/abs/0811.4309}{quantum complete intersections}.
+Theorem~\ref{six} organizes this familiar rank-one phenomenon into all
+bounded profiles of the derived category in the stated convention.
+Theorem~\ref{jump} transports it to a family whose graded cohomology
+algebra is fixed, and proves equality of profiles by testing every
+perfect source. The orbit phenomenon itself has a substantial history.
+For arbitrary twists in characteristic zero, the companion note
+\othernote{orbit_closures}{Orbit closures and bounded profiles}
+gives a geometric description using generic matrix ranks on every
+irreducible component. Intrinsic equality of its upper labels without
+quantifying over matrix tests remains open in free rank at least two.
+\end{document}

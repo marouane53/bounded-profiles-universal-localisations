@@ -1,0 +1,12 @@
+20-dimensional boundary certificate over Q
+Conventions: cohomological grading, left B modules; R=A_3^op
+dim R = 6*3 = 18; dim W = 1; dim A_prime = 20
+Semi-free generators have degrees 0,-2,-4,...,-32: PASS
+Truncated resolutions exact away from augmentation and unfilled bottom: PASS
+Ext_B^q(L1,L1) nonzero for 0 <= q <= 32: [0, 4, 8, 12, 16, 20, 24, 28, 32]
+Ext_B^q(L4,L1) nonzero for 0 <= q <= 32: [2, 6, 10, 14, 18, 22, 26, 30]
+Independent ambient stable-Ext check in degrees 1,...,32: PASS
+All odd Ext degrees vanish; the brief's parity assertion is false: VERIFIED
+Correct infinite patterns: q=4m and q=4m+2, respectively
+Tor vanishing in every degree is by projectivity of the localisation target, not finite testing
+ALL CHECKS PASSED

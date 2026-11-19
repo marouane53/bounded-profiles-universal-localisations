@@ -1,0 +1,72 @@
+\section{The canonical detector}\label{sec:detector}
+
+\begin{theorem}[Canonical detector]\label{thm:detector}
+Let \(R\) be a finite-dimensional \(k\)-algebra, let \(i:\cK\hookrightarrow D(R)\) be the inclusion of a compactly generated localising subcategory, and let \(\Gamma\) be its right adjoint.  Put \(I_{\cK}=\Gamma(DR)\in\cK\).  Then
+\begin{equation}\label{eq:detector}
+ \cK\cap\Db(R\text{-}\modcat)
+ =\Bigl\{X\in\cK:\ \bigoplus_{n\in\bbZ}\Hom_{\cK}\bigl(X,I_{\cK}[n]\bigr)\text{ is finite-dimensional}\Bigr\}.
+\end{equation}
+If \(F:D(B)\xrightarrow{\sim}\cK\) is the dg Morita equivalence attached to a compact generator \(T\), then \(F^{-1}(I_{\cK})\simeq D_kT\), with the left \(B\)-action dual to the right \(B\)-action on \(T\); equivalently
+\begin{equation}\label{eq:tensor-duality}
+ \RHom_B(Y,D_kT)\simeq D_k\bigl(T\Ltensor_BY\bigr)\qquad(Y\in D(B)).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For every \(X\in D(R)\), possibly unbounded,
+\begin{equation}\label{eq:ambient-duality}
+ \RHom_R(X,DR)\simeq D_kX,\qquad \Hom_{D(R)}(X,DR[n])\cong D_kH^{-n}(X).
+\end{equation}
+Indeed, on modules evaluation at \(1\) identifies \(\Hom_R(X,DR)\) with \(D_kX\); the inverse sends a functional \(f\) to \(x\mapsto(r\mapsto f(rx))\), and the left \(R\)-action fixed in \Cref{sec:preliminaries} makes this \(R\)-linear.  The identification holds on complexes with their Hom differentials.  Since \(D_k\) is exact, \(\Hom_R(-,DR)\) sends acyclic complexes to acyclic complexes, so \(DR\) is K-injective and the complex identification computes derived Hom.  Taking cohomology gives \eqref{eq:ambient-duality}.
+
+For \(X\in\cK\), adjunction gives \(\Hom_{\cK}(X,\Gamma DR[n])\cong\Hom_{D(R)}(iX,DR[n])\).  By \eqref{eq:ambient-duality} the sum of these spaces is finite-dimensional exactly when only finitely many cohomology spaces of \(X\) are nonzero and each is finite-dimensional, which over a finite-dimensional algebra is membership in \(\Db(R\text{-}\modcat)\).  This proves \eqref{eq:detector}.
+
+Since \(F\) is fully faithful with right adjoint \(\Theta=\RHom_R(T,-)\), the composite \(F\Theta\) is the coreflection into \(\cK\).  Hence
+\[
+ \Theta(\Gamma DR)\simeq\Theta(DR)=\RHom_R(T,DR)\simeq D_kT,
+\]
+the last isomorphism being \eqref{eq:ambient-duality} for \(X=T\); precomposition on the Hom complex is carried to the dual of the right \(B\)-action on \(T\).  Formula \eqref{eq:tensor-duality} is tensor--Hom adjunction over the field \(k\), computed on a K-projective replacement of \(Y\).
+\end{proof}
+
+\begin{corollary}[The bounded defect as an invariant of a pair]\label{cor:pair-invariant}
+Let \(\lambda:R\to S\) be a stably flat universal localisation of finite-dimensional algebras at a finite set \(\Sigma\), with \(T=\bigoplus_\sigma\Cone(\sigma)\) and \(B\) as in \Cref{sec:preliminaries}.  Then \(D_kT\in\Dfd(B)\),
+\begin{equation}\label{eq:profile-as-cut}
+ \Prof(F)=\cU_{D_kT},
+ \qquad
+ \DeltaB(\lambda)\simeq\cU_{D_kT}/\per B,
+\end{equation}
+and \(\DeltaB(\lambda)\) is determined by the \(k\)-linear pair \((\cK_\lambda,\Gamma_\lambda DR)\): a \(k\)-linear triangle equivalence of such pairs commuting with coproducts induces an equivalence of bounded defects.
+\end{corollary}
+
+\begin{proof}
+The complex \(T\) is a bounded complex of finite-dimensional projectives, so \(D_kT\) has finite-dimensional total cohomology.  For \(Y\in D(B)\) with \(FY\) bounded, \(Y\simeq\Theta FY\) has finite-dimensional total cohomology because \(T\) is a bounded complex of finitely generated projectives; hence \(\Prof(F)\subseteq\Dfd(B)\).  On \(\Dfd(B)\), \eqref{eq:detector} and \eqref{eq:tensor-duality} give \(\Prof(F)=\cU_{D_kT}\).  The Morita equivalence sends \(\per B\) onto \(\thick(T)=\Kc_\lambda\) by the Thomason--Neeman identification of compacts used in \Cref{lem:compact-intersection}, so \Cref{cor:relative-dg-bounded} gives the quotient formula.  A \(k\)-linear coproduct-preserving equivalence of pairs preserves compact objects and the finite-total-Hom condition in \eqref{eq:detector}, hence the numerator and denominator of the quotient.
+\end{proof}
+
+\begin{remark}[Reconstruction of the intrinsic subcategory]\label{rem:intrinsic}
+Put
+\[
+ \cF(\cK)=\Bigl\{X\in\cK:\ \bigoplus_n\Hom(C,X[n])\text{ is finite-dimensional for all }C\in\cK^c\Bigr\}.
+\]
+Under Morita equivalence \(\bigoplus_n\Hom(T,FY[n])\cong\bigoplus_nH^n(Y)\), and for fixed \(X\) the compacts satisfying the condition form a thick subcategory, so testing \(T\) tests \(\thick(T)=\cK^c\).  This recovers \(F(\Dfd B)=\cF(\cK)\) and its generator independence \Cref{prop:finite-total-hom}, which is the Gao--Psaroudakis criterion \cite[Lemma~4.1]{GaoPsaroudakis18} in Morita coordinates.  Full bounded compatibility in the sense of \Cref{def:r-bounded} is the equality of the intrinsic category \(\cF(\cK)\) with the cut \eqref{eq:detector}; both are independent of the generator, which recovers \Cref{cor:rbounded-generator-independent} without reference to the silting graph.  The two objects \(D_kT\) and \(D_kB\) must not be conflated: the first records the embedding, the second is the intrinsic dual of the free module, and \(\cU_{D_kB}=\Dfd(B)\).
+\end{remark}
+
+\begin{remark}
+The detector need not itself have bounded ambient realisation.  On the right-module side of the AHKLY localisation \Cref{prop:dual-dga}, \(T\simeq k\oplus k[1]\) as a left module over \(B=k[\eps]/(\eps^2)\), so \(D_kT\simeq k\oplus k[-1]\) is not perfect and \(F(D_kT)\) is unbounded.  Brown--Comenetz duals as detectors and far-away orthogonality already appear in \cite[Section~2]{KostasPsaroudakisVitoria25}; no novelty is claimed for the duality \eqref{eq:tensor-duality}.
+\end{remark}
+
+We record the truncation lemma that converts a complex detector into a module detector.
+
+\begin{lemma}[Module detectors]\label{lem:module-detector}
+Let \(R\) be finite-dimensional and \(X\in\Db(R\text{-}\modcat)\).  There are a finite left \(R\)-module \(N\), an integer \(m\), and a bounded complex \(J\) of finite-dimensional injective left \(R\)-modules with a triangle
+\begin{equation}\label{eq:truncation-triangle}
+ N[-m]\longrightarrow X\longrightarrow J\longrightarrow N[-m+1].
+\end{equation}
+Consequently, for every \(Z\in\Db(R\text{-}\modcat)\),
+\begin{equation}\label{eq:module-detector}
+ \RHom_R(Z,X)\in\Db(k\text{-}\modcat)\iff\RHom_R(Z,N)\in\Db(k\text{-}\modcat)\iff\Ext^{\gg0}_R(Z,N)=0 .
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Injective envelopes of finite modules over a finite-dimensional algebra are finite, so \(X\) has a bounded-below injective resolution \(I\) with finite-dimensional terms.  Choose \(m\) above the highest nonzero cohomology degree of \(X\).  The good truncation \(\tau_{\le m}I\) is quasi-isomorphic to \(I\) and has top term \(N=\ker(I^m\to I^{m+1})\) in degree \(m\); the short exact sequence of complexes \(0\to N[-m]\to\tau_{\le m}I\to\sigma_{\le m-1}I\to0\), with \(\sigma_{\le m-1}I\) the brutal truncation, gives \eqref{eq:truncation-triangle} with \(J=\sigma_{\le m-1}I\), a bounded complex of finite-dimensional injectives.  For bounded finite-dimensional \(Z\), \(\RHom_R(Z,J)\) is computed by the ordinary Hom complex from a bounded finite-dimensional representative of \(Z\) into \(J\), hence is bounded and finite-dimensional.  Applying \(\RHom_R(Z,-)\) to \eqref{eq:truncation-triangle} gives the first equivalence in \eqref{eq:module-detector}.  For the second, each \(\Ext^n_R(Z,N)\) is finite-dimensional and vanishes for \(n\) sufficiently negative because \(Z\) is bounded and \(N\) is a module.
+\end{proof}

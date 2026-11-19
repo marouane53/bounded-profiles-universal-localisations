@@ -1,0 +1,7 @@
+Coordinate symmetry for C = k[x,y]/(x^2,y^2)
+Swap x <-> y: unital involution; all 16 multiplication pairs: PASS
+Module pullback exchanges C/(x) and C/(y): PASS
+Repeating free-resolution step: image = kernel over Q and F_2: PASS
+Repeating Hom step: self-Ext dimension 2; cross-Ext dimension 0: PASS
+All-degree Ext statements use the periodicity proof in the manuscript.
+ALL COORDINATE-SYMMETRY CHECKS PASSED

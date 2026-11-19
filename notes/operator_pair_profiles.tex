@@ -1,0 +1,490 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Operator pairs and all bounded profiles of a six-dimensional dg algebra}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\per}{\operatorname{per}}
+\newcommand{\fd}{\mathrm{fd}}
+\newcommand{\HHom}{\operatorname{RHom}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\cone}{\operatorname{Cone}}
+\newcommand{\thick}{\operatorname{thick}}
+\newcommand{\supp}{\operatorname{supp}_{\sigma}}
+\newcommand{\Dom}{\operatorname{Dom}_{\sigma}}
+\newcommand{\prof}{\mathcal U}
+\newcommand{\fib}[1]{\overline{#1}}
+\newcommand{\bb}{\mathcal B}
+\newcommand{\ttt}{\mathcal T}
+\setlength{\emergencystretch}{1em}
+\title{Operator pairs and all bounded profiles\\ of a six-dimensional dg algebra}
+\author{Marouane Lamharzi Alaoui\\
+\small Research notes on two-term dg kernels and bounded profiles of universal localisations}
+\date{18 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Two finite-dimensional operator pairs give the same bounded profile precisely
+when their sets of simple composition factors agree after identifying a
+factor with its exchange. We describe the whole poset over any field.
+One part consists of finite sets of these simple types in reverse inclusion.
+The other consists of invertibility domains of square matrices over a
+two-generator free algebra, tested in both orders of the generators.
+A special-fibre calculation separates the two parts. We give a finite
+comparison method for operator pairs and for polynomial-matrix domains.
+Over $\mathbb C$ we identify the
+nonempty domains by finite sets of stable atom types.
+\end{abstract}
+
+\section{The classification}
+Let $D$ be the six-dimensional dg algebra over $k$ with degree-zero
+basis $1,a,b,h$, degree-minus-one basis $r,w$, products $a^2=h$,
+$br=rb=w$, and $dr=h$. All unlisted radical products and differentials
+vanish. Its finite-cohomology category is equivalent to the perfect
+\emph{right} dg modules over the zero-differential graded algebra
+\[
+ A=k\langle x,z\rangle/(x^2z-zx^2),\qquad |x|=|z|=1 .
+\]
+The preceding note \emph{A cubic higher multiplication creates infinitely
+many bounded profiles} proves this using the reduced bar dual. We work
+on the $A$ side. For perfect $P,E$, membership $P\in\prof_E$ means that
+$H^*\HHom_A(P,E)$ has finite total dimension. Such Hom complexes have
+locally finite, bounded-below cohomology, by building both objects from
+finite cells and retracts. The inclusion poset is the same after dividing
+by the original $\per D$, common to all profiles.
+
+Put $s=x^2$, $R=k\langle U,V\rangle$, and let $\sigma$ exchange $U,V$.
+Let $\Omega_r$ and $\Omega_l$ be the isomorphism types of nonzero
+finite-dimensional simple right and left $R$-modules, respectively,
+modulo $\sigma$. For a finite module $W$ write $\supp W$ for its
+set of such orbits among its composition factors, with repetitions
+discarded. A superscript $\sigma$ denotes twisting the action. Ordinary
+matrices on a vector space specify either convention using rows or
+columns consistently. Denote by $M(W)$ the perfect module of the preceding
+note, with $W$ in every nonnegative degree, $x$ the identity between
+consecutive copies and $z$ the two operators alternately. Its left-handed
+version is perfect too, by word reversal.
+
+For a square polynomial matrix $F$ over $R$, set
+\[
+ \Dom F=\{[L]\in\Omega_l:\ F(L)\text{ and }F(L^\sigma)
+                      \text{ are invertible}\}.
+\]
+Here $F(L)$ is the block matrix acting on copies of $L$. Include the
+empty domain (zero matrix) and all of $\Omega_l$ (identity matrix).
+The use of orbits puts the parity condition into the label.
+
+\begin{theorem}\label{poset}
+The list below has no repetitions except for equal labels within a row.
+Every label in the list occurs.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Profiles & Labels & Inclusion rule\\
+\midrule
+$\ttt_F$ & finite $F\subset\Omega_r$ & $\ttt_F\subseteq\ttt_{F'}\iff F\supseteq F'$\\
+$\bb_O$ & domains $O=\Dom H\subseteq\Omega_l$ &
+$\bb_O\subseteq\bb_{O'}\iff O\subseteq O'$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here $\prof_{M(W)}=\ttt_{\supp W}$. The full profile is $\ttt_\varnothing$,
+and the smallest is $\bb_\varnothing$. A first-row profile never lies
+in a second-row profile as a subcategory. A second-row profile lies
+in a first-row profile exactly when the former is the smallest or the
+latter is the full one. Thus every nonempty $F$ and nonempty $O$ give
+incomparable profiles with intersection $\bb_\varnothing$.
+\end{theorem}
+
+In particular a Jordan block can have the same profile as a single scalar,
+and the exchange can be made independently on different simple factors.
+This classification by actual subsets of simple types makes sense over
+any field. Sections~\ref{atoms} and~\ref{effective} give finite-factor labels over
+$\mathbb C$ and a finite comparison of two supplied domains over any field.
+
+\section{The localized presentation}
+Write $B=A[s^{-1}]$. The normal words for $A$ avoid $xxz$.
+Right multiplication by $x^2$ appends two letters to these words and is
+injective. Since $s$ is central, its localisation is flat and
+$G=A/(s)=k\langle x,z\rangle/(x^2)$. There is a graded isomorphism
+\[
+ B=R[x,x^{-1};\sigma],\qquad U=zx^{-1},\quad V=xzx^{-2},
+ \qquad x f=\sigma(f)x .
+\]
+Degree zero and induction from $R=B^0$ are inverse equivalences on
+graded modules; multiplying by the invertible $x$ identifies the
+components, with $\sigma$ twisting the action after one step.
+
+\begin{lemma}\label{presentation}
+Any perfect right dg $B$-module is isomorphic in the derived category to
+the cone of a map $B^m\to B^n$ with entries in $R$ and generators in
+degree zero. If its degree-zero cohomology is a finite-dimensional module
+$W$, its cohomology as a graded module is the two-sided infinite grading
+of $M(W)$, and it is quasi-isomorphic to that cohomology with zero
+differential. The corresponding statements hold for left modules.
+\end{lemma}
+\begin{proof}
+In the category of graded $B$-modules, cohomology of a perfect dg module
+is finitely presented. Indeed $R$ is coherent and hereditary with free
+submodules of a free module. For the freeness assertion take leading
+terms in a degree-lexicographic order on module words, compatible with
+right multiplication. Pick a monic element for each minimal prefix among
+the leading words in each position. Their right multiples span by
+leading-term reduction and are independent by prefix incomparability.
+A finitely generated free submodule has finite rank. The image of a
+map of finite free modules is thus finite free, and its kernel is a
+finitely generated projective summand, also free. This gives coherence.
+The graded equivalence transfers these facts to $B$.
+The long cohomology sequence now shows that finite presentation is closed
+under triangles (kernels, cokernels and extensions), shifts and summands.
+
+Take a finite graded free presentation $0\to B^m\xrightarrow{F} B^n
+\to H^*P\to0$, using the equivalence with $R$ to put the generators
+in degree zero. Lift the generators of $B^n$ to cycles in $P$.
+The relations are boundaries, so lift each to a primitive. The resulting
+map $\cone(F)\to P$ induces the presentation isomorphism on cohomology.
+Also $\cone(F)\to H^*P$ is a quasi-isomorphism by injectivity of $F$.
+Degree zero determines the graded module, giving the final claim.
+\end{proof}
+
+For $E$ perfect call its cohomology \emph{eventually $s$-invertible}
+if $s:H^nE\to H^{n+2}E$ is an isomorphism for all sufficiently large
+$n$. Its localisation map to $E_s$ is then an isomorphism on all high
+cohomology groups. The same terminology applies to $P^\vee=\HHom_A(P,A)$,
+a perfect left module. If $W=H^0(E_s)$ in this case, $W$ is finite
+dimensional. For the alternating detector $M(W)$ it is exactly the
+original ordered pair, since $zx^{-1}$ and $xzx^{-2}$ act on degree zero
+as the even and odd operators. The conjugate occurs in odd degrees.
+
+\section{Equality and inclusion for operator pairs}
+For perfect $P$, the localization of $\HHom_A(P,E)$ is
+$\HHom_B(P_s,E_s)$. This follows first for $P=A$, then for its thick
+closure. If $E$ has eventually invertible $s$, Hom into the cone of
+$E\to E_s$ vanishes in high degrees for every perfect $P$, again by
+finite cells and summands. The localized Hom has two-periodic cohomology.
+Consequently $P\in\prof_E$ exactly when $\HHom_B(P_s,E_s)$ is acyclic.
+Use Lemma~\ref{presentation} to present $P_s$ by a matrix $H$.
+Applying Hom into the zero-differential model of $E_s$ tests bijectivity
+of its precomposition map on $W$ and $W^\sigma$. For $W\ne0$ unequal
+matrix dimensions preclude bijectivity. For a square matrix, a composition
+series puts each evaluation into block triangular form with square
+diagonal blocks. Bijectivity is therefore equivalent to bijectivity on
+each simple factor in both parities. This proves sufficiency of the
+support and reverse inclusion, also for sources which are retracts.
+
+For necessity take a simple type present in $W'$ and absent up to exchange
+from $W$. The annihilator of a finite-dimensional simple module is a
+maximal two-sided ideal: the image on the simple is a finite-dimensional
+primitive algebra, hence simple artinian. Equal annihilators give
+isomorphic simples on the same side. In the semisimple quotient of the
+joint finite image on all the relevant simple representatives and
+exchanges, choose the central idempotent equal to one on the support
+of $W$ and zero on the distinguished orbit. Equivalently lift the
+prescribed scalars by the Chinese remainder theorem for distinct
+maximal two-sided ideals. This yields $f\in R$ with both properties.
+As $f\in B^0$, some $s^d f\in A^{2d}$. The cone of left multiplication
+by $s^d f:A[-2d]\to A$ gives a perfect source in $\prof_{M(W)}$
+outside $\prof_{M(W')}$. This works if $W=0$ as well. Taking direct sums
+of simple representatives realises every finite support.
+
+\paragraph{A finite comparison on the input matrices.}
+Form the unital joint image algebra $H$ on $W\oplus W^\sigma\oplus
+W'\oplus(W')^\sigma$ by closing the span of the identity under the two
+generators. Let $I$ be the kernel of restriction to $W\oplus W^\sigma$.
+Then $\prof_{M(W)}\subseteq\prof_{M(W')}$ exactly when repeated action
+of $I$ on $W'\oplus(W')^\sigma$ reaches zero. Indeed a faithful finite
+module contains every simple type of its algebra among its composition
+factors: the regular module embeds in finitely many copies by its action
+on a vector-space basis. Apply this to $H/I$. On a simple module the
+ideal $I$ acts either by zero or surjectively. A finite filtration now
+proves the criterion in both directions. Each subspace iteration
+decreases dimension or stabilises, so this test terminates over the
+given field using only linear algebra. Interchanging the inputs tests
+the reverse inclusion.
+
+\section{Why the special fibre forces the other cases}
+For a perfect complex use a subscript $s$ for central localization and
+a bar for derived reduction to $G$. Let $K=\HHom_A(P,E)$. Flat localization
+and the two-term free resolution of $G$ give
+\[
+ K_s\simeq E_s\otimes^L_B (P^\vee)_s,\qquad
+ \cone(s:K[-2]\to K)\simeq\HHom_G(\fib P,\fib E).
+\]
+The second identity also follows by applying $\HHom_A(P,-)$ to the
+multiplication triangle for $E$ and using extension-restriction
+adjunction. Reduction commutes with the perfect dual.
+For any locally finite bounded-below cohomology as here, $H^*K$ is
+finite exactly when $K_s$ is acyclic and the displayed cone has finite
+cohomology. The cone condition makes $s$ eventually invertible, and
+localization then recovers each high-degree group.
+
+\begin{lemma}\label{fibre}
+For perfect right dg $G$-modules $P_0,E_0$, the total cohomology of
+$\HHom_G(P_0,E_0)$ is finite exactly when
+$H^*(E_0)$ is finite or $H^*\HHom_G(P_0,G)$ is finite.
+\end{lemma}
+\begin{proof}
+Use the ordinary commutative local ring
+$T=k[a,b]_{(a,b)}/(ab,b^2)$ with residue field $k$. We verify the
+Koszul duality needed here directly. A minimal free $T$-resolution
+$J$ of $k$ has basis $e_w$ in degree $-|w|$ indexed by words on $a,b$
+avoiding $aa$ and differential $d(e_{iw})=i e_w$.
+The initial augmentation is the residue map. For each suffix the images
+$aT,bT$ intersect trivially, $\operatorname{ann}(a)=kb$ and
+$\operatorname{ann}(b)=(a,b)$. These facts prove exactness recursively,
+including at suffixes beginning in $a$ where only the prefix $b$ is allowed.
+There are two closed degree-one endomorphisms stripping a terminal $a$
+or $b$ with sign $(-1)^{|w|-1}$ on the entire input word $w$ (zero on
+the empty word or a mismatched ending). Stripping $a$ twice is zero.
+Products for admissible words evaluate, up to signs, as the dual basis
+of $\Hom_T(J,k)$. Since $J$ is bounded-above projective,
+$\operatorname{End}_T(J)\to\Hom_T(J,k)$ induced by augmentation is a
+quasi-isomorphism of complexes. Thus $G\to\operatorname{End}_T(J)$ is
+a dg algebra quasi-isomorphism. The resulting equivalence
+$\thick_{D(T)}(k)\simeq\per G$ takes $k$ to $G$. Its source is precisely
+the bounded complexes with finite-length cohomology, by truncation.
+
+Write $Y,N$ for the objects corresponding to $P_0,E_0$. If
+$\Ext_T^*(k,N)$ is bounded, construction from $k$ makes
+$\Ext_T^*(Y,N)$ bounded for all such $Y$. Otherwise take a bounded-above
+minimal free resolution of $Y$ with finite ranks. Below its cohomology,
+dimension shifting replaces $Y$, up to a perfect complex and a shift,
+by a syzygy $L\subseteq(a,b)T^n$ (truncate the resolution in an exact
+degree). If $Y$ is nonperfect this syzygy is nonzero. It is killed by
+$b$ and is a submodule of $a k[a]_{(a)}^n\oplus (kb)^n$. Over the
+discrete valuation ring $T/(b)$, its torsion is killed by $a$, so
+$L\cong (T/(b))^u\oplus k^v$ with $u+v>0$. The first syzygy of $T/(b)$
+is $kb$ and that of $k$ is $aT\oplus kb$. Thus the next syzygy of $L$
+has a $k$ summand. Unbounded $\Ext_T^*(k,N)$ now forces unbounded
+$\Ext_T^*(Y,N)$. Bounded total Ext from $Y$ to $k$ is equivalent to
+perfection of $Y$ by minimality. Conversely a perfect $Y$ has bounded
+Ext to every $N$ here. Translating the two tests back gives the assertion.
+\end{proof}
+
+Combining the lemma and the multiplication triangles yields an individual
+membership test, useful even without comparing poset labels:
+\[
+ \boxed{\quad P\in\prof_E\ \Longleftrightarrow E_s\otimes_B^L(P^\vee)_s\simeq0\quad\text{and}\quad
+ \big(E\text{ or }P^\vee\text{ is eventually }s\text{-invertible}\big).\quad}
+\]
+Here and below eventual invertibility refers to cohomology. In particular
+the perfect source $G=\cone(s:A[-2]\to A)$ belongs to $\prof_E$
+exactly when $E$ is eventually $s$-invertible. Such profiles are exactly
+the first row of Theorem~\ref{poset}.
+
+\section{Matrix domains and the order between the two parts}
+Suppose $E$ fails eventual invertibility. By the boxed criterion, the
+eligible sources have $P^\vee$ eventually $s$-invertible. Put
+$W_P=H^0((P^\vee)_s)$, a finite-dimensional left $R$-module.
+Lemma~\ref{presentation} gives a presentation $B^m\xrightarrow{H}B^n$
+for $E_s$. Tensor with the zero-differential localized model of $P^\vee$.
+In each parity this evaluates $H$ on copies of $W_P$ or $W_P^\sigma$.
+If $m\ne n$, acyclicity requires $W_P=0$. Otherwise the composition-series
+test gives the explicit rule
+\[
+  P\in\bb_O\quad\Longleftrightarrow\quad P^\vee\text{ is eventually }
+  s\text{-invertible and }\supp W_P\subseteq O,
+  \qquad O=\Dom H .
+\]
+The unequal-rank case is $O=\varnothing$. Any finite-dimensional left
+module can occur as $W_P$, by taking $P$ to be the perfect dual of its
+left alternating detector. This both witnesses differences of domains
+and proves their inclusion rule.
+
+Conversely given any square matrix $H$ over $R$, clear all central
+denominators by a common $s^d$. Let $E$ be the direct sum of $G$ and
+the cone of the resulting graded map $A[-2d]^m\to A^m$. Its $G$
+summand has infinite cohomology killed by $s$, and its localization is
+zero. The other summand realizes exactly the desired evaluation test
+after localization. This argument applies even when the matrix over $R$
+has a kernel. In particular $\bb_{\Omega_l}=\prof_G$ and
+$\bb_\varnothing=\prof_A$. The latter consists of the sources whose
+dual has finite total cohomology. Under the original equivalence
+$A$ is the residue-field detector, so this is the image of $\per D$.
+
+To check the mixed comparisons, the source $G$ lies in every first-row
+profile and no second-row profile. Take $P$ in a second-row profile and
+a nonzero $W$ giving a first-row detector. If $W_P\ne0$, the localized
+tensor cannot be acyclic. Indeed, for a finite-dimensional right
+$R$-module $W$ of dimension $d$, there is a free presentation with
+ranks $2d,d$. Start with $W\otimes_k R\to W$ and impose the relations
+$v\otimes i-(vi)\otimes1$ for $i=U,V$. Their right multiples are
+independent by the leading first letters and they span the kernel by
+word reduction. Induce this presentation to $B$ and tensor with
+$(P^\vee)_s$. The dimensions in each parity differ by $d\dim W_P>0$.
+Hence intersection with the first-row profile forces $W_P=0$, which
+here is equivalent to $P\in\bb_\varnothing$. Conversely all such
+sources pass every test. This proves Theorem~\ref{poset}.
+
+\section{Counterexamples and the complex case}\label{atoms}
+\paragraph{Separate similarity and extensions.}
+Let $J=e_{12}$ and $K=e_{21}$ on $k^2$. The pairs $(J,K)$ and $(J,J)$
+have individually similar first operators and individually similar
+second operators. The polynomial $U-V$ is invertible on the former
+and zero on the latter, also after exchange, over every field.
+Clearing its denominator gives the explicit cone of $zx-xz$.
+The pair $(J,J)$, although nonsplit, has exactly the same profile as
+the one-dimensional zero pair. Both have only the trivial simple type.
+Over a field containing $0,1,2$ as distinct elements, the sums
+$(0,1)\oplus(0,2)$ and $(1,0)\oplus(0,2)$ have equal profiles, although
+neither simultaneous similarity nor one global exchange identifies them.
+
+\paragraph{Even the entire scalar pencil can agree.}
+Over $\mathbb Q$ take $L=\operatorname{diag}(2,3,4)$ and let $S$ cyclically
+send $e_1$ to $e_2$, $e_2$ to $e_3$, and $e_3$ to $e_1$. Compare
+$(L,S)$ with $(L,S^{\mathsf t})$. Their scalar pencils
+$\alpha I+\beta L+\gamma S$ and $\alpha I+\beta L+\gamma S^{\mathsf t}$
+have identical determinant polynomials by transposition. Set
+\[
+ f(U,V)=[U,V]^3-2I+(U-2I)(U-3I)(U-4I).
+\]
+Since $[L,S]^3=-2I$, the two evaluations on the first pair and its
+exchange are $-4I$ and $(S-2I)(S-3I)(S-4I)$, both invertible.
+On $(L,S^{\mathsf t})$ the commutator cube is $2I$ and $f$ is zero.
+Thus clearing denominators of this single polynomial separates the
+profiles. The pairs are both simple: the spectral projections of $L$
+and the directed cycle generate the matrix units. Their distinct swap
+orbits give incomparability in both directions.
+
+\paragraph{The localization can forget the smallest profile.}
+For $W\ne0$, $M(W)$ and $M(W)\oplus G$ have identical localizations.
+The first yields $\ttt_{\supp W}$, whereas the second yields
+$\ttt_{\supp W}\cap\bb_{\Omega_l}=\bb_\varnothing$.
+The special-fibre condition in the membership test is essential.
+
+\paragraph{Scalar tests miss second-row profiles.}
+The commutator $H=UV-VU$ vanishes on all one-dimensional modules. It
+evaluates on $(J,K)$ as $\operatorname{diag}(1,-1)$, invertible also in
+characteristic two and after exchange. The pair $(J,K)$ is simple
+because $J,K$ generate all matrix units. Thus $\bb_{\Dom H}$ is
+strictly above $\bb_\varnothing$ and strictly below $\bb_{\Omega_l}$.
+A source witnessing the first strict inclusion is the dual alternating
+detector for $(J,K)$; the one-dimensional zero pair witnesses the second.
+This example also gives a nontrivial second-row profile incomparable
+with every proper first-row profile.
+
+\paragraph{Finite factor labels over $\mathbb C$.}
+A square matrix over $\mathbb C\langle U,V\rangle$ is full if it has
+full inner rank. Fullness is equivalent to admitting an invertible
+finite matrix evaluation (the free skew field criterion). A full
+nonunit has a factorisation into atoms. Stable association allows
+adjoining identity blocks and multiplying on both sides by invertible
+polynomial matrices. For two full matrices $H,H'$, use the
+Singul\"arstellensatz, Theorem 2.12 of
+\href{https://arxiv.org/abs/1907.04328}{Helton, Klep and Vol\v ci\v c}.
+The free singularity locus of $H$ is contained in that of $H'$ precisely
+when every atomic factor of $H$ occurs, up to stable association, in $H'$.
+Passing from simple tuples to all finite tuples preserves comparisons of
+invertibility domains by block triangularity. Testing both parities is
+equivalent to the single block $H\oplus\sigma H$. Consequently the
+nonempty second-row domains are in bijection with finite sets of
+stable atom types modulo $\sigma$, ordered by reverse inclusion.
+Every finite set occurs by taking block sums. A block sum of full matrices
+is full over the free skew field, so the symmetrization still has a
+nonempty domain. Nonfull matrices give the global bottom, and the
+identity has empty atom set and gives $\prof_G$.
+The arbitrary-field description in Theorem~\ref{poset} uses no
+characteristic-zero factorisation theorem.
+
+\section{Comparing the second-row labels over any field}\label{effective}
+The description by domains has a finite pairwise comparison test as well.
+This section gives it for two given polynomial-matrix labels; it is
+separate from the much smaller calculation for input operator pairs.
+
+\begin{lemma}\label{monic}
+For monic pencils $I-\sum_i C_iY_i$ and $I-\sum_i C'_iY_i$, the first
+invertibility domain on finite matrix tuples is contained in the second
+precisely when the nontrivial simple factors of the coefficient tuple $C'$
+are contained among those of $C$, ignoring multiplicities. Here the
+trivial simple has every generator zero. This assertion holds over any field.
+\end{lemma}
+\begin{proof}
+Triangularising along a composition series gives sufficiency; the trivial
+factor contributes an identity. If a nontrivial factor of $C'$ is missing,
+use the finite-image argument of Section 3 to find a polynomial $f$ in
+the coefficient variables which is one on that factor and zero on all
+factors of $C$ and on the trivial module. In particular $f$ has zero
+constant term. There exist finite scalar matrices $Y_i$ that make the
+pencil invertible precisely when $I-f(C)$ is invertible, for every $C$.
+To construct them write $f$ as a sum of words. For each word make a
+path from one common base vertex back to itself, with distinct internal
+vertices, edge labels the letters of the word and its coefficient on one
+edge. Let $Y_i$ be the weighted adjacency matrices for label $i$, adding
+parallel edge weights. Deleting the base vertex leaves a directed acyclic
+graph. Eliminating its vertices in the block matrix $I-\sum_iY_i\otimes C_i$
+has identity diagonal pivots and sole remaining Schur complement $I-f(C)$.
+Interchanging tensor factors is a change of basis. This gives a tuple
+where the first pencil is invertible and the second singular.
+\end{proof}
+
+\begin{corollary}\label{finite}
+Inclusion and equality between two second-row labels can be checked by
+finitely many field operations and polynomial identity tests, in any
+characteristic, given exact arithmetic in $k$.
+\end{corollary}
+\begin{proof}
+First replace each label $H$ by $H\oplus\sigma H$. Its ordinary domain
+on all finite tuples determines the original domain on simple orbits
+and conversely, by composition series. Linearise each matrix to an affine
+pencil $L_i=A_{i0}+A_{i1}U+A_{i2}V$ preserving invertibility at every tuple.
+For example replace a product term $BC$ in a matrix $D+BC$ by the block
+matrix with rows $(D,B),(-C,I)$ and use its Schur complement. Splitting
+individual word products, with the appropriate entry row and column,
+terminates in affine entries.
+
+Let $n_i$ be the pencil sizes and $d=\max(1,n_1-1,n_2-1)$. Test the
+determinants $\det L_i(Z_1,Z_2)$ at two $d$-by-$d$ independent generic
+matrices. An identically zero determinant means an empty domain.
+Indeed apply Theorem 1.8 of
+\href{https://arxiv.org/abs/1512.03393}{Derksen and Makam} over the
+algebraic closure to the homogeneous pencil
+$\sum_{j=0}^2 A_{ij}\otimes Z_j$. Existence of any invertible evaluation
+implies one in every size $d\ge n_i-1$ for $n_i\ge2$; the scalar
+case is immediate. In fixed size the open invertibility condition can
+be combined with $Z_0$ invertible. Multiplying by $I\otimes Z_0^{-1}$
+then normalizes $Z_0$ to identity. Conversely a nonzero generic determinant
+can be specialized in the algebraic closure, and restricting scalars from
+the finite extension generated by the entries produces a tuple over $k$.
+This also justifies the emptiness test over finite fields. Empty-domain
+comparisons follow directly.
+
+For two nonempty domains take the generic pair $Z$ as a common centre
+over $K=k(\text{entries of }Z)$. Inclusion of domains on all finite tuples
+over $k$ is equivalent to inclusion over $K$. A witness over $k$ persists.
+A witness over $K$ can be specialized to a finite algebraic extension of
+$k$, avoiding denominators and the nonzero determinant, while its identically
+zero determinant remains zero. Restriction of scalars preserves the two
+outcomes. At sizes $dm$ now substitute
+\[
+ Z_i\otimes I_m+\sum_{a,b=1}^d e_{ab}\otimes Y_{iab}
+ \quad(i=1,2)
+\]
+with the $2d^2$ blocks free to vary. This covers every tuple of size $dm$
+over $K$. Any witness in another size can be amplified by a direct sum of
+$d$ copies. The constant part of the amplified affine pencil is invertible
+over $K$; left normalization gives a monic pencil in the block variables.
+Lemma~\ref{monic} compares its ordinary domains. To implement that finite
+simple-factor test, adjoin a trivial summand to both coefficient tuples
+and use the joint-image ideal iteration of Section 3, with all $2d^2$
+generators and without any further exchange. All steps use finite matrices
+and rational functions. This is a termination statement, without a
+practical complexity estimate.
+\end{proof}
+
+The preceding factor theorem and the monic-pencil comparison of
+\href{https://arxiv.org/abs/1512.02648}{Klep and Vol\v ci\v c}
+supply prior free-locus results. The special-fibre argument is in the
+setting of the vanishing theorem for nontrivial fibre products of
+\href{https://doi.org/10.1090/proc/13633}{Nasseh and Sather-Wagstaff}:
+$T$ is the fibre product of a discrete valuation ring and the dual
+numbers over $k$. The proof above establishes the particular complex
+version directly. The classification here combines this fibre, the
+graded localization and the realisation of all test matrices for the
+six-dimensional example. Its order description does not classify
+simultaneous similarity classes of all operator pairs.
+\end{document}

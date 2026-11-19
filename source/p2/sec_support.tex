@@ -1,0 +1,124 @@
+\section{Support classification and non-generation}\label{sec:support}
+
+Throughout this section \(k\) is algebraically closed and \(C\) is a finite-dimensional self-injective \(k\)-algebra, so that \(\Dsg(C)\simeq\underline{\modcat}\,C\) is the stable module category, by Buchweitz's theorem \cite{Buchweitz} in the form used in \Cref{sec:nakayama}.  We write \(q:\Db(C\text{-}\modcat)\to\Dsg(C)\) for the quotient.
+
+\subsection{Support theories}
+\begin{definition}[Support theory]\label{def:support-theory}
+A \emph{support theory} for \(C\) consists of a projective \(k\)-variety \(\PP_C\) and closed subsets \(\VV_C(M)\subseteq\PP_C\) for finite \(C\)-modules \(M\), such that:
+\begin{enumerate}[label=\textup{(S\arabic*)}]
+\item\label{S:basic} \(\VV_C(M)=\varnothing\) iff \(M\) is projective; \(\VV_C(\Omega M)=\VV_C(M)\); \(\VV_C(M\oplus M')=\VV_C(M)\cup\VV_C(M')\); and \(\VV_C(M_h)\subseteq\VV_C(M_i)\cup\VV_C(M_j)\) for every short exact sequence \(0\to M_1\to M_2\to M_3\to0\) and \(\{h,i,j\}=\{1,2,3\}\);
+\item\label{S:pair} for finite modules \(M,N\): \(\Ext^{\gg0}_C(M,N)=0\) iff \(\VV_C(M)\cap\VV_C(N)=\varnothing\);
+\item\label{S:realise} every closed subset of \(\PP_C\) is \(\VV_C(N)\) for some finite module \(N\);
+\item\label{S:full} \(\VV_C(C/\rad C)=\PP_C\).
+\end{enumerate}
+\end{definition}
+
+By \ref{S:basic}, \(\VV_C\) is constant on isomorphism classes of the stable category and descends to \(\Dsg(C)\); for \(X\in\Db(C\text{-}\modcat)\) we put \(\VV_C(X)=\VV_C(M)\) for any finite module \(M\) with \(qM\cong qX[t]\) for some \(t\).  Then \(\VV_C(X)=\varnothing\) iff \(X\in\per C\), support is invariant under shifts, decreases under summands, and satisfies the union property for triangles.  For a closed subset \(Z\subseteq\PP_C\) put
+\begin{equation}\label{eq:DZ}
+ \sD_Z=\{X\in\Dsg(C):\VV_C(X)\cap Z=\varnothing\}.
+\end{equation}
+By \ref{S:basic} this is a thick subcategory; as a thick subcategory of the Krull--Schmidt category \(\underline{\modcat}\,C\) it is idempotent complete.
+
+\begin{theorem}[Support classification]\label{thm:support-classification}
+Let \(C\) admit a support theory.  The marked subcategories of \(\Dsg(C)\) occurring as bounded defects of stably flat universal localisations of finite-dimensional algebras at finite \(\Sigma\) with kernel dg algebra \(C\) are exactly the \(\sD_Z\), \(Z\subseteq\PP_C\) closed.  Distinct closed subsets give distinct subcategories.  Every \(\sD_Z\) is realised by \(\lambda_{D_kN}:C[D_kN]\to k\) for any finite module \(N\) with \(\VV_C(N)=Z\); in that family
+\begin{equation}\label{eq:fixed-data}
+ \cK_{\lambda}\simeq D(C),\qquad \Kc_\lambda\simeq\per C,\qquad C[D_kN]/C[D_kN]eC[D_kN]=k,\qquad \Dsg(C[D_kN])\simeq\Dsg(C),
+\end{equation}
+and every \(\DeltaB(\lambda_{D_kN})\) is idempotent complete and coincides with \(\Defsg(\lambda_{D_kN})\) before completion.
+\end{theorem}
+
+\begin{proof}
+By \Cref{thm:normal-form} every profile is \(\cU_N\) for a finite module \(N\), and every \(\cU_N\) occurs, realised by \(\lambda_{D_kN}\).  For \(Y\in\Db(C\text{-}\modcat)\) choose a finite module \(M\) and \(t\) with \(qM\cong qY[t]\); the difference is measured by bounded complexes of projectives, which are also bounded complexes of injectives because \(C\) is self-injective, so \(\Ext^{\gg0}(Y,N)=0\) iff \(\Ext^{\gg0}(M,N)=0\).  By \ref{S:pair},
+\begin{equation}\label{eq:UN-support}
+ \cU_N=\{Y\in\Db(C\text{-}\modcat):\VV_C(Y)\cap\VV_C(N)=\varnothing\}.
+\end{equation}
+The functor \(\cU_N/\per C\to\Dsg(C)\) is fully faithful by \Cref{lem:subcategory-quotient-embedding}, since \(\per C\subseteq\cU_N\) and \(\cU_N\) is triangulated; its essential image consists of the objects of \(\Dsg(C)\) represented by modules in \(\cU_N\), which by \eqref{eq:UN-support} is \(\sD_{\VV_C(N)}\).  With \ref{S:realise} every closed \(Z\) occurs.
+
+If \(Z_1\ne Z_2\), one of the locally closed sets \(Z_1\setminus Z_2\), \(Z_2\setminus Z_1\) is nonempty and, \(\PP_C\) being a variety over an algebraically closed field, contains a closed point \(p\).  By \ref{S:realise} there is a module \(X_p\) with \(\VV_C(X_p)=\{p\}\); its image lies in exactly one of \(\sD_{Z_1},\sD_{Z_2}\).
+
+For \eqref{eq:fixed-data}: the kernel statements are \Cref{lem:ope-stratifying}; the singularity equivalence is Chen's Theorem~4.1(1) \cite{ChenSchur09}, applicable because the upper-left ring \(k\) has global dimension zero and \(D_kN\) is finite over \(k\), with no hypothesis on \((D_kN)_C\); its Schur functor is the exact corner restriction \(e(-)\), which sends \(j_!Y\) to \(Y\) and hence respects the marking.  Finally the compact kernel has the silting object \(C\) with artinian endomorphism algebra, so \Cref{thm:unconditional-comparison,cor:finite-dimensional-precompletion} gives idempotent completeness and the equality with the singular defect; alternatively \(\sD_Z\) is idempotent complete as a thick subcategory of a Krull--Schmidt category.
+\end{proof}
+
+\begin{theorem}[Non-generation]\label{thm:no-generator}
+Let \(C\) admit a support theory and let \(Z\subseteq\PP_C\) be closed.  Suppose some irreducible component \(Y\) of \(\PP_C\) meets both \(Z\) and \(\PP_C\setminus Z\).  Then \(\sD_Z\) is a nonzero proper idempotent-complete triangulated category with no classical generator.  Consequently \(\sD_Z\) is not triangle equivalent to \(\Dsg(\Lambda)\) for any finite-dimensional algebra \(\Lambda\), nor to \(\Dfd(B')/\per B'\) for any proper cohomologically non-positive dg algebra \(B'\).
+\end{theorem}
+
+\begin{proof}
+For \(G\in\Dsg(C)\), the objects \(X\) with \(\VV_C(X)\subseteq\VV_C(G)\) form a thick subcategory containing \(G\), by shift invariance, the union property, and monotonicity on summands; hence
+\begin{equation}\label{eq:generator-support}
+ X\in\thick(G)\implies\VV_C(X)\subseteq\VV_C(G).
+\end{equation}
+The set \(Y\cap(\PP_C\setminus Z)\) is a nonempty open subset of the irreducible variety \(Y\), hence dense in \(Y\), and its closed points are dense in it.  For each such closed point \(p\), \ref{S:realise} gives \(X_p\) with \(\VV_C(X_p)=\{p\}\); it lies in \(\sD_Z\), so \(\sD_Z\ne0\).  If \(G\) classically generated \(\sD_Z\), \eqref{eq:generator-support} would force every such \(p\) into the closed set \(\VV_C(G)\), hence \(Y\subseteq\VV_C(G)\); but \(Y\cap Z\ne\varnothing\) contradicts \(G\in\sD_Z\).  Properness: by \ref{S:full}, \(C/\rad C\notin\sD_Z\) because \(Z\ne\varnothing\).
+
+For a finite-dimensional algebra \(\Lambda\), the finitely many simple modules classically generate \(\Db(\Lambda\text{-}\modcat)\) and hence \(\Dsg(\Lambda)\).  For proper non-positive \(B'\), the standard truncation triangles express every object of \(\Dfd(B')\) through finitely many finite-dimensional \(H^0(B')\)-modules \Cref{lem:d-bfg-heart}, which are built from the finitely many simple \(H^0(B')\)-modules; properness places \(\per B'\) in \(\Dfd(B')\), and the image of the sum of the simples generates the quotient.  A category with a classical generator cannot be equivalent to \(\sD_Z\).
+\end{proof}
+
+\begin{remark}
+When \(Z=\varnothing\) the category \(\sD_Z=\Dsg(C)\) has a generator; when \(Z=\PP_C\) it is zero; the hypothesis excludes both.  The obstruction is independent of the summand obstruction \(\operatorname{SObs}_0\) of \Cref{subsec:summand-negative-k}, which vanishes throughout the one-point-extension family by \Cref{thm:support-classification}.  The statement excludes one-object proper connective models only; nonproper or multi-object dg descriptions are not excluded.
+\end{remark}
+
+\subsection{Complete intersections}
+
+\begin{theorem}[Complete intersections]\label{thm:ci-classification}
+Let \(C\) be a finite-dimensional commutative local complete intersection over \(k\) of codimension \(c\ge1\), and let \(\VV_C\) be the projectivised cohomological support of Avramov--Buchweitz \cite{AvramovBuchweitz00} in \(\PP_C=\PP^{c-1}_k\).  Then \(\VV_C\) is a support theory in the sense of \Cref{def:support-theory}.  Consequently the marked bounded defects with kernel \(\per C\) are exactly the \(\sD_Z\), \(Z\subseteq\PP^{c-1}_k\) closed, and for \(c\ge2\) and \(\varnothing\ne Z\subsetneq\PP^{c-1}_k\) the category \(\sD_Z\) has no classical generator.
+\end{theorem}
+
+\begin{proof}
+An artinian local complete intersection is Gorenstein, hence self-injective.  Property \ref{S:basic} and \ref{S:full} are the basic properties of support varieties over complete intersections, \cite[Theorem~5.6]{AvramovBuchweitz00}, in the formulation \cite[Theorem~2.2]{BerghJorgensenEasy}.  Property \ref{S:pair} is the pair-support criterion: the support of the pair equals the intersection of the supports \cite[Theorem~2.2(3)]{BerghJorgensenEasy}, and it is trivial exactly when \(\Ext^{\gg0}_C(M,N)=0\) \cite[Theorem~5.6]{AvramovBuchweitz00}.  Property \ref{S:realise} is the realisability of every cone by a module of finite length \cite[Theorem~4.2 and the following Remark]{BerghJorgensenEasy}.  Since \(\PP^{c-1}_k\) is irreducible, the component hypothesis of \Cref{thm:no-generator} reduces to \(\varnothing\ne Z\subsetneq\PP^{c-1}_k\), which requires \(c\ge2\).
+\end{proof}
+
+\begin{proposition}[Hyperplanes and matrix factorisations]\label{prop:hmf}
+Let \(C=Q/(f_1,\dots,f_c)\) be a minimal presentation of a complete intersection as above and let \(W\subseteq\PP^{c-1}_k\) be the hyperplane spanned by the classes of \(f_1,\dots,f_{c-1}\).  Then, by Bergh--Jorgensen \cite[Theorem~3.5]{BerghJorgensenMF},
+\begin{equation}\label{eq:hmf}
+ \sD_W\simeq\HMF\bigl(Q/(f_1,\dots,f_{c-1}),\,f_c\bigr),
+\end{equation}
+the homotopy category of matrix factorisations of \(f_c\) over the codimension-\((c-1)\) complete intersection \(Q/(f_1,\dots,f_{c-1})\), the functor being the cokernel functor of that theorem.  Hence every such matrix-factorisation category is the bounded defect of a one-point extension of \(C\).
+\end{proposition}
+
+\begin{proof}
+Theorem~3.5 of \cite{BerghJorgensenMF} identifies \(\HMF(Q/(f_1,\dots,f_{c-1}),f_c)\) with the full subcategory of \(\Dsg(C)\) of objects whose affine support meets the hyperplane only in \(0\), which is \(\sD_W\).  \Cref{thm:ci-classification} realises \(\sD_W\).
+\end{proof}
+
+\begin{example}[A seven-dimensional algebra]\label{ex:seven}
+Let \(C=k[x,y]/(x^2,y^2)\), a local complete intersection of codimension \(2\) with \(k\)-basis \(1,x,y,xy\).  Let \(M=C/(x)\), regarded as a right \(C\)-module, so that \(N=D_kM\cong C/(x)\) is the detector, and let \(X=C/(y)\) be a test object.  Put \(A=C[M]\); then \(\dim_kA=1+2+4=7\).
+
+Since \(\ker(y\colon C\to C)=yC\) and \(\ker(x\colon C\to C)=xC\), the modules \(X\) and \(M\) have one-periodic minimal resolutions with all differentials \(y\), respectively \(x\).  Tensoring the resolution of \(X\) with \(M=k[y]/(y^2)\) gives the repeated map \(y\) on \(M\), whose kernel equals its image, so
+\[
+ \Tor_0^C(M,X)=k,\qquad\Tor^C_i(M,X)=0\quad(i>0);
+\]
+tensoring the resolution of \(M\) with \(M\) kills every differential, so \(\Tor_i^C(M,M)=M\) for all \(i\ge0\).  Hence \(X\in\cU_N\) and \(M\notin\cU_N\).  The bounded \(A\)-module realising \(X\) is \(j_!X=(k,X,\varphi)\) with \(\varphi:M\otimes_CX\xrightarrow{\sim}k\).  Its endomorphisms in the defect are the stable endomorphisms of \(X\): \(\End_C(X)=k[x]/(x^2)\), and every map \(X\to C\) has image in \(\ann_C(y)=yC\), which every map \(C\to X\) kills, so no nonzero endomorphism factors through a projective and
+\[
+ \End_{\DeltaB(\lambda_M)}(j_!X)\cong\underline{\End}_C(X)\cong k[x]/(x^2).
+\]
+The support of \(N\) is the single point of \(\PP^1_k\) represented by the relation \(x^2\): over the hypersurface \(Q/(ax^2+by^2)\) with \(b\ne0\), \(N\) is the quotient by a non-zerodivisor and has projective dimension one, while for \(b=0\) it has infinite projective dimension.  By \Cref{prop:hmf} with \(W=\{[x^2]\}\),
+\[
+ \DeltaB(\lambda_M)\simeq\HMF\bigl(k[[x,y]]/(x^2),\,y^2\bigr),
+\]
+and the rank-one factorisation \((y,y)\) corresponds to \(X\).  By \Cref{thm:no-generator} this matrix-factorisation category has no classical generator.  Since \(M\) is a nonprojective module over the self-injective algebra \(C\), \(\pd(M_C)=\infty\), so \(\pd(k_A)=\infty\) by \Cref{thm:two-sided}: the bounded-extension hypothesis (B2) fails on the left and the defect is not the kernel of a functor induced by derived extension.  The calculations are checked exactly over \(\mathbb Q\) by \texttt{check\_7dim.py} (\Cref{app:computation}).
+\end{example}
+
+\begin{example}[Distinct marked cuts related by a coordinate symmetry]\label{ex:support-symmetry}
+Let \(C=k[x,y]/(x^2,y^2)\), \(M=C/(x)\), and \(N=C/(y)\). The algebra automorphism \(\tau\) exchanging \(x\) and \(y\) gives an exact pullback autoequivalence \(\tau^*\) of \(D(C)\), preserving perfect objects and exchanging \(M\) and \(N\). Since it preserves derived Hom, it induces
+\[
+ \cU_M/\per C\xrightarrow{\sim}\cU_N/\per C.
+\]
+These marked subcategories are distinct. Indeed, the free resolution of \(M\) has every differential multiplication by \(x\): exactness follows from \(\ker(x:C\to C)=xC\). Applying \(\Hom_C(-,M)\) gives zero differentials, so \(\Ext_C^n(M,M)\cong M\ne0\) for every \(n\ge0\). Applying \(\Hom_C(-,N)\), with \(N\cong k[x]/(x^2)\), gives multiplication by \(x\), whose kernel and image are both \(kx\). Thus \(\Ext_C^n(M,N)=0\) for every \(n>0\). Consequently \(M\in\cU_N\) but \(M\notin\cU_M\).
+
+The two detector supports are the distinct points \([x^2]\) and \([y^2]\), exchanged by \(\tau\). Thus different closed subsets can yield abstractly equivalent avoidance categories, even though the marked classification distinguishes them. The remaining problem is to classify abstract equivalences, taking these symmetries into account. The identities and the single repeating resolution step are checked in \texttt{verify\_coordinate\_swap.py}; exactness of the full periodic resolution is the argument above.
+\end{example}
+
+\subsection{Finite \texorpdfstring{\(p\)}{p}-groups}
+
+\begin{theorem}[\(p\)-groups]\label{thm:pgroup}
+Let \(k\) have characteristic \(p>0\), let \(P\) be a finite \(p\)-group and \(C=kP\).  Let \(\PP_C=\Proj H^*(P,k)\) and let \(\VV_C(M)\subseteq\PP_C\) be the projectivised cohomological support variety of Carlson \cite{Carlson83}.  Then \(\VV_C\) is a support theory for \(kP\).  Consequently the marked bounded defects with kernel \(\per kP\) are exactly the \(\sD_Z\), \(Z\subseteq\Proj H^*(P,k)\) closed, and \(\sD_Z\) has no classical generator whenever some irreducible component of \(\Proj H^*(P,k)\) meets both \(Z\) and its complement.
+\end{theorem}
+
+\begin{proof}
+The algebra \(kP\) is local and self-injective, with unique simple module \(k\).  The cohomology ring \(H^*(P,k)\) is a finitely generated graded-commutative \(k\)-algebra by Evens--Venkov, so \(\PP_C\) is a projective variety; its irreducible components correspond to conjugacy classes of maximal elementary abelian subgroups by Quillen \cite{Quillen71}.  Property \ref{S:basic} is standard: \(\VV_C(M)=\varnothing\) iff \(M\) is projective, support is invariant under \(\Omega\), additive on sums, and subadditive on short exact sequences \cite{Carlson83}, \cite[Chapter~5]{BensonII}.  Property \ref{S:full} holds because \(\VV_C(k)\) is the whole variety.  Property \ref{S:realise} is Carlson's realisability theorem: every closed homogeneous subvariety of the affine cone is the support of a module \cite{Carlson83,Carlson84}, see also \cite[Chapter~5]{BensonII}.
+
+For \ref{S:pair}, use \(\Ext^n_{kP}(M,N)\cong H^n(P,M^*\otimes_kN)\) and the tensor product theorem of Avrunin--Scott \cite{AvruninScott82}, \(\VV_C(M^*\otimes_kN)=\VV_C(M^*)\cap\VV_C(N)=\VV_C(M)\cap\VV_C(N)\).  It remains to see that \(H^{\gg0}(P,L)=0\) iff \(L\) is projective.  Since \(k\) is the only simple \(kP\)-module, \(\Ext^n_{kP}(k,L)=0\) for all \(n>n_0\) means \(L\) has injective dimension at most \(n_0\); over the self-injective algebra \(kP\) a module of finite injective dimension is injective, hence projective.  The converse is clear.  \Cref{thm:support-classification,thm:no-generator} apply.
+\end{proof}
+
+\begin{remark}
+For an elementary abelian \(p\)-group, \(kP\cong k[x_1,\dots,x_r]/(x_1^p,\dots,x_r^p)\) is a complete intersection and \Cref{thm:ci-classification} already applies; the new cases are the non-abelian \(p\)-groups, where \(kP\) is noncommutative and \(\PP_C\) may be reducible.  For the dihedral group of order \(8\) in characteristic \(2\), \(\Proj H^*(P,k)\) is two projective lines meeting in a point, and \(Z\) equal to one of the lines satisfies the hypothesis of \Cref{thm:no-generator}.  The theorem does not extend to arbitrary finite groups: for \(G=C_3\times C_2\) in characteristic \(3\), \(kG\cong k[t]/(t^3)\times k[t]/(t^3)\), the two simple modules have the same one-point support but \(\Ext^n_{kG}(M,N)=0\) for all \(n\), so \ref{S:pair} fails across blocks and \(\cU_N/\per\) is a nonzero proper defect not of the form \(\sD_Z\).  Any extension beyond \(p\)-groups must be formulated blockwise or with pair supports.
+\end{remark}
