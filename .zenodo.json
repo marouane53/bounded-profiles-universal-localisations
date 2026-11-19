@@ -1,0 +1,22 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "Two-term dg kernels and bounded profiles of universal localisations",
+  "creators": [
+    {
+      "name": "Lamharzi Alaoui, Marouane"
+    }
+  ],
+  "description": "<p>Every proper dg algebra over a field with cohomology in degrees &minus;1 and 0 is realised as the dg endomorphism algebra of a perfect kernel generator for a stably flat universal localisation of finite-dimensional algebras at one map. The target is projective on both sides, and the marked kernel embedding is standard t-exact with full finite-dimensional profile. Conversely, a standard t-exact marked realisation of a connective dg algebra by an ordinary homological ring epimorphism forces a two-term projective generator. The paper also studies the bounded profiles of these embeddings and asks whether a higher multiplication can change the profile poset at fixed graded cohomology.</p><p>The accompanying research notes (November 2026) answer that question, classify the full profile poset of a six-dimensional example, and extend the classification to an infinite family of dg algebras whose Koszul duals have a regular normal element. The deposit contains the paper, its LaTeX source and computational supplement, and the notes with their verification scripts.</p>",
+  "keywords": [
+    "universal localisation",
+    "dg algebra",
+    "bounded profile",
+    "Koszul duality",
+    "A-infinity algebra",
+    "singularity category"
+  ],
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "version": "1.0"
+}

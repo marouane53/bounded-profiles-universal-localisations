@@ -39,3 +39,7 @@ cd notes/support_theory && python3 verify_normal_localisations.py
 ```
 
 The scripts in `notes/support_theory/` import helpers from `notes/`, so keep the folder layout. The scripts check finite ranges only; the general statements are proved in the notes.
+
+## Licence
+
+The paper and the research notes are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The computational supplement in `source/anc/supplement/` carries its own MIT licence, and `source/amsplain-doi.bst` is a modified AMS style under LPPL 1.3c.
